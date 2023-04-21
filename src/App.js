@@ -8,10 +8,11 @@ function App() {
   const { orderArray: order } = useSelector((state) => state.exams);
   const dispatch = useDispatch();
   const [currentPos, setCurrentPos] = useState(0);
-  const [seconds, setSeconds] = useState(3300);
+  const [seconds, setSeconds] = useState(0);
   const [errors, setErrors] = useState(0);
   const [message, setMessage] = useState("");
   const [selectedResp, setSelectedResp] = useState();
+  const [warning, setWarning] = useState(false);
   let actualPosition = parseInt(
     JSON.parse(localStorage.getItem("actualPosition"))
   );
@@ -37,6 +38,19 @@ function App() {
   }, [order.length, order, dispatch]);
 
   const nextPosition = () => {
+    setWarning(false);
+    var ele = document.getElementsByName(currentPos);
+    let res = false;
+    for (var i = 0; i < ele.length; i++) {
+      if (ele[i].checked === true) {
+        res = true;
+      }
+    }
+    if (res === false) {
+      setWarning(true);
+      return;
+    }
+
     if (parseInt(selectedResp) !== parseInt(exams[currentPos].Correct)) {
       setErrors(errors + 1);
     }
@@ -46,13 +60,13 @@ function App() {
     } else {
       setCurrentPos(-1);
     }
-    var ele = document.getElementsByName(currentPos);
+
     for (var i = 0; i < ele.length; i++) ele[i].checked = false;
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
+      setSeconds((seconds) => seconds + 1);
     }, 1000);
 
     return () => clearInterval(interval);
@@ -81,19 +95,30 @@ function App() {
               <p className="text-left text-lg">{exams[currentPos].Question}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2">
-              <div className="p-3 text-left">
+              <div
+                className={`p-3 text-left ${
+                  warning === true
+                    ? "border-solid border-2 border-red-500"
+                    : "border-none"
+                }`}
+              >
                 {exams[currentPos].Responses.map((resp, index) => (
                   <Fragment key={index}>
-                    <p className="w-full bg-gray-300 my-2 rounded-md p-4">
-                      <input
-                        type="radio"
-                        name={currentPos}
-                        value={resp}
-                        className="mt-2 mx-2"
-                        onClick={() => setSelectedResp(index)}
-                      ></input>
-                      {" " + resp}
-                    </p>
+                    <div className="my-2 bg-red-200 rounded-md">
+                      <label
+                        className="w-full block bg-gray-300 my-2 rounded-md p-2"
+                        onClick={() => setWarning(false)}
+                      >
+                        <input
+                          type="radio"
+                          name={currentPos}
+                          value={resp}
+                          className="mt-2 mx-2 scale-125"
+                          onClick={() => setSelectedResp(index)}
+                        ></input>
+                        {" " + resp}
+                      </label>
+                    </div>
                   </Fragment>
                 ))}
               </div>
@@ -117,12 +142,13 @@ function App() {
           <p>
             {exams.length - errors} correct answers out of {exams.length}
           </p>
+          <p>Correct answers: {exams.length - errors}</p>
         </div>
       )}
       {currentPos >= 0 && (
         <button
           type="button"
-          className="bg-blue-400 p-2 w-40 mb-5"
+          className="bg-blue-400 p-2 w-40 mb-5 my-3"
           onClick={() => nextPosition()}
         >
           <span className="text-white font-bold text-xl">Next Question</span>
