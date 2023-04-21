@@ -112,10 +112,10 @@ function App() {
       ) : (
         <div className="text-center h-80">
           <p className="text-3xl mb-6">
-            Nota del Examen: {100 - (errors * 100) / 30}
+            Note: {Math.trunc(100 - (errors * 100) / 30)}
           </p>
           <p>
-            {exams.length - errors} respuestas correctas de {exams.length}
+            {exams.length - errors} correct answers out of {exams.length}
           </p>
         </div>
       )}
