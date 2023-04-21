@@ -61,7 +61,7 @@ function App() {
       setCurrentPos(-1);
     }
 
-    for (var i = 0; i < ele.length; i++) ele[i].checked = false;
+    for (var j = 0; j < ele.length; j++) ele[j].checked = false;
   };
 
   useEffect(() => {
