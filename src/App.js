@@ -72,11 +72,11 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (seconds === 0) {
-      setMessage("Time limit exceeded!");
-    }
-  }, [seconds]);
+  // useEffect(() => {
+  //   if (seconds === 0) {
+  //     setMessage("Time limit exceeded!");
+  //   }
+  // }, [seconds]);
 
   return (
     <div className="App w-8/12 h-auto mx-auto">
