@@ -83,7 +83,6 @@ function App() {
       <p className="text-green-700 font-bold">
         Remaining minutes: {Math.trunc(seconds / 60)}
       </p>
-      {message && <p>{message}</p>}
       {currentPos >= 0 ? (
         exams.length && (
           <div className="w-full">
