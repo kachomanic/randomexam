@@ -10,7 +10,7 @@ function App() {
   const [currentPos, setCurrentPos] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [errors, setErrors] = useState(0);
-  const [message, setMessage] = useState("");
+  //const [message, setMessage] = useState("");
   const [selectedResp, setSelectedResp] = useState();
   const [warning, setWarning] = useState(false);
   let actualPosition = parseInt(
