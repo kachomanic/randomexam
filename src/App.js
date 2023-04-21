@@ -20,9 +20,9 @@ function App() {
     actualPosition = 0;
   }
 
-  useEffect(() => {
-    setCurrentPos(actualPosition);
-  }, [actualPosition]);
+  // useEffect(() => {
+  //   setCurrentPos(actualPosition);
+  // }, [actualPosition]);
 
   useEffect(() => {
     if (!exams.length) {
