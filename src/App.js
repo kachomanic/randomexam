@@ -1,13 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
-import logo from "./logo.svg";
-import {
-  fetchAllExams,
-  fetchOrderArray,
-  setOrderArray,
-} from "./store/slices/exams";
+import { fetchAllExams, fetchOrderArray } from "./store/slices/exams";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { current } from "@reduxjs/toolkit";
 
 function App() {
   const { list: exams } = useSelector((state) => state.exams);
