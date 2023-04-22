@@ -81,7 +81,7 @@ function App() {
   return (
     <div className="App w-8/12 h-auto mx-auto">
       <p className="text-green-700 font-bold">
-        Remaining minutes: {Math.trunc(seconds / 60)}
+        Test time: {Math.trunc(seconds / 60)} minutes
       </p>
       {currentPos >= 0 ? (
         exams.length && (
@@ -105,7 +105,7 @@ function App() {
                   <Fragment key={index}>
                     <div className="my-2 bg-red-200 rounded-md">
                       <label
-                        className="w-full block bg-gray-300 my-2 rounded-md p-2"
+                        className="w-full block bg-gray-200 my-2 rounded-md p-2"
                         onClick={() => setWarning(false)}
                       >
                         <input
@@ -134,14 +134,16 @@ function App() {
           </div>
         )
       ) : (
-        <div className="text-center h-80">
+        <div className="text-center h-80 bg-gray-100">
           <p className="text-3xl mb-6">
             Note: {Math.trunc(100 - (errors * 100) / 30)}
           </p>
-          <p>
+          <p className="text-xl">
             {exams.length - errors} correct answers out of {exams.length}
           </p>
-          <p>Correct answers: {exams.length - errors}</p>
+          <p className="text-lg">
+            Total time: {Math.trunc(seconds / 60)} minutes
+          </p>
         </div>
       )}
       {currentPos >= 0 && (
