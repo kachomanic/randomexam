@@ -79,7 +79,7 @@ function App() {
   // }, [seconds]);
 
   return (
-    <div className="App w-8/12 h-auto mx-auto">
+    <div className="App w-full sm:w-6/12 h-auto mx-auto">
       <p className="text-green-700 font-bold">
         Test time: {Math.trunc(seconds / 60)} minutes
       </p>
@@ -94,6 +94,15 @@ function App() {
               <p className="text-left text-lg">{exams[currentPos].Question}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2">
+              {exams[currentPos].Img !== "" && (
+                <div className="align-middle my-auto">
+                  <img
+                    src={exams[currentPos].Img}
+                    alt="explain"
+                    className="my-auto align-middle"
+                  ></img>
+                </div>
+              )}
               <div
                 className={`p-3 text-left ${
                   warning === true
@@ -121,15 +130,6 @@ function App() {
                   </Fragment>
                 ))}
               </div>
-              {exams[currentPos].Img !== "" && (
-                <div className="p-3 align-middle my-auto">
-                  <img
-                    src={exams[currentPos].Img}
-                    alt="explain"
-                    className="my-auto align-middle"
-                  ></img>
-                </div>
-              )}
             </div>
           </div>
         )
