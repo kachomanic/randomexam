@@ -3,7 +3,7 @@ import { fetchAllExams, fetchOrderArray } from "./store/slices/exams/ged1";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 
-function App() {
+function Gedfirst() {
   const { list: exams } = useSelector((state) => state.exams);
   const { orderArray: order } = useSelector((state) => state.exams);
   const dispatch = useDispatch();
@@ -153,4 +153,4 @@ function App() {
   );
 }
 
-export default App;
+export default Gedfirst;

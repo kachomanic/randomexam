@@ -3,7 +3,7 @@ import { fetchAllExams, fetchOrderArray } from "./store/slices/exams/ged2";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 
-function App() {
+function Gedsecond() {
   const { list: exams } = useSelector((state) => state.exams2);
   const { orderArray: order } = useSelector((state) => state.exams2);
   const dispatch = useDispatch();
@@ -162,4 +162,4 @@ function App() {
   );
 }
 
-export default App;
+export default Gedsecond;
