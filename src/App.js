@@ -51,7 +51,7 @@ function App() {
       return;
     }
 
-    if (parseInt(selectedResp) !== parseInt(exams[currentPos].Correct)) {
+    if (!exams[currentPos].Correct.includes(parseInt(selectedResp))) {
       setErrors(errors + 1);
     }
 
@@ -79,7 +79,7 @@ function App() {
   // }, [seconds]);
 
   return (
-    <div className="App w-full sm:w-6/12 h-auto mx-auto">
+    <div className="App w-full sm:w-8/12 h-auto mx-auto">
       <p className="text-green-700 font-bold">
         Test time: {Math.trunc(seconds / 60)} minutes
       </p>
@@ -91,7 +91,10 @@ function App() {
               <span className="font-bold">{exams.length}</span>
             </p>
             <div className="p-3 mb-6">
-              <p className="text-left text-lg">{exams[currentPos].Question}</p>
+              <p
+                className="text-left text-lg"
+                dangerouslySetInnerHTML={{ __html: exams[currentPos].Question }}
+              ></p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {exams[currentPos].Img !== "" && (
@@ -124,7 +127,7 @@ function App() {
                           className="mt-2 mx-2 scale-125"
                           onClick={() => setSelectedResp(index)}
                         ></input>
-                        {" " + resp}
+                        <span dangerouslySetInnerHTML={{ __html: resp }}></span>
                       </label>
                     </div>
                   </Fragment>

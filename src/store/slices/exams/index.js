@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exam1img1 from "../../../assets/imgs/question-1.jpg";
-import exam1img2 from "../../../assets/imgs/question-2.jpg";
-import exam1img27 from "../../../assets/imgs/question-27.jpg";
+import exam3img12 from "../../../assets/imgs/exam3-question12.jpg";
+import exam4img25 from "../../../assets/imgs/exam4-question25.jpg";
 
 export const examsSlice = createSlice({
-  name: "exams",
+  name: "exams3",
   initialState: {
     list: [],
     orderArray: [],
@@ -44,221 +43,198 @@ export const fetchOrderArray = () => (dispatch) => {
 export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
-      Question:
-        "At a certain school, 70 out of 180 Year 2 students walk to school, while 90 out of 210 Year 6 students walk to school. What is the percentage difference in the number of Year 6 students who walk to school compared to Year 2 students who walk to school?",
-      Img: exam1img1,
-      Responses: ["3%", "4%", "5%", "6%", "2%", "8%"],
-      Correct: "0",
-    },
-    {
-      Question:
-        "If the total 2013 cold cereal sales for the seven counties assessed were $180,000, what percent of these sales was purchased Trinity County? Disregard the percentage symbol when choosing your answer.",
-      Img: exam1img2,
-      Responses: ["20", "25", "10", "15", "12", "21"],
-      Correct: "3",
-    },
-    {
-      Question:
-        "Do we use the same units to represent Surface Areas of three-dimensional figures and Areas?",
-      Img: "",
-      Responses: ["Yes", "No", "Maybe", "Only when the answer is the same"],
-      Correct: "0",
-    },
-    {
-      Question: "Write the following equation in Standard Form: y = 6x + 2/3",
+      Question: "Which definition of a mean is more accurate?",
       Img: "",
       Responses: [
-        "y - 2/3 = 6x",
-        "3y - 18x = 2",
-        "-6x - 2/3 = -y",
-        "No answer is correct",
-        "There is no standard form when you work with Fractions.",
+        "Is the Average in a set of Data",
+        "Mean is adding all the numbers in a set of Data",
+        "Mean is dividing the greatest number in a set of Data by 2",
+        "Is subtracting the greatest number minus the smallest",
+        "Is the number that repeats the most",
       ],
-      Correct: "1",
+      Correct: [0],
     },
     {
       Question:
-        "Do I find the perimeter of the square with the same formula as a rectangle?",
+        "Joseph borrowed $40,000 at a 7% rate for 3 years. How much will she pay in interest?",
       Img: "",
-      Responses: [
-        "Maybe if they have the same perimeter.",
-        "You can calculate both using the formula of the rectangle.",
-        "The formula of the square you can use for a rectangle.",
-        "Squares and Rectangles always are the same formulas.",
-      ],
-      Correct: "1",
+      Responses: ["$5,100", "$9,200", "$6,400", "$7,600", "$8,400"],
+      Correct: [4],
+    },
+    {
+      Question: "2² - 3² + 2<sup>3</sup> -3<sup>3</sup> =",
+      Img: "",
+      Responses: ["45", "-24", "-27", "36", "-52", "55"],
+      Correct: [1],
     },
     {
       Question:
-        "What is the area of the parallelogram with base = 12ft and height = 9ft",
+        "Peter buys a pair of pants for $11.25 and 2 T-shirts for $7.35 each and 1 pair of shoes for double the total of one 1 T-shirt and 1 pair of pants. What is the change if he pays with a $100 bill?",
       Img: "",
-      Responses: ["108 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
-      Correct: "2",
-    },
-    {
-      Question: "Convert the following measure: 0.0015 km to cm.",
-      Img: "",
-      Responses: ["50 cm", "15 cm", "0.15 cm", "150 cm", "50 cm", "1,500 cm"],
-      Correct: "3",
-    },
-    {
-      Question: "What is Permutation (8, 2)?",
-      Img: "",
-      Responses: ["120", "24", "15", "56", "8", "10"],
-      Correct: "3",
+      Responses: [
+        "$5.35 is the change",
+        "$1.50",
+        "$36.85",
+        "$1.15 is the change",
+        "The answer is not on the options",
+        "$27.60",
+      ],
+      Correct: [2],
     },
     {
       Question:
-        "John has in his bank account $40,000 and he is planning to make 3 different investments. 1/5 of the money will go to the stock market, 1/4 of the total will be spent to sell online and the rest in real estate. How much money Does John will invest in Real Estate?",
+        "In a school there are 350 students, 1/5 of them are Christians. From the Christians 1/10 does not go to church every week. How many students go to church every week?",
       Img: "",
-      Responses: [
-        "$7,500",
-        "$6,500",
-        "$6,000",
-        "$22,000",
-        "$21,500",
-        "$13,800",
-      ],
-      Correct: "3",
+      Responses: ["58", "24", "35", "55", "63", "No answer is correct"],
+      Correct: [4],
     },
     {
       Question:
-        "If a linear equation has a formula y=2x-5. What is the y intercept for that equation?",
-      Img: "",
-      Responses: ["5", "2", "-5", "2", "7", "-7"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "Which are the coordinates of the y intercept for the following equation? y + 2 = 3x",
-      Img: "",
-      Responses: [
-        "(0, -2)",
-        "(1, -2)",
-        "(1, 3)",
-        "(0, -3)",
-        "(1, 3/2)",
-        "(0, -2/3)",
-      ],
-      Correct: "0",
-    },
-    {
-      Question:
-        "When two die are rolled, find the probability of getting a 5 and then a number less than 2?",
-      Img: "",
-      Responses: [
-        "1/36",
-        "3/36",
-        "1/12",
-        "1/18",
-        "0.90",
-        "4/36",
-        "All are incorrect",
-      ],
-      Correct: "0",
-    },
-    {
-      Question:
-        "A recent survey indicates that in a town of 1500 households, 850 had cordless telephones. If a household is randomly selected, find the probability that it has a cordless telephone.",
-      Img: "",
-      Responses: [
-        "17/30",
-        "500/1500",
-        "1/4",
-        "25/32",
-        "0.90",
-        "4/36",
-        "All are incorrect",
-      ],
-      Correct: "0",
-    },
-    {
-      Question: "Factoring Trinomials 6x² + 15x - 21",
-      Img: "",
-      Responses: [
-        "(x + 7)(3x - 3)",
-        "(2x + 7)(3x - 3)",
-        "(2x + 7)(3x + 3)",
-        "(2x - 7)(3x - 3)",
-        "(2x + 3)(3x - 7)",
-        "(2x + 3)(3x + 7)",
-        "The answer is not there",
-      ],
-      Correct: "6",
-    },
-    {
-      Question: "Find the answer: -2 + 9 * 3 -10 +3 * (-10) =",
-      Img: "",
-      Responses: ["4", "-20", "20", "-15", "9", "-10", "18", "16"],
-      Correct: "3",
-    },
-    {
-      Question: "What is the unit that we use to represent volume?",
-      Img: "",
-      Responses: [
-        "Cube units",
-        "Square units",
-        "Linear units",
-        "None of these",
-        "All of these",
-      ],
-      Correct: "0",
-    },
-    {
-      Question: "In the following equation y = -2x + 4 the slope is:",
-      Img: "",
-      Responses: ["Negative", "Positive", "Undefined", "Zero"],
-      Correct: "0",
-    },
-    {
-      Question: "Solve for k; 3k + 5 = 17",
-      Img: "",
-      Responses: ["k = 2", "k = 5", "k = -3", "k = -2", "k = 4"],
-      Correct: "4",
-    },
-    {
-      Question: "Divide (48m - 30n³ + 16t²)/4",
-      Img: "",
-      Responses: [
-        "12m - 15/2n³ + 5t²",
-        "12m - 15/2n² + 4t²",
-        "12m - 13/2n³ + 4t²",
-        "10m - 15/2n³ + 4t²",
-        "12m - 15/2n³ + 4t²",
-      ],
-      Correct: "4",
-    },
-    {
-      Question: "Multiply (x + 7)(2x - 8)",
-      Img: "",
-      Responses: [
-        "2x² - 6x + 56",
-        "x² + 6x - 56",
-        "2x² + 6x + 56",
-        "2x² - 6x - 56",
-        "2x² + 6x - 56",
-        "No answer is correct",
-      ],
-      Correct: "4",
-    },
-    {
-      Question: "5 is 100% of what Number?",
-      Img: "",
-      Responses: ["100", "1", "5", "20", "4"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "At a store we see that shoes are mark dawn15%. If the price of shoes is $160. What is the new price after the discount?",
+        "At a store we see that shoes are made 15% off. If the price of shoes is $160. What is the new price after the discount?",
       Img: "",
       Responses: ["154", "145", "136", "120", "155"],
-      Correct: "2",
+      Correct: [2],
     },
     {
-      Question: "Find the probability of getting a 7 when we role a dice.",
+      Question:
+        "What is the sum of Mean, Median, Mode and Range of the following set of Data. 12, 8, 10, 10, 15, 15, 3, 10, 17. (If needed round your answer)",
+      Img: "",
+      Responses: ["10", "40", "48", "15", "14", "45", "51", "20"],
+      Correct: [5],
+    },
+    {
+      Question: "What is Combination (100, 100)?",
       Img: "",
       Responses: [
-        "We can not calculated",
+        "The answer is not presented in the options",
+        "100,000",
+        "100",
+        "10,000",
+        "1,000,000",
+        "1",
+      ],
+      Correct: [5],
+    },
+    {
+      Question:
+        "In a group of 8 businesspeople they want to select board of director conform by 1 President, 1 Vice-president and 1 Secretary. How many ways can this board of directors be selected?",
+      Img: "",
+      Responses: ["1024", "5024", "56", "120", "336", "720"],
+      Correct: [4],
+    },
+    {
+      Question: "Find the area of a circle with diameter = 8 in.",
+      Img: "",
+      Responses: [
+        "50.24 ft",
+        "150.24 in",
+        "50.24 in²",
+        "200.96 in",
+        "200.96 ft",
+      ],
+      Correct: [2],
+    },
+    {
+      Question:
+        "What is the area of the circle with r = 1.8 mi? (Remember pi = 3.14)",
+      Img: "",
+      Responses: [
+        "10.17 mi",
+        "4.17 mi²",
+        "3.14 mi²",
+        "10.17 mi²",
+        "8.17 mi²",
+        "12.17 mi²",
+        "-5.24 mi²",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "What is the slope of the following line: 2y = 2x - 4",
+      Img: "",
+      Responses: ["m = 2", "m = 3", "m = 4", "m = 1", "m = -2", "m = -4"],
+      Correct: [3],
+    },
+    {
+      Question:
+        "What is the y-intercept of the following equation? -4y = 4x - 4",
+      Img: "",
+      Responses: [
+        "b = 4",
+        "b = -2",
+        "b = 2",
+        "b = 3",
+        "b = -4",
+        "b = 1",
+        "b = undefine",
+      ],
+      Correct: [5],
+    },
+    {
+      Question: "Simplify: m² + 3m - 5 + 7m - 3m²",
+      Img: "",
+      Responses: [
+        "2m² + 10m - 5",
+        "-2m² + 10m + 5",
+        "-2m² + 10m - 5",
+        "-2m² - 10m - 5",
+        "2m² + 10m - 10",
+        "-2m² + 4m - 5",
+      ],
+      Correct: [5],
+    },
+    {
+      Question: "Solve: (2x+2) / (2) = 2",
+      Img: "",
+      Responses: ["1", "4", "2", "8", "5", "-2"],
+      Correct: [0],
+    },
+    {
+      Question: "Divide (15x - 25x<sup>3</sup> + 40x²) / 5x",
+      Img: "",
+      Responses: [
+        "3 + 5x² - 8x",
+        "3 - 5x² + 8x",
+        "3 + 5x² + 8x",
+        "3x + 8x - 5x²",
+        "3 + 5x + 8x²",
+        "No answer is correct",
+        "5 + 3x² + 8x",
+      ],
+      Correct: [1],
+    },
+    {
+      Question: "Find the Value of M. 3(m + 5) - 4 = 23",
+      Img: "",
+      Responses: ["-4", "5", "4", "2", "9", "-5"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "In a dealer a car costs $25,000 at 8% off. What is the price of the car after discount?",
+      Img: "",
+      Responses: ["$25,000", "$22,000", "$21,000", "$23,000", "$24,000"],
+      Correct: [3],
+    },
+    {
+      Question:
+        "Out of 200 pairs of shoes 8 pairs are of poor quality. The auditor selects randomly one pairs of the shoes. What is the probability that one is of poor quality?",
+      Img: "",
+      Responses: [
+        "3/98",
+        "5/200",
+        "3/200",
+        "1/25",
+        "No answer is correct",
+        "3/50",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "Find the probability of getting a 7 when we roll a dice.",
+      Img: "",
+      Responses: [
+        "We cannot calculated",
         "Probability is equal to 0",
         "Probability is equal to -1",
         "Probability is equal to 1/6",
@@ -266,68 +242,88 @@ export const fetchAllExams = () => (dispatch) => {
         "Probability is equal to 1/4",
         "Probability is equal to 35%",
       ],
-      Correct: "1",
+      Correct: [3],
+    },
+    {
+      Question:
+        "A brand is considering whether to invest in a new project that has an expected return of 12% per year. The initial investment is $100,000, and the brand expects to receive cash flows of $25,000 per year for the first three years, and $35,000 per year for the next two years. If the brand's cost of capital is 10%, what is the net present value (NPV) of the project?",
+      Img: "",
+      Responses: ["$16,068", "$18,670", "$21,322", "$23,512"],
+      Correct: [3],
+    },
+    {
+      Question: "If x + 2y = 5 and 3x - 4y = 7, what is the value of x - y?",
+      Img: "",
+      Responses: ["-1", "1", "2", "3"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "If a product's revenue is given by the function R(x) = 500x - 0.5x², where x is the number of units sold, what is the maximum revenue that can be generated by the product?",
+      Img: "",
+      Responses: ["$250", "$500", "$625", "None of the above"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "A small business owner wants to apply for a loan to expand the business. The business has an average monthly revenue of $50,000 and an average monthly cost of $35,000. The bank requires the business to have a debt-to-equity ratio of no more than 1.5. If the business owner has $100,000 in personal savings and wants to borrow as much money as possible, how much can the business owner borrow?",
+      Img: "",
+      Responses: ["$37,500", "$50,000", "$75,000", "$100,000"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "The annual salaries of the employees working at The Island Resort are listed. What is the average salary and range for these salaries?",
+      Img: exam4img25,
+      Responses: [
+        "$208,385.00, $63,070.00",
+        "$26,273.00, $27,270.00",
+        "$29,770.00, $27,470.00",
+        "$208,385.00, $63,070.00",
+        "None of the above",
+      ],
+      Correct: [2],
     },
     {
       Question:
         "What is the probability of selecting a vowel in a 24 later alphabet?",
       Img: "",
       Responses: ["7/24", "3/24", "4/24", "5/24", "No answer is correct"],
-      Correct: "3",
+      Correct: [3],
     },
     {
       Question:
-        "If a product's revenue is given by the function R(x) = 500x - 0.5x², where x is the number of units sold, what is the maximum revenue that can be generated by the product?",
+        "Mary borrowed $100,000 at a 6% rate for 4 years. How much will she pay in interest?",
+      Img: "",
+      Responses: ["$25,100", "$24,100", "$24,000", "$50,600", "$16,400"],
+      Correct: [2],
+    },
+    {
+      Question: "Simplify: (8m + n² ) - (5m - 2n² ) - 3m + n",
       Img: "",
       Responses: [
-        "$250,000",
-        "$500,000",
-        "$125,000",
-        "None of the above",
-        "$420,000",
-        "$575,000",
+        "- 3n² + 2n",
+        "3n² + n",
+        "8m + 3n² + n",
+        "3m + 3n² - n",
+        "The answer is not correct",
+        "m - 3n² + n",
+        "3n² + 2n",
       ],
-      Correct: "2",
+      Correct: [1],
+    },
+    {
+      Question: "Solve for k; 3k + 5 = 17",
+      Img: "",
+      Responses: ["k = 2", "k = 5", "k = -3", "k = -2", "k = 4"],
+      Correct: [4],
     },
     {
       Question:
-        "A football team has scored 45 goals in 20 matches so far in the league. If they want to achieve an average of 3 goals per match for the remaining 10 matches, how many goals do they need to score in these matches?",
+        "What is a Surface Area of a Cone that has a radio of 4in and a slang high of 10in?",
       Img: "",
-      Responses: ["15", "20", "25", "30", "13", "22"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "A sports club spends $100,000 on different sports in a year. The pie chart representing this expenditure shows that hockey accounts for 27.78% of the total amount spent. What is the total amount spent on sports other than hockey?",
-      Img: exam1img27,
-      Responses: [
-        "$22,220",
-        "$72,220",
-        "$77,780",
-        "$100,000",
-        "$22,780",
-        "$77,220",
-      ],
-      Correct: "1",
-    },
-    {
-      Question:
-        "What is the probability of throwing dice and getting an odd number?",
-      Img: "",
-      Responses: ["1/4", "1/3", "1/2", "No answer is correct", "1/5", "3"],
-      Correct: "2",
-    },
-    {
-      Question: "What is 7.5ft in inches?",
-      Img: "",
-      Responses: ["86 in", "120 in", "96 in", "72 in", "120 in", "90 in"],
-      Correct: "5",
-    },
-    {
-      Question: "Find the Value of 2P. 3(P + 5) - 4 = 23",
-      Img: "",
-      Responses: ["-4", "5", "8", "2", "9", "-5"],
-      Correct: "2",
+      Responses: ["42.37 pi", "48 pi", "50.25 pi", "64 i", "56 pi"],
+      Correct: [4],
     },
   ];
 
