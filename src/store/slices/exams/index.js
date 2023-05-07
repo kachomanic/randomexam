@@ -340,7 +340,7 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        ". Joan is closing the register at the end of the day. He is in charge of counting all the change. There are 129 coins counting only quarters and dimes. If Jason counts $27.00 in these coins, how many quarters(x) and dimes(y) are there?",
+        "Joan is closing the register at the end of the day. He is in charge of counting all the change. There are 129 coins counting only quarters and dimes. If Jason counts $27.00 in these coins, how many quarters(x) and dimes(y) are there?",
       Img: "",
       Responses: [
         "x = 100, y = 29",
