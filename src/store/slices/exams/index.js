@@ -194,7 +194,7 @@ export const fetchAllExams = () => (dispatch) => {
       Question:
         "What is the length of CD in a circle with center O, where the line segment AB intersects the circle at points C and D, and AC = 4 and BD = 6?",
       Img: "",
-      Responses: ["2", "3", "4s", "5", "1"],
+      Responses: ["2", "3", "4", "5", "1"],
       Correct: [0],
     },
     {
