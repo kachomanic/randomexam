@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import exam3img12 from "../../../assets/imgs/exam3-question12.jpg";
-import exam4img25 from "../../../assets/imgs/exam4-question25.jpg";
+import exam5img23 from "../../../assets/imgs/exam5-question23.jpg";
+import exam5img24 from "../../../assets/imgs/exam5-question24.jpg";
 
 export const examsSlice = createSlice({
   name: "exams3",
@@ -43,287 +44,311 @@ export const fetchOrderArray = () => (dispatch) => {
 export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
-      Question: "Which definition of a mean is more accurate?",
+      Question: "In the following equation y = -2x + 4 the slope is:",
+      Img: "",
+      Responses: ["Negative", "Positive", "Undefined", "Zero"],
+      Correct: [0],
+    },
+    {
+      Question:
+        "In a group of 8 doctors they want to select a committee of 5 people. How many ways can those committee be selected?",
+      Img: "",
+      Responses: ["336", "45", "720", "24", "110", "100", "56"],
+      Correct: [6],
+    },
+    {
+      Question: "Which of the following equation has slope equal to zero?",
       Img: "",
       Responses: [
-        "Is the Average in a set of Data",
-        "Mean is adding all the numbers in a set of Data",
-        "Mean is dividing the greatest number in a set of Data by 2",
-        "Is subtracting the greatest number minus the smallest",
-        "Is the number that repeats the most",
+        "y = 2x - 1",
+        "y = 1/2 x+ 4",
+        "y = 2x+ 4",
+        "y = 4",
+        "y = x - 1",
+        "y = x",
+      ],
+      Correct: [3],
+    },
+    {
+      Question:
+        "A painter charges $50 for 2 hours and $100 for 4 hours of work. What is the equation that best describes the painter's hourly rate? ",
+      Img: "",
+      Responses: [
+        "y = 50x + 100",
+        "y = 50x",
+        "y = 25x",
+        "y = 25x + 25",
+        "y = 50x + 100 * 4",
+        "No Answer is correct",
+      ],
+      Correct: [2],
+    },
+    {
+      Question: "Five is 100% of what Number?",
+      Img: "",
+      Responses: ["100", "1", "5", "20", "4", "6", "14"],
+      Correct: [2],
+    },
+    {
+      Question: "Which of the following equations has slope undefine?",
+      Img: "",
+      Responses: ["- 5 + x = 5y", "x = 5 + y", "-y = 5", "y = 5", "x = 5"],
+      Correct: [4],
+    },
+    {
+      Question:
+        "What is the area of the triangle with base = 14in and high = 8in Impossible to find the answer",
+      Img: "",
+      Responses: ["80 in²", "56 in", "120 in²", "112 in²", "56 in²"],
+      Correct: [4],
+    },
+    {
+      Question: "How to find the perimeter?",
+      Img: "",
+      Responses: [
+        "Adding all sides around the figure",
+        "Adding all sides that are the same",
+        "Adding the most important information",
+        "Not sure how to find it",
       ],
       Correct: [0],
     },
     {
       Question:
-        "Joseph borrowed $40,000 at a 7% rate for 3 years. How much will she pay in interest?",
+        "If you know two points in a line, (3, 9) and (0, 0) What is the slope of that line?",
       Img: "",
-      Responses: ["$5,100", "$9,200", "$6,400", "$7,600", "$8,400"],
+      Responses: [
+        "m = -3",
+        "m = -9",
+        "m = 9",
+        "m = 3",
+        "m = 12",
+        "m is undefine",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "What is a area of a rectangle with side A = 20ft and B = 8ft?",
+      Img: "",
+      Responses: [
+        "120 ft",
+        "80 ft²",
+        "120 ft²",
+        "110 ft²",
+        "200 ft²",
+        "160 ft²",
+      ],
+      Correct: [5],
+    },
+    {
+      Question:
+        "Five Runners are in a race. How many ways can 1st and 2nd be awarded?",
+      Img: "",
+      Responses: ["120", "6", "5", "1", "20", "24", "10", "15"],
       Correct: [4],
     },
     {
-      Question: "2² - 3² + 2<sup>3</sup> -3<sup>3</sup> =",
+      Question: "4,500 is 25% of What number?",
       Img: "",
-      Responses: ["45", "-24", "-27", "36", "-52", "55"],
+      Responses: ["13,500", "20,000", "18,500", "19,000", "17,000", "18,000"],
+      Correct: [5],
+    },
+    {
+      Question: "Solve: -(-4+7) - 2<sup>3</sup> + (-20) + 20",
+      Img: "",
+      Responses: ["-15", "-20", "-7", "-31", "25", "-11", "18"],
+      Correct: [5],
+    },
+    {
+      Question:
+        "If a linear equation has a formula y=2x-5. What is the y intercept for that equation?",
+      Img: "",
+      Responses: ["5", "2", "-5", "2", "7", "-7"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "If we find a Combination (10,10) and Permutation (10,10) Which of those two will have a greater answer?",
+      Img: "",
+      Responses: [
+        "We cannot answer with the information provided",
+        "Depends on the context of the problem",
+        "Combination",
+        "Permutation",
+      ],
+      Correct: [3],
+    },
+    {
+      Question:
+        "Which are the coordinates of the y intercept for the following equation? y +2 = 3x",
+      Img: "",
+      Responses: [
+        "(0, -2)",
+        "(1, -2)",
+        "(1, 3)",
+        "(0, -3)",
+        "(1, 3/2)",
+        "(0, -2/3)",
+      ],
+      Correct: [0],
+    },
+    {
+      Question:
+        "Which the slope for the following linear equation? y = -2x + 1/3",
+      Img: "",
+      Responses: ["5", "-2", "3", "-3", "1/3", "-1/3", "1"],
       Correct: [1],
     },
     {
       Question:
-        "Peter buys a pair of pants for $11.25 and 2 T-shirts for $7.35 each and 1 pair of shoes for double the total of one 1 T-shirt and 1 pair of pants. What is the change if he pays with a $100 bill?",
+        "In a lock of 3 character's combinations (2 of them are numbers and one is a letter) there are 10 numbers to choose from (0,1,2,3,4,5,6,7,8,9) and 24 letters. How many different options for a code do we have if: Numbers cannot be repeated",
       Img: "",
       Responses: [
-        "$5.35 is the change",
-        "$1.50",
-        "$36.85",
-        "$1.15 is the change",
-        "The answer is not on the options",
-        "$27.60",
+        "600",
+        "6",
+        "720",
+        "5040",
+        "2160",
+        "1024",
+        "2400",
+        "Not enough information to answer",
+      ],
+      Correct: [4],
+    },
+    {
+      Question:
+        "Convert the following measure: 1.12 miles to yards if (1 mi = 1760 yd)",
+      Img: "",
+      Responses: [
+        "3971.2 yd",
+        "2971.2 yd",
+        "871.2 yd",
+        "1971.2 yd",
+        "971.2 yd",
+        "1771.2 yd",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "Find the volume of a sphere in m3 that has a radio of 200cm?",
+      Img: "",
+      Responses: [
+        "40/3 pi",
+        "26/5 pi",
+        "32/3 pi",
+        "26/5 pi",
+        "No answer is correct",
+        "15.5 pi",
+        "18.75 pi",
+      ],
+      Correct: [2],
+    },
+    {
+      Question: "The equation of the line y=2x -1 has:",
+      Img: "",
+      Responses: [
+        "Slope -1 and y-intercept 2",
+        "Slope -2 and y-intercept 1",
+        "Slope 2 and y-intercept -1",
+        "Slope 2 and y-intercept 1",
       ],
       Correct: [2],
     },
     {
       Question:
-        "In a school there are 350 students, 1/5 of them are Christians. From the Christians 1/10 does not go to church every week. How many students go to church every week?",
+        "What is the area of the parallelogram with base = 12ft and height = 9ft",
       Img: "",
-      Responses: ["58", "24", "35", "55", "63", "No answer is correct"],
-      Correct: [4],
+      Responses: ["108 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
+      Correct: [2],
+    },
+    {
+      Question: "Find the missing side",
+      Img: exam5img23,
+      Responses: [
+        "9x - 20y",
+        "9x - 19y",
+        "9x - 21y",
+        "7x - 21y",
+        "No answer is correct",
+      ],
+      Correct: [2],
+    },
+    {
+      Question: "Find the missing side",
+      Img: exam5img24,
+      Responses: [
+        "3x - 8",
+        "7x + 5",
+        "10x + 5",
+        "6x - 9",
+        "7x + 9",
+        "No answer is correct",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "Multiply mk²p<sup>4</sup> (2m²kp<sup>5</sup>)",
+      Img: "",
+      Responses: [
+        "m<sup>3</sup>k<sup>3</sup>p<sup>9</sup>",
+        "m<sup>3</sup>k<sup>3</sup>p<sup>8</sup>",
+        "2m<sup>3</sup>k<sup>3</sup>p<sup>9</sup>",
+        "2m<sup>3</sup>k<sup>3</sup>p<sup>7</sup>",
+        "No answer is correct",
+        "2m²k²p<sup>9</sup>",
+      ],
+      Correct: [2],
+    },
+    {
+      Question: "Simplify: (5x + z² + 3y) + (12x - 2z² - 8x) + x",
+      Img: "",
+      Responses: [
+        "9x + 3y - z²",
+        "10x + 3y + z²",
+        "18x + 3y - z²",
+        "No answer is correct",
+        "5x - 3y - z²",
+      ],
+      Correct: [2],
     },
     {
       Question:
-        "At a store we see that shoes are made 15% off. If the price of shoes is $160. What is the new price after the discount?",
+        "Find the probability of getting a 1 or a number greater than 5 when we role some dice.",
+      Img: "",
+      Responses: ["1/4", "1/5", "1/3", "2/7", "1/60", "-1"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "At a store we see that shoes are mark dawn15%. If the price of shoes is $160. What is the new price after the discount?",
       Img: "",
       Responses: ["154", "145", "136", "120", "155"],
       Correct: [2],
     },
     {
-      Question:
-        "What is the sum of Mean, Median, Mode and Range of the following set of Data. 12, 8, 10, 10, 15, 15, 3, 10, 17. (If needed round your answer)",
-      Img: "",
-      Responses: ["10", "40", "48", "15", "14", "45", "51", "20"],
-      Correct: [5],
-    },
-    {
-      Question: "What is Combination (100, 100)?",
+      Question: "What is a Volume of a Cube that has a side of 12 m?",
       Img: "",
       Responses: [
-        "The answer is not presented in the options",
-        "100,000",
-        "100",
-        "10,000",
-        "1,000,000",
-        "1",
+        "5728 m<sup>3</sup>",
+        "36 m<sup>3</sup>",
+        "1426 m<sup>3</sup>",
+        "None is correct",
+        "1728 m<sup>3</sup>",
+        "144 m<sup>3</sup>",
       ],
-      Correct: [5],
-    },
-    {
-      Question:
-        "In a group of 8 businesspeople they want to select board of director conform by 1 President, 1 Vice-president and 1 Secretary. How many ways can this board of directors be selected?",
-      Img: "",
-      Responses: ["1024", "5024", "56", "120", "336", "720"],
-      Correct: [4],
-    },
-    {
-      Question: "Find the area of a circle with diameter = 8 in.",
-      Img: "",
-      Responses: [
-        "50.24 ft",
-        "150.24 in",
-        "50.24 in²",
-        "200.96 in",
-        "200.96 ft",
-      ],
-      Correct: [2],
-    },
-    {
-      Question:
-        "What is the area of the circle with r = 1.8 mi? (Remember pi = 3.14)",
-      Img: "",
-      Responses: [
-        "10.17 mi",
-        "4.17 mi²",
-        "3.14 mi²",
-        "10.17 mi²",
-        "8.17 mi²",
-        "12.17 mi²",
-        "-5.24 mi²",
-      ],
-      Correct: [3],
-    },
-    {
-      Question: "What is the slope of the following line: 2y = 2x - 4",
-      Img: "",
-      Responses: ["m = 2", "m = 3", "m = 4", "m = 1", "m = -2", "m = -4"],
-      Correct: [3],
-    },
-    {
-      Question:
-        "What is the y-intercept of the following equation? -4y = 4x - 4",
-      Img: "",
-      Responses: [
-        "b = 4",
-        "b = -2",
-        "b = 2",
-        "b = 3",
-        "b = -4",
-        "b = 1",
-        "b = undefine",
-      ],
-      Correct: [5],
-    },
-    {
-      Question: "Simplify: m² + 3m - 5 + 7m - 3m²",
-      Img: "",
-      Responses: [
-        "2m² + 10m - 5",
-        "-2m² + 10m + 5",
-        "-2m² + 10m - 5",
-        "-2m² - 10m - 5",
-        "2m² + 10m - 10",
-        "-2m² + 4m - 5",
-      ],
-      Correct: [5],
-    },
-    {
-      Question: "Solve: (2x+2) / (2) = 2",
-      Img: "",
-      Responses: ["1", "4", "2", "8", "5", "-2"],
-      Correct: [0],
-    },
-    {
-      Question: "Divide (15x - 25x<sup>3</sup> + 40x²) / 5x",
-      Img: "",
-      Responses: [
-        "3 + 5x² - 8x",
-        "3 - 5x² + 8x",
-        "3 + 5x² + 8x",
-        "3x + 8x - 5x²",
-        "3 + 5x + 8x²",
-        "No answer is correct",
-        "5 + 3x² + 8x",
-      ],
-      Correct: [1],
-    },
-    {
-      Question: "Find the Value of M. 3(m + 5) - 4 = 23",
-      Img: "",
-      Responses: ["-4", "5", "4", "2", "9", "-5"],
-      Correct: [2],
-    },
-    {
-      Question:
-        "In a dealer a car costs $25,000 at 8% off. What is the price of the car after discount?",
-      Img: "",
-      Responses: ["$25,000", "$22,000", "$21,000", "$23,000", "$24,000"],
-      Correct: [3],
-    },
-    {
-      Question:
-        "Out of 200 pairs of shoes 8 pairs are of poor quality. The auditor selects randomly one pairs of the shoes. What is the probability that one is of poor quality?",
-      Img: "",
-      Responses: [
-        "3/98",
-        "5/200",
-        "3/200",
-        "1/25",
-        "No answer is correct",
-        "3/50",
-      ],
-      Correct: [3],
-    },
-    {
-      Question: "Find the probability of getting a 7 when we roll a dice.",
-      Img: "",
-      Responses: [
-        "We cannot calculated",
-        "Probability is equal to 0",
-        "Probability is equal to -1",
-        "Probability is equal to 1/6",
-        "Probability is equal to 1/5",
-        "Probability is equal to 1/4",
-        "Probability is equal to 35%",
-      ],
-      Correct: [3],
-    },
-    {
-      Question:
-        "A brand is considering whether to invest in a new project that has an expected return of 12% per year. The initial investment is $100,000, and the brand expects to receive cash flows of $25,000 per year for the first three years, and $35,000 per year for the next two years. If the brand's cost of capital is 10%, what is the net present value (NPV) of the project?",
-      Img: "",
-      Responses: ["$16,068", "$18,670", "$21,322", "$23,512"],
-      Correct: [3],
-    },
-    {
-      Question: "If x + 2y = 5 and 3x - 4y = 7, what is the value of x - y?",
-      Img: "",
-      Responses: ["-1", "1", "2", "3"],
-      Correct: [2],
-    },
-    {
-      Question:
-        "If a product's revenue is given by the function R(x) = 500x - 0.5x², where x is the number of units sold, what is the maximum revenue that can be generated by the product?",
-      Img: "",
-      Responses: ["$250", "$500", "$625", "None of the above"],
-      Correct: [2],
-    },
-    {
-      Question:
-        "A small business owner wants to apply for a loan to expand the business. The business has an average monthly revenue of $50,000 and an average monthly cost of $35,000. The bank requires the business to have a debt-to-equity ratio of no more than 1.5. If the business owner has $100,000 in personal savings and wants to borrow as much money as possible, how much can the business owner borrow?",
-      Img: "",
-      Responses: ["$37,500", "$50,000", "$75,000", "$100,000"],
-      Correct: [2],
-    },
-    {
-      Question:
-        "The annual salaries of the employees working at The Island Resort are listed. What is the average salary and range for these salaries?",
-      Img: exam4img25,
-      Responses: [
-        "$208,385.00, $63,070.00",
-        "$26,273.00, $27,270.00",
-        "$29,770.00, $27,470.00",
-        "$208,385.00, $63,070.00",
-        "None of the above",
-      ],
-      Correct: [2],
-    },
-    {
-      Question:
-        "What is the probability of selecting a vowel in a 24 later alphabet?",
-      Img: "",
-      Responses: ["7/24", "3/24", "4/24", "5/24", "No answer is correct"],
-      Correct: [3],
-    },
-    {
-      Question:
-        "Mary borrowed $100,000 at a 6% rate for 4 years. How much will she pay in interest?",
-      Img: "",
-      Responses: ["$25,100", "$24,100", "$24,000", "$50,600", "$16,400"],
-      Correct: [2],
-    },
-    {
-      Question: "Simplify: (8m + n² ) - (5m - 2n² ) - 3m + n",
-      Img: "",
-      Responses: [
-        "- 3n² + 2n",
-        "3n² + n",
-        "8m + 3n² + n",
-        "3m + 3n² - n",
-        "The answer is not correct",
-        "m - 3n² + n",
-        "3n² + 2n",
-      ],
-      Correct: [1],
-    },
-    {
-      Question: "Solve for k; 3k + 5 = 17",
-      Img: "",
-      Responses: ["k = 2", "k = 5", "k = -3", "k = -2", "k = 4"],
       Correct: [4],
     },
     {
       Question:
-        "What is a Surface Area of a Cone that has a radio of 4in and a slang high of 10in?",
+        ". Joan is closing the register at the end of the day. He is in charge of counting all the change. There are 129 coins counting only quarters and dimes. If Jason counts $27.00 in these coins, how many quarters(x) and dimes(y) are there?",
       Img: "",
-      Responses: ["42.37 pi", "48 pi", "50.25 pi", "64 i", "56 pi"],
-      Correct: [4],
+      Responses: [
+        "x = 100, y = 29",
+        "x = 70, y = 95",
+        "x = 94, y = 35",
+        "x = 150, y = 15",
+      ],
+      Correct: [2],
     },
   ];
 
