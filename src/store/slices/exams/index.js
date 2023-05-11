@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import exam3img12 from "../../../assets/imgs/exam3-question12.jpg";
 import exam4img25 from "../../../assets/imgs/exam4-question25.jpg";
+import exam4img31 from "../../../assets/imgs/exam4-question31.jpg";
 
 export const examsSlice = createSlice({
   name: "exams3",
@@ -27,14 +28,14 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 29; i++) {
+  for (let i = 0; i < 31; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -324,6 +325,33 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["42.37 pi", "48 pi", "50.25 pi", "64 i", "56 pi"],
       Correct: [4],
+    },
+    {
+      Question: "What is the Perimeter of the following figure:",
+      Img: exam4img31,
+      Responses: [
+        "12.5 u",
+        "12 + 4√2 u",
+        "12 + 2√2  u",
+        "14 + √2 u",
+        "16.5 u",
+        "10 + √2 u",
+      ],
+      Correct: [2],
+    },
+    {
+      Question:
+        "Which are possible solutions for the following quadratic equations. 4x² + 16x + 16 = 0",
+      Img: "",
+      Responses: [
+        "x = 2 and x = 4",
+        "x = -2",
+        "x = 8 and x = 2",
+        "x = 16 and x = 1",
+        "x = 16",
+        "x = 8",
+      ],
+      Correct: [1],
     },
   ];
 
