@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exam1img1 from "../../../assets/imgs/question-1.jpg";
-import exam1img2 from "../../../assets/imgs/question-2.jpg";
-import exam1img27 from "../../../assets/imgs/question-27.jpg";
+import exam2img2 from "../../../assets/imgs/exam2-question2.jpg";
+import exam2img6 from "../../../assets/imgs/exam2-question6.jpg";
+import exam2img31 from "../../../assets/imgs/exam2-question31.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -45,105 +45,6 @@ export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
       Question:
-        "At a certain school, 70 out of 180 Year 2 students walk to school, while 90 out of 210 Year 6 students walk to school. What is the percentage difference in the number of Year 6 students who walk to school compared to Year 2 students who walk to school?",
-      Img: exam1img1,
-      Responses: ["3%", "4%", "5%", "6%", "2%", "8%"],
-      Correct: "0",
-    },
-    {
-      Question:
-        "If the total 2013 cold cereal sales for the seven counties assessed were $180,000, what percent of these sales was purchased Trinity County? Disregard the percentage symbol when choosing your answer.",
-      Img: exam1img2,
-      Responses: ["20", "25", "10", "15", "12", "21"],
-      Correct: "3",
-    },
-    {
-      Question:
-        "Do we use the same units to represent Surface Areas of three-dimensional figures and Areas?",
-      Img: "",
-      Responses: ["Yes", "No", "Maybe", "Only when the answer is the same"],
-      Correct: "0",
-    },
-    {
-      Question: "Write the following equation in Standard Form: y = 6x + 2/3",
-      Img: "",
-      Responses: [
-        "y - 2/3 = 6x",
-        "3y - 18x = 2",
-        "-6x - 2/3 = -y",
-        "No answer is correct",
-        "There is no standard form when you work with Fractions.",
-      ],
-      Correct: "1",
-    },
-    {
-      Question:
-        "Do I find the perimeter of the square with the same formula as a rectangle?",
-      Img: "",
-      Responses: [
-        "Maybe if they have the same perimeter.",
-        "You can calculate both using the formula of the rectangle.",
-        "The formula of the square you can use for a rectangle.",
-        "Squares and Rectangles always are the same formulas.",
-      ],
-      Correct: "1",
-    },
-    {
-      Question:
-        "What is the area of the parallelogram with base = 12ft and height = 9ft",
-      Img: "",
-      Responses: ["108 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
-      Correct: "2",
-    },
-    {
-      Question: "Convert the following measure: 0.0015 km to cm.",
-      Img: "",
-      Responses: ["50 cm", "15 cm", "0.15 cm", "150 cm", "50 cm", "1,500 cm"],
-      Correct: "3",
-    },
-    {
-      Question: "What is Permutation (8, 2)?",
-      Img: "",
-      Responses: ["120", "24", "15", "56", "8", "10"],
-      Correct: "3",
-    },
-    {
-      Question:
-        "John has in his bank account $40,000 and he is planning to make 3 different investments. 1/5 of the money will go to the stock market, 1/4 of the total will be spent to sell online and the rest in real estate. How much money Does John will invest in Real Estate?",
-      Img: "",
-      Responses: [
-        "$7,500",
-        "$6,500",
-        "$6,000",
-        "$22,000",
-        "$21,500",
-        "$13,800",
-      ],
-      Correct: "3",
-    },
-    {
-      Question:
-        "If a linear equation has a formula y=2x-5. What is the y intercept for that equation?",
-      Img: "",
-      Responses: ["5", "2", "-5", "2", "7", "-7"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "Which are the coordinates of the y intercept for the following equation? y + 2 = 3x",
-      Img: "",
-      Responses: [
-        "(0, -2)",
-        "(1, -2)",
-        "(1, 3)",
-        "(0, -3)",
-        "(1, 3/2)",
-        "(0, -2/3)",
-      ],
-      Correct: "0",
-    },
-    {
-      Question:
         "When two die are rolled, find the probability of getting a 5 and then a number less than 2?",
       Img: "",
       Responses: [
@@ -155,198 +56,330 @@ export const fetchAllExams = () => (dispatch) => {
         "4/36",
         "All are incorrect",
       ],
-      Correct: "0",
+      Correct: [0],
     },
     {
       Question:
-        "A recent survey indicates that in a town of 1500 households, 850 had cordless telephones. If a household is randomly selected, find the probability that it has a cordless telephone.",
-      Img: "",
+        "What is the equation of the line from the graph showing in the picture.",
+      Img: exam2img2,
       Responses: [
-        "17/30",
-        "500/1500",
-        "1/4",
-        "25/32",
-        "0.90",
-        "4/36",
-        "All are incorrect",
+        "y = 3x + 2",
+        "y = -2x + 1",
+        "y = 2x + 2",
+        "y = 2x + 1",
+        "y = 5x + 2",
+        "y = 4x - 1",
+        "-2y = 2x +2",
       ],
-      Correct: "0",
+      Correct: [3],
     },
     {
-      Question: "Factoring Trinomials 6x² + 15x - 21",
+      Question:
+        "In Mary borrowed $40,000 at a 7% rate for 3 years. How much will she pay in interest?",
+      Img: "",
+      Responses: ["$5,100", "$9,200", "$6,400", "$7,600", "$8,400"],
+      Correct: [4],
+    },
+    {
+      Question:
+        "Joan is closing the register at the end of the day. He oversees counting all the changes. There are 129 coins counting only quarters and dimes. If Jason counts $27.00 in these coins, how many quarters(x) and dimes(y) are there?",
+      Img: "",
+      Responses: ["x=100, y=29", "x=70, y=95", "x=94, y=35", "x=150, y=15"],
+      Correct: [2],
+    },
+    {
+      Question:
+        "In a circle with center O, the radius is 8 cm. What is the length of the arc intercepted by a central angle of 60 degrees?",
+      Img: "",
+      Responses: ["4π cm", "8π/3 cm", "4π/3 cm", "16π/3 cm"],
+      Correct: [1],
+    },
+    {
+      Question:
+        "If the amount of money collected by the girls in all six classes is multiplied by 5, and the amount of money collected by the boys in all six classes is multiplied by 2, what would be the new ratio of the total amount of money collected by the girls to that of the boys? The chart shows how much money the boys and girls collected.",
+      Img: exam2img6,
+      Responses: ["215:86", "150:57", "445:172", "258:100", "150:86", "86:172"],
+      Correct: [2],
+    },
+    {
+      Question: "Divide (15x - 25x³ + 40x²) / 5x",
       Img: "",
       Responses: [
-        "(x + 7)(3x - 3)",
-        "(2x + 7)(3x - 3)",
-        "(2x + 7)(3x + 3)",
-        "(2x - 7)(3x - 3)",
-        "(2x + 3)(3x - 7)",
-        "(2x + 3)(3x + 7)",
-        "The answer is not there",
+        "3 + 5x² - 8x",
+        "3 - 5x² + 8x",
+        "3 + 5x² + 8x",
+        "3x + 8x - 5x²",
+        "3 + 5x + 8x²",
+        "No answer is correct",
+        "5 + 3x² + 8x",
       ],
-      Correct: "6",
+      Correct: [1],
     },
     {
-      Question: "Find the answer: -2 + 9 * 3 -10 +3 * (-10) =",
-      Img: "",
-      Responses: ["4", "-20", "20", "-15", "9", "-10", "18", "16"],
-      Correct: "3",
-    },
-    {
-      Question: "What is the unit that we use to represent volume?",
+      Question:
+        "How do you model the process of buying a car when you pay a $3,000 down payment and a monthly payment of $350. Which number represents the slope and which the y-intercept?",
       Img: "",
       Responses: [
-        "Cube units",
-        "Square units",
-        "Linear units",
-        "None of these",
-        "All of these",
+        "$3,000 represents the slope but $350 is not needed in this case",
+        "$350 represents the slope and $3,000 the y-intercept",
+        "$3,000 represents the slope and $350 the y-intercept.",
+        "$350 represents the slope but you cannot find the y intercept",
+        "The slope and Y-intercept is to model linear equations in coordinate plane NOT in finance",
       ],
-      Correct: "0",
+      Correct: [2],
     },
     {
-      Question: "In the following equation y = -2x + 4 the slope is:",
+      Question: "Does a line with positive slope go:",
       Img: "",
-      Responses: ["Negative", "Positive", "Undefined", "Zero"],
-      Correct: "0",
+      Responses: ["Dawn", "Horizontal", "Up", "Vertical"],
+      Correct: [2],
     },
     {
-      Question: "Solve for k; 3k + 5 = 17",
-      Img: "",
-      Responses: ["k = 2", "k = 5", "k = -3", "k = -2", "k = 4"],
-      Correct: "4",
-    },
-    {
-      Question: "Divide (48m - 30n³ + 16t²)/4",
+      Question: "The equation of the line y=2x -1 has:",
       Img: "",
       Responses: [
-        "12m - 15/2n³ + 5t²",
-        "12m - 15/2n² + 4t²",
-        "12m - 13/2n³ + 4t²",
-        "10m - 15/2n³ + 4t²",
-        "12m - 15/2n³ + 4t²",
+        "Slope -1 and y-intercept 2",
+        "Slope -2 and y-intercept 1",
+        "Slope 2 and y-intercept -1",
+        "Slope 2 and y-intercept 1",
       ],
-      Correct: "4",
+      Correct: [2],
     },
     {
-      Question: "Multiply (x + 7)(2x - 8)",
+      Question:
+        "What is the area of the circle with r = 1.8 mi? (Remember pi = 3.14)",
       Img: "",
       Responses: [
-        "2x² - 6x + 56",
-        "x² + 6x - 56",
-        "2x² + 6x + 56",
-        "2x² - 6x - 56",
-        "2x² + 6x - 56",
+        "10.17 mi",
+        "4.17 mi²",
+        "3.14 mi²",
+        "10.17 mi²",
+        "8.17 mi²",
+        "12.17 mi²",
+        "-5.24mi²",
+      ],
+      Correct: [3],
+    },
+    {
+      Question:
+        "What words can you look at or help you determine if a problem is a Combination or Permutation?",
+      Img: "",
+      Responses: [
+        "Select a group indicate Permutation and find a sequence or choosing specific order group like places in a race or president secretary indicate Combination.",
+        "Select a group, like places in a race or president secretary indicate Combination and any other word indicate Permutation",
+        "Select a group, like places in a race or president secretary indicate Permutation and any other word indicate Combination",
+        "Select a group indicate Combination and find a sequence or choosing specific order group like places in a race or president secretary indicate Permutation.",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "What is half of 0.025?",
+      Img: "",
+      Responses: ["1/8", "0.1575", "0.755", "0.0125", "1/0.75", "0.00755"],
+      Correct: [3],
+    },
+    {
+      Question:
+        "Peter bought a pair of pants for $11.25 and 2 T-shirts for $7.35 each and 1 pair of shoes for double the total of one T-shirt and 1 pair of pants. What is the change if he pays with a $100 bill? ",
+      Img: "",
+      Responses: [
+        "$5.35 is the change",
+        "$1.50",
+        "$36.85",
+        "$1.15 is the change.",
+        "The answer is not on the options.",
+        "$27.60",
+      ],
+      Correct: [2],
+    },
+    {
+      Question:
+        "Which the slope for the following linear equation? 2y = -2x + 1/3",
+      Img: "",
+      Responses: ["5", "-1", "3", "-3", "1/3", "-1/3", "1"],
+      Correct: [1],
+    },
+    {
+      Question: "Factor the polynomial: 16x² - 169",
+      Img: "",
+      Responses: [
+        "(4x + 12)(4x - 12)",
+        "(4x + 13)(4x - 13)",
+        "(x + 13)(x - 13)",
+        "(x + 11)(x - 11)",
+        "(4x - 13)(4x - 13)",
+        "(4x + 13)(4x + 13)",
+      ],
+      Correct: [1],
+    },
+    {
+      Question: "The following equation y = 2x - 1 is written in:",
+      Img: "",
+      Responses: [
+        "Slope Intercept Form",
+        "Standard Form",
+        "Point Slope Form",
+        "Quadratic Form",
+      ],
+      Correct: [0],
+    },
+    {
+      Question:
+        "In a school there are 350 students, 1/5 of them are Christians. From the Christians 1/10 does not go to church every week. How many students go to church every week? ",
+      Img: "",
+      Responses: ["58", "24", "35", "55", "63", "No answer is correct"],
+      Correct: [4],
+    },
+    {
+      Question: "-5² + (-5)² + 4²",
+      Img: "",
+      Responses: ["-25", "25", "-5", "5", "1", "0", "16", "64"],
+      Correct: [6],
+    },
+    {
+      Question: "If 3(5m - 1 ) = 12 ; What is the value of -2m",
+      Img: "",
+      Responses: ["m = 2", "m = -3", "m = 4", "m = -2", "m = -5", "m = 0"],
+      Correct: [3],
+    },
+    {
+      Question:
+        "There are 20 products in the box, of which 3 are faulty. Find the probability of pulling out a nonfaulty product",
+      Img: "",
+      Responses: ["0", "1/10", "2/15", "1/20", "1/9", "17/20"],
+      Correct: [5],
+    },
+    {
+      Question: "Multiply xy²z<sup>4</sup> (2x² - 5yz)",
+      Img: "",
+      Responses: [
+        "2x³y²z<sup>4</sup - 5xy³z<sup>5</sup",
+        "4x³y²z<sup>4</sup> - 5xy³z<sup>5</sup>",
+        "2x³y²z<sup>5</sup> - 5xy³z<sup>5</sup>",
+        "2x³y²z<sup>4</sup> + 5xy³z<sup>5</sup>",
+        "2x³y²z<sup>4</sup> + 5xy²z<sup>5</sup>",
         "No answer is correct",
       ],
-      Correct: "4",
-    },
-    {
-      Question: "5 is 100% of what Number?",
-      Img: "",
-      Responses: ["100", "1", "5", "20", "4"],
-      Correct: "2",
+      Correct: [0],
     },
     {
       Question:
-        "At a store we see that shoes are mark dawn15%. If the price of shoes is $160. What is the new price after the discount?",
-      Img: "",
-      Responses: ["154", "145", "136", "120", "155"],
-      Correct: "2",
-    },
-    {
-      Question: "Find the probability of getting a 7 when we role a dice.",
+        "Solve: 5(5p - 5) = 5 (Find all correct answer if there are more than one) ",
       Img: "",
       Responses: [
-        "We can not calculated",
-        "Probability is equal to 0",
-        "Probability is equal to -1",
-        "Probability is equal to 1/6",
-        "Probability is equal to 1/5",
-        "Probability is equal to 1/4",
-        "Probability is equal to 35%",
+        "p = 1/5",
+        "p = 1.325",
+        "p = 1.425",
+        "p = 1.2",
+        "p = 6/4",
+        "p = 6/5",
       ],
-      Correct: "1",
+      Correct: [3, 5],
     },
     {
       Question:
-        "What is the probability of selecting a vowel in a 24 later alphabet?",
-      Img: "",
-      Responses: ["7/24", "3/24", "4/24", "5/24", "No answer is correct"],
-      Correct: "3",
-    },
-    {
-      Question:
-        "If a product's revenue is given by the function R(x) = 500x - 0.5x², where x is the number of units sold, what is the maximum revenue that can be generated by the product?",
+        "What information do you need to find the Volume of the Sphere?",
       Img: "",
       Responses: [
-        "$250,000",
-        "$500,000",
-        "$125,000",
-        "None of the above",
-        "$420,000",
-        "$575,000",
+        "Only high",
+        "Depends on the formula we use",
+        "The radio and the high",
+        "Only the radio",
+        "All answers are correct",
       ],
-      Correct: "2",
+      Correct: [3],
+    },
+    {
+      Question: "What is the slope of the following equation? 4y = 2x - 8",
+      Img: "",
+      Responses: ["m = 0", "m = 4", "m = -2", "m = 8", "m = 0", "m = 1/2"],
+      Correct: [5],
     },
     {
       Question:
-        "A football team has scored 45 goals in 20 matches so far in the league. If they want to achieve an average of 3 goals per match for the remaining 10 matches, how many goals do they need to score in these matches?",
-      Img: "",
-      Responses: ["15", "20", "25", "30", "13", "22"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "A sports club spends $100,000 on different sports in a year. The pie chart representing this expenditure shows that hockey accounts for 27.78% of the total amount spent. What is the total amount spent on sports other than hockey?",
-      Img: exam1img27,
-      Responses: [
-        "$22,220",
-        "$72,220",
-        "$77,780",
-        "$100,000",
-        "$22,780",
-        "$77,220",
-      ],
-      Correct: "1",
-    },
-    {
-      Question:
-        "What is the probability of throwing dice and getting an odd number?",
-      Img: "",
-      Responses: ["1/4", "1/3", "1/2", "No answer is correct", "1/5", "3"],
-      Correct: "2",
-    },
-    {
-      Question: "What is 7.5ft in inches?",
-      Img: "",
-      Responses: ["86 in", "120 in", "96 in", "72 in", "120 in", "90 in"],
-      Correct: "5",
-    },
-    {
-      Question: "Find the Value of 2P. 3(P + 5) - 4 = 23",
-      Img: "",
-      Responses: ["-4", "5", "8", "2", "9", "-5"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "Which of the following values for c makes a trinomial a perfect square? X² + 8x + c = 0",
-      Img: "",
-      Responses: ["c = 12", "c = 8", "c = 16", "c = 64", "c = 32"],
-      Correct: "2",
-    },
-    {
-      Question:
-        "Which of the following quadratic equations has no real solutions?",
+        "Which are the intercepts from the following Equations: 2x + 3y =9",
       Img: "",
       Responses: [
-        "2x² - 9x + 10 = 0",
-        "x² + 11x + 12 = 0",
-        "-x² + 8x + 18 = 0",
-        "2x² + 3x + 15 = 0",
+        "(0, 1) and (4.5, 2)",
+        "(0, -3) and (-4.5, 0)",
+        "(0, -3) and (4.5, 2)",
+        "(0, 3) and (4.5, 0)",
+        "No answer is correct",
+        "(1, 1) and (-4.5, 2)",
       ],
-      Correct: "3",
+      Correct: [3],
+    },
+    {
+      Question:
+        "What is the equation of the line passes through the points (1, 2) and (2, -2)",
+      Img: "",
+      Responses: [
+        "y = 4/3x + 1",
+        "y = -4x + 6",
+        "y = 4x + 4",
+        "y = 4x -2",
+        "y = 6x -1",
+      ],
+      Correct: [1],
+    },
+    {
+      Question: "Convert the following measure: 0.0015 km to cm",
+      Img: "",
+      Responses: ["50 cm", "15 cm", "0.15 cm", "150 cm", "50 cm", "1,500 cm"],
+      Correct: [3],
+    },
+    {
+      Question:
+        "What words can you look at or help you determine if a problem is a Combination or Permutation?",
+      Img: "",
+      Responses: [
+        "Select a group indicate Permutation and find a sequence or choosing specific order group like places in a race or president secretary indicate Combination. ",
+        "Select a group, like places in a race or president secretary indicate Combination and any other word indicate Permutation. ",
+        "Select a group, like places in a race or president secretary indicate Permutation and any other word indicate Combination. ",
+        "Select a group indicate Combination and find a sequence or choosing specific order group like places in a race or president secretary indicate Permutation.",
+      ],
+      Correct: [3],
+    },
+    {
+      Question:
+        "What is the meaning and range of the following set of Data? 20, 10, 10, 15, 25, 20, 30, 30.",
+      Img: "",
+      Responses: [
+        "mean 20 and range 20",
+        "mean 10 and range 20",
+        "mean 10 and range 15",
+        "mean 15 and range 20",
+        "mean 15 and range 15",
+      ],
+      Correct: [0],
+    },
+    {
+      Question: "Find the area of the following triangle",
+      Img: exam2img31,
+      Responses: [
+        "90 u²",
+        "27 u²",
+        "54 u²",
+        "36 u²",
+        "42 u²",
+        "The answer is not in the options",
+      ],
+      Correct: [2],
+    },
+    {
+      Question:
+        "Which of the following equation does NOT represent a function?",
+      Img: "",
+      Responses: [
+        "y + 2 = x³ + 2",
+        "x² = y + 1",
+        "x = 2",
+        "y - x = -2",
+        "y = 1/2x³",
+        "-y + 1 = -x",
+        "y = 5",
+      ],
+      Correct: [3],
     },
   ];
 
