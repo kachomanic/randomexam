@@ -21,10 +21,6 @@ function App() {
     actualPosition = 0;
   }
 
-  // useEffect(() => {
-  //   setCurrentPos(actualPosition);
-  // }, [actualPosition]);
-
   useEffect(() => {
     if (!exams.length) {
       dispatch(fetchAllExams());
@@ -136,7 +132,7 @@ function App() {
       ) : (
         <div className="text-center h-80 bg-gray-100">
           <p className="text-3xl mb-6">
-            Note: {Math.trunc(100 - (errors * 100) / 30)}
+            Note: {Math.trunc(100 - (errors * 100) / 32)}
           </p>
           <p className="text-xl">
             {exams.length - errors} correct answers out of {exams.length}

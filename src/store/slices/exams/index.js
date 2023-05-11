@@ -28,14 +28,14 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 29; i++) {
+  for (let i = 0; i < 31; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -328,6 +328,25 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["-4", "5", "8", "2", "9", "-5"],
       Correct: "2",
+    },
+    {
+      Question:
+        "Which of the following values for c makes a trinomial a perfect square? X² + 8x + c = 0",
+      Img: "",
+      Responses: ["c = 12", "c = 8", "c = 16", "c = 64", "c = 32"],
+      Correct: "2",
+    },
+    {
+      Question:
+        "Which of the following quadratic equations has no real solutions?",
+      Img: "",
+      Responses: [
+        "2x² - 9x + 10 = 0",
+        "x² + 11x + 12 = 0",
+        "-x² + 8x + 18 = 0",
+        "2x² + 3x + 15 = 0",
+      ],
+      Correct: "3",
     },
   ];
 
