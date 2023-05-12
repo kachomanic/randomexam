@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import exam6img29 from "../../../assets/imgs/exam6-question29.jpg";
 import exam6img30 from "../../../assets/imgs/exam6-question30.jpg";
+import exam6img31 from "../../../assets/imgs/exam6-question31.jpg";
+import exam6img32 from "../../../assets/imgs/exam6-question32.jpg";
 
 export const examsSlice = createSlice({
-  name: "exams3",
+  name: "exams",
   initialState: {
     list: [],
     orderArray: [],
@@ -27,14 +29,14 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 29; i++) {
+  for (let i = 0; i < 31; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -299,6 +301,25 @@ export const fetchAllExams = () => (dispatch) => {
         "$77,220",
       ],
       Correct: [1],
+    },
+    {
+      Question: "Which of the following Graph does NOT represent a function?",
+      Img: exam6img31,
+      Responses: ["a", "b", "c", "d"],
+      Correct: [3],
+    },
+    {
+      Question: "Find the perimeter of the following triangle.",
+      Img: exam6img32,
+      Responses: [
+        "16.8 u",
+        "27.5 u",
+        "35.7 u",
+        "33.6 u",
+        "24.2 u",
+        "The answer is not in the options",
+      ],
+      Correct: [2],
     },
   ];
 
