@@ -4,7 +4,7 @@ import exam5img23 from "../../../assets/imgs/exam5-question23.jpg";
 import exam5img24 from "../../../assets/imgs/exam5-question24.jpg";
 
 export const examsSlice = createSlice({
-  name: "exams3",
+  name: "exams",
   initialState: {
     list: [],
     orderArray: [],
@@ -28,14 +28,14 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 29; i++) {
+  for (let i = 0; i < 31; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -347,6 +347,34 @@ export const fetchAllExams = () => (dispatch) => {
         "x = 70, y = 95",
         "x = 94, y = 35",
         "x = 150, y = 15",
+      ],
+      Correct: [2],
+    },
+    {
+      Question:
+        "Which is the equation of the line that passes through the points: (2, -3) and (0, 4)?",
+      Img: "",
+      Responses: [
+        "y = -7/2x + 4",
+        "y = 3x + 4",
+        "y = 1/2x + 4",
+        "y = 1/5x + 2",
+        "y = 3/4x + 2",
+        "y = -2x + 4",
+      ],
+      Correct: [1],
+    },
+    {
+      Question:
+        "What is the Volume of the sphere that has a circumference equal to 6 ?",
+      Img: "",
+      Responses: [
+        "V = 12π",
+        "V = 18π",
+        "V = 36π",
+        "V = 24π",
+        "V = 32π",
+        "V = 50π",
       ],
       Correct: [2],
     },
