@@ -4,7 +4,7 @@ import exam4img25 from "../../../assets/imgs/exam4-question25.jpg";
 import exam4img31 from "../../../assets/imgs/exam4-question31.jpg";
 
 export const examsSlice = createSlice({
-  name: "exams3",
+  name: "exams",
   initialState: {
     list: [],
     orderArray: [],
