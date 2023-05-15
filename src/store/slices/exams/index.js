@@ -211,9 +211,9 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: "0",
     },
     {
-      Question: "Solve for k; 3k + 5 = 17",
+      Question: "-3k; when 3k + 5 = 17",
       Img: "",
-      Responses: ["k = 2", "k = 5", "k = -3", "k = -2", "k = 4"],
+      Responses: ["k = 12", "k = 15", "k = -13", "k = 14", "k = -12"],
       Correct: "4",
     },
     {
@@ -324,7 +324,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: "5",
     },
     {
-      Question: "Find the Value of 2P. 3(P + 5) - 4 = 23",
+      Question: "Find the Value of 2P when 3(P + 5) - 4 = 23",
       Img: "",
       Responses: ["-4", "5", "8", "2", "9", "-5"],
       Correct: "2",
