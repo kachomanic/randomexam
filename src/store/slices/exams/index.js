@@ -3,6 +3,7 @@ import exam6img29 from "../../../assets/imgs/exam6-question29.jpg";
 import exam6img30 from "../../../assets/imgs/exam6-question30.jpg";
 import exam6img31 from "../../../assets/imgs/exam6-question31.jpg";
 import exam6img32 from "../../../assets/imgs/exam6-question32.jpg";
+import exam6img25 from "../../../assets/imgs/exam6-question25.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -256,10 +257,16 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "What is the length of CD in a circle with center O, where the line segment AB intersects the circle at points C and D, and AC = 4 and BD = 6?",
-      Img: "",
-      Responses: ["2", "3", "4", "5", "1"],
-      Correct: [0],
+        "If we use the following equation. What would be the values X and Y in the table below?",
+      Img: exam6img25,
+      Responses: [
+        "When x is 8, y = -6 and when y = -4, x = 8",
+        "When x is 8, y = - 5 and when y = -4, x = 5",
+        "When x is 8, y = 6 and when y = -4, x = -12",
+        "When x is 8, y = - 5 and when y = -4, x = 12",
+        "When x is 8, y = -7 and when y = -4, x = 16",
+      ],
+      Correct: [3],
     },
     {
       Question:
