@@ -157,9 +157,9 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "A small business owner wants to apply for a loan to expand the business. The business has an average monthly revenue of $50,000 and an average monthly cost of $35,000. The bank requires the business to have a debt-to-equity ratio of no more than 1.5. If the business owner has $100,000 in personal savings and wants to borrow as much money as possible, how much can the business owner borrow?",
+        "A small business owner wants to apply for a loan to expand the business. The business has an average monthly revenue of $60,000 and an average monthly cost of $35,000. The bank can borrow to a business 5 times the profit plus 2 times their savings. If the business owner has $140,000 in savings. How much can the business owner borrow?",
       Img: "",
-      Responses: ["$37,500", "$50,000", "$75,000", "$100,000"],
+      Responses: ["$415,500", "$275,000", "$405,000", "$395,000", "$335,500"],
       Correct: [2],
     },
     {
