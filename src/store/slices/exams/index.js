@@ -326,8 +326,8 @@ export const fetchAllExams = () => (dispatch) => {
     {
       Question: "Find the Value of 2P when 3(P + 5) - 4 = 23",
       Img: "",
-      Responses: ["-4", "5", "8", "2", "9", "-5"],
-      Correct: "2",
+      Responses: ["-4", "5", "8", "2", "9", "28"],
+      Correct: "5",
     },
     {
       Question:
