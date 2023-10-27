@@ -1,9 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exam6img29 from "../../../assets/imgs/exam6-question29.jpg";
-import exam6img30 from "../../../assets/imgs/exam6-question30.jpg";
-import exam6img31 from "../../../assets/imgs/exam6-question31.jpg";
-import exam6img32 from "../../../assets/imgs/exam6-question32.jpg";
-import exam6img25 from "../../../assets/imgs/exam6-question25.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -30,14 +25,14 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+        20, 21, 22, 23, 24,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 31; i++) {
+  for (let i = 0; i < 24; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -47,286 +42,256 @@ export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
       Question:
-        "What is the probability of throwing dice and getting an odd number?",
+        "What is the area of a triangle that has base 5 and height is double the base? ",
       Img: "",
-      Responses: ["1/4", "1/3", "1/2", "No answer is correct", "1/5", "3"],
-      Correct: [2],
+      Responses: ["15", "20", "50", "25", "35", "40"],
+      Correct: [3],
     },
     {
       Question:
-        "Five gentlemen have taken off five identical hats in the locker room. What is the probability that took the wrong hat?",
+        "What is the area of the triangle with base = 14in and high = 8in Impossible to find the answer.",
       Img: "",
-      Responses: [
-        "3/5",
-        "1/5",
-        "2/7",
-        "4/5",
-        "2/5",
-        "All the answer are incorrect",
-      ],
-      Correct: [3],
-    },
-    {
-      Question: "Multiply (3y+z²)(3y+z²)",
-      Img: "",
-      Responses: [
-        "6y² + 3yz² - z<sup>4</sup>",
-        "3y² + 3yz² - z<sup>4</sup>",
-        "6y² + 6yz² - z<sup>4</sup>",
-        "9y² + 6yz² + z<sup>4</sup>",
-        "6y² + 6yz² - 2z<sup>4</sup>",
-        "No answer is correct",
-      ],
-      Correct: [3],
-    },
-    {
-      Question: "Multiply (x + 7)(2x - 8)",
-      Img: "",
-      Responses: [
-        "2x² - 6x + 56",
-        "x² + 6x - 56",
-        "2x² + 6x + 56",
-        "2x² - 6x - 56",
-        "2x² + 6x - 56",
-        "No answer is correct",
-      ],
+      Responses: ["80 in²", "56 in", "120 in²", "112 in²", "56 in²", "110 in"],
       Correct: [4],
     },
     {
-      Question: "Solve: 8k - 12 = 4k - 8",
+      Question: "How to find the perimeter?",
       Img: "",
-      Responses: ["k = 13", "k = 6", "k = 3", "k = 1", "k = 8", "k = 7"],
+      Responses: [
+        "Adding all sides around the figure",
+        "Adding all sides that are the same",
+        "Adding the most important information",
+        "Not sure how to find it",
+        "Adding the first 3 sides and multiply the last one",
+      ],
+      Correct: [0],
+    },
+    {
+      Question:
+        "Do I find the perimeter of the square with the same formula than a rectangle",
+      Img: "",
+      Responses: [
+        "Maybe if they have the same perimeter",
+        "You can calculate both using the formula of the rectangle",
+        "The formula of the square you can use it for a rectangle",
+        "Only if the rectangle has one 90 degrees angle",
+      ],
+      Correct: [1],
+    },
+    {
+      Question:
+        "What is the area of the circle with r = 1.8 mi ? (remember pi = 3.14)",
+      Img: "",
+      Responses: [
+        "10.85 mi",
+        "4.17 mi²",
+        "3.14 mi²",
+        "10.17 mi²",
+        "8.17 mi²",
+        "12.17 mi²",
+        "-5.24 mi²",
+      ],
       Correct: [3],
     },
     {
-      Question: "What is a Surface Area of a Cube that has a side of 12 m?",
+      Question:
+        "What is an area of a rectangle with side A = 20ft and B = 8ft?",
       Img: "",
       Responses: [
-        "36 m²",
-        "64 m²",
-        "164 m²",
-        "564 m²",
-        "864 m²",
-        "No answer is correct",
+        "120 ft",
+        "80 ft²",
+        "120 ft²",
+        "110 ft²",
+        "200 ft²",
+        "160 ft²",
       ],
+      Correct: [5],
+    },
+    {
+      Question: "What is the perimeter of a square that has a side of 25m?",
+      Img: "",
+      Responses: ["90", "75", "40", "50", "100", "75"],
       Correct: [4],
     },
     {
       Question:
-        "What is the difference in the formula of the Cone and Cylinder?",
+        "A circular park has a diameter of 3 miles, and you want to jog around the park. How many miles do you complete in 4 laps?",
       Img: "",
       Responses: [
-        "No answer is correct",
-        "The formulas are the same",
-        "The cone is divided by 3 and cylinder no",
-        "The cylinder is divided by 3 and cone no",
-        "One has radio square and the other not",
+        "9.68 mi²",
+        "37.68 mi",
+        "9.68 mi",
+        "37.18 mi²",
+        "25.68 mi",
+        "97.68 mi",
       ],
-      Correct: [2],
+      Correct: [1],
     },
     {
-      Question: "What is the y-intercept of the following line: 2y = 2x - 4",
+      Question:
+        "What is the area of the parallelogram with base = 12ft and hight = 9ft",
       Img: "",
-      Responses: ["2", "1", "4", "-2", "3", "-3", "1/2"],
-      Correct: [3],
+      Responses: ["102 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
+      Correct: [2],
     },
     {
       Question:
         "What is the difference between a rectangle and a parallelogram?",
       Img: "",
       Responses: [
-        "One has opposite sides different and the other not",
-        "The difference is in the formulas for Perimeters and areas",
-        "The difference is that all sides are different",
-        "The sides of the rectangles intersect with 90 degrees angels and sides of the parallelogram no",
-        "There is no difference between them",
+        "One has opposite sides different and the other not.",
+        "The difference is in the formulas for Perimeters and areas.",
+        "The difference is that all sides are different.",
+        "The sides of the rectangles intersect with 90 degrees angels and sides of the parallelogram no.",
+        "There is no difference between them.",
       ],
+      Correct: [3],
+    },
+    {
+      Question: "Convert the following measure: 0.0015 km to cm",
+      Img: "",
+      Responses: ["50 cm", "15 cm", "0.15 cm", "150 cm", "50 cm", "1,500 cm"],
       Correct: [3],
     },
     {
       Question:
         "If a rectangle has a width of 2 ft and a length of 3 ft. What is the area in square inches?",
       Img: "",
-      Responses: ["1564 in²", "164 in", "514 in²", "72 in²", "864²"],
+      Responses: ["1564 in²", "164 in", "514 in²", "72 in²", "864 in²"],
       Correct: [4],
     },
     {
-      Question: "What is Permutation (8, 2)?",
+      Question:
+        "Convert the following measure: 1.12 miles to yards if (1 mi = 1760 yd)",
       Img: "",
-      Responses: ["120", "24", "15", "56", "8", "10"],
+      Responses: [
+        "3971.2 yd",
+        "2971.2 yd",
+        "871.2 yd",
+        "1971.2 yd",
+        "971.2 yd",
+        "1771.2 yd",
+      ],
       Correct: [3],
     },
     {
-      Question:
-        "A small business owner wants to apply for a loan to expand the business. The business has an average monthly revenue of $60,000 and an average monthly cost of $35,000. The bank can borrow to a business 5 times the profit plus 2 times their savings. If the business owner has $140,000 in savings. How much can the business owner borrow?",
+      Question: "Find the area of a circle with diameter = 8 in.",
       Img: "",
-      Responses: ["$415,500", "$275,000", "$405,000", "$395,000", "$335,500"],
+      Responses: [
+        "50.24 ft",
+        "150.24 in",
+        "50.24 in²",
+        "200.96 in",
+        "200.96 ft",
+        "184.25 ft",
+      ],
       Correct: [2],
     },
     {
-      Question: "Multiply 1/4 * 5/7 =",
+      Question:
+        "What is the area of a parallelogram with base 4ft and high 100 in",
       Img: "",
-      Responses: ["3/7", "1/7", "2/5", "5/7", "5/28", "7/25"],
-      Correct: [4],
-    },
-    {
-      Question: "What is half plus half of half?",
-      Img: "",
-      Responses: ["1/4", "1/5", "1/2", "3/4", "1/8", "3/8"],
+      Responses: ["4800 ft²", "2400 in²", "100 ft²", "4800 in²", "4800 in"],
       Correct: [3],
     },
     {
-      Question: "What is 7.5ft in inches?",
+      Question: "Which of the following is equal to -5?",
       Img: "",
-      Responses: ["86 in", "120 in", "96 in", "72 in", "120 in", "90 in"],
-      Correct: [5],
+      Responses: [
+        "-5 + 5",
+        "4 + 1",
+        "3 - 8",
+        "10 - 5",
+        "-5 + 1",
+        "None is equal to -5",
+      ],
+      Correct: [2],
+    },
+    {
+      Question: "Find the answer: -5 + 7 * 2 -10 =",
+      Img: "",
+      Responses: ["13", "-1", "-14", "2", "-8", "-15"],
+      Correct: [1],
     },
     {
       Question:
-        "A company is planning to launch a new product line. The fixed costs for developing and launching the product are $100,000, and the variable costs for producing each unit are $10. The selling price for each unit is $20. How many units does the company need to sell to break even?",
+        "When we calculate using Order of Operation the first operation if is present is always:",
       Img: "",
       Responses: [
-        "5,000 units",
-        "10,000 units",
-        "15,000 units",
-        "None of the above",
+        "Multiplication",
+        "Division",
+        "Addition",
+        "Parenthesis",
+        "Subtraction",
+        "Exponent",
+      ],
+      Correct: [3],
+    },
+    {
+      Question: "Find the answer: -2 + 9 * 3 -10 +3 * (-10) =",
+      Img: "",
+      Responses: ["4", "-20", "20", "-15", "9", "-10", "18"],
+      Correct: [3],
+    },
+    {
+      Question:
+        "Talking about US money, what is the equivalent of $3.75 in quarters?",
+      Img: "",
+      Responses: [
+        "6 quarters",
+        "15 quarters",
+        "12 quarters",
+        "75 quarters",
+        "10 quarters",
+        "18 quarters",
       ],
       Correct: [1],
     },
     {
       Question:
-        "What is the length of CD in a circle with center O, where the line segment AB intersects the circle at points C and D, and AC = 4 and BD = 6?",
+        "Talking about US money, what is the equivalent of $5.40 in dimes?",
       Img: "",
-      Responses: ["2", "3", "4", "5", "1"],
+      Responses: [
+        "36 dimes",
+        "54 dimes",
+        "48 dimes",
+        "65 dimes",
+        "44 dimes",
+        "40 dimes",
+      ],
+      Correct: [1],
+    },
+    {
+      Question: "Find the value of X if 10X = 30",
+      Img: "",
+      Responses: ["4", "10", "2", "3", "5", "300", "1/3"],
+      Correct: [3],
+    },
+    {
+      Question: "Find the value of X if -4X = 28",
+      Img: "",
+      Responses: ["-6", "-10", "2", "-7", "6", "-4"],
+      Correct: [3],
+    },
+    {
+      Question: "Multiply the following numbers: 0.25 x 0.1 =",
+      Img: "",
+      Responses: ["0.025", "2.5", "25", "0.125", "0.4", "0.0025"],
       Correct: [0],
     },
     {
-      Question: "Solve for K; 7k - 4 = 73",
-      Img: "",
-      Responses: ["k = 13", "k = 15", "k = 10", "k = 11", "k = 8", "k = 3"],
-      Correct: [3],
-    },
-    {
       Question:
-        "A company is producing t-shirts and sweatshirts to sell at a local fair. The company can produce a maximum of 500 shirts, and each T-shirt costs $8 to produce while each sweatshirt costs $12 to produce. If the company wants to produce at least 100 T-shirts, how many sweatshirts can they produce while staying within their budget of $4000?",
+        "Which of the following expressions is equal (same answer) to 2 x ½",
       Img: "",
       Responses: [
-        "At most 250 sweatshirts",
-        "At most 375 sweatshirts",
-        "At most 400 sweatshirts",
-        "None of the above",
+        "4 times 10",
+        "8 divided by 8",
+        "12 minus 10",
+        "7 times ½",
+        "7 plus 6",
+        "4 multiply 4",
       ],
       Correct: [1],
-    },
-    {
-      Question: "-5² + (-5)² + 4²",
-      Img: "",
-      Responses: ["-25", "25", "-5", "5", "1", "0", "16"],
-      Correct: [6],
-    },
-    {
-      Question: "Solve: 3(5m - 1 ) = 12",
-      Img: "",
-      Responses: ["m = 2", "3", "m = 4", "m = 1", "m = 5", "0"],
-      Correct: [3],
-    },
-    {
-      Question:
-        "A startup company has developed a new product and is considering two different pricing strategies. Strategy A involves pricing the product at $50 and selling 1000 units, while strategy B involves pricing the product at $60 and selling 800 units. The company's fixed costs are $30,000, and its variable costs are $20 per unit. Which pricing strategy should the company choose to maximize its profit?",
-      Img: "",
-      Responses: [
-        "Strategy A",
-        "Strategy B",
-        "Both strategies will result in the same profit",
-        "Neither strategy will result in a profit",
-      ],
-      Correct: [1],
-    },
-    {
-      Question:
-        "A brand is considering whether to invest in a new project that has an expected return of 12% per year. The initial investment is $100,000, and the brand expects to receive cash flows of $25,000 per year for the first three years, and $35,000 per year for the next two years. If the brand's cost of capital is 10%, what is the net present value (NPV) of the project?",
-      Img: "",
-      Responses: ["$16,068", "$18,670", "$21,322", "$23,512"],
-      Correct: [3],
-    },
-    {
-      Question: "If x + 2y = 5 and 3x - 4y = 7, what is the value of x - y?",
-      Img: "",
-      Responses: ["-1", "1", "2", "3"],
-      Correct: [2],
-    },
-    {
-      Question:
-        "If we use the following equation. What would be the values X and Y in the table below?",
-      Img: exam6img25,
-      Responses: [
-        "When x is 8, y = -6 and when y = -4, x = 8",
-        "When x is 8, y = - 5 and when y = -4, x = 5",
-        "When x is 8, y = 6 and when y = -4, x = -12",
-        "When x is 8, y = - 5 and when y = -4, x = 12",
-        "When x is 8, y = -7 and when y = -4, x = 16",
-      ],
-      Correct: [3],
-    },
-    {
-      Question:
-        "Johnny wrote a random natural number from 1 to 20. Determine the probability that he wrote an even number",
-      Img: "",
-      Responses: ["1/5", "1/4", "1/3", "1/2", "1/6", "No answer is correct"],
-      Correct: [3],
-    },
-    {
-      Question: "5 is 100% of what Number?",
-      Img: "",
-      Responses: ["100", "1", "5", "20", "4"],
-      Correct: [2],
-    },
-    {
-      Question:
-        "There are 20 products in the box, of which 3 are faulty. Find the probability of pulling out a non-faulty product",
-      Img: "",
-      Responses: ["0", "1/10", "2/15", "1/20", "1/9", "17/20"],
-      Correct: [5],
-    },
-    {
-      Question:
-        "At a certain school, 70 out of 180 Year 2 students walk to school, while 90 out of 210 Year 6 students walk to school. What is the percentage difference in the number of Year 6 students who walk to school compared to Year 2 students who walk to school?",
-      Img: exam6img29,
-      Responses: ["3%", "4%", "5%", "6%", "2%", "8%"],
-      Correct: [1],
-    },
-    {
-      Question:
-        "A sports club spends $100,000 on different sports in a year. The pie chart representing this expenditure shows that hockey accounts for 27.78% of the total amount spent. What is the total amount spent on sports other than hockey?",
-      Img: exam6img30,
-      Responses: [
-        "$22,220",
-        "$72,220",
-        "$77,780",
-        "$100,000",
-        "$22,780",
-        "$77,220",
-      ],
-      Correct: [1],
-    },
-    {
-      Question: "Which of the following Graph does NOT represent a function?",
-      Img: exam6img31,
-      Responses: ["a", "b", "c", "d"],
-      Correct: [3],
-    },
-    {
-      Question: "Find the perimeter of the following triangle.",
-      Img: exam6img32,
-      Responses: [
-        "16.8 u",
-        "27.5 u",
-        "35.7 u",
-        "33.6 u",
-        "24.2 u",
-        "The answer is not in the options",
-      ],
-      Correct: [2],
     },
   ];
 
