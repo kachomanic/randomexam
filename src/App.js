@@ -180,7 +180,7 @@ function App() {
         <Fragment>
           <button
             type="button"
-            className="bg-blue-400 p-2 w-40 mb-5 my-3"
+            className="bg-blue-400 p-2 w-40 mb-5 my-3 rounded-lg"
             onClick={() => nextPosition()}
           >
             <span className="text-white font-bold text-xl">Next Question</span>
