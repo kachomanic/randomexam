@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import recta from "../../../assets/imgs/exam1-recta.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -25,14 +26,14 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24,
+        20, 21, 22,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 22; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -41,229 +42,220 @@ export const fetchOrderArray = () => (dispatch) => {
 export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
-      Question:
-        "What is the area of a triangle that has base 4 and height is 7?",
+      Question: "¿Cuál es el número que se escribe después del 7?",
       Img: "",
-      Responses: ["15", "12", "20", "14", "21", "28"],
-      Correct: [3],
-    },
-    {
-      Question:
-        "What is the area of the triangle in square feet with base = 24in and high = 2ft ;   (1ft = 12in)",
-      Img: "",
-      Responses: ["12 ft²", "8 ft²", "24 ft²", "4 ft²", "2 ft²", "6 ft²"],
-      Correct: [4],
-    },
-    {
-      Question: "What is the perimeter of a square that has a side of 10m?",
-      Img: "",
-      Responses: ["10", "16", "30", "40", "28", "14"],
-      Correct: [3],
-    },
-    {
-      Question: "What is 100% of 10?",
-      Img: "",
-      Responses: ["10", "1", "1000", "100", "5", "20"],
+      Responses: ["8", "9", "4", "7"],
       Correct: [0],
+      Verse:
+        "Juan 1:1 En el principio era el Verbo, y el Verbo era con Dios, y el Verbo era Dios.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
-      Question:
-        "What is the area of the circle with r = 10 m? (Remember pi = 3.14)",
+      Question: "Escriba 3 de los números que siguen después del 5 en orden",
       Img: "",
-      Responses: [
-        "10.85 m²",
-        "4.17 m²",
-        "3.14 m²",
-        "314 m²",
-        "8.17 m²",
-        "12.17 m²",
-      ],
-      Correct: [3],
-    },
-    {
-      Question:
-        "What is an area of a rectangle with side A = 10ft and B = 8ft?",
-      Img: "",
-      Responses: ["100 ft", "80 ft²", "60 ft²", "110 ft²", "70 ft²", "80 ft²"],
-      Correct: [5],
-    },
-    {
-      Question: "What is the perimeter of a square that has a side of 13mm?",
-      Img: "",
-      Responses: ["60", "75", "40", "50", "52", "75"],
-      Correct: [4],
-    },
-    {
-      Question: "What is 50% of 50? ",
-      Img: "",
-      Responses: ["25", "12.5", "500", "250", "5", "50"],
+      Responses: ["6,7,8 y 9", "4,5,6 y 7"],
       Correct: [0],
+      Verse:
+        "Mateo 5:9 Bienaventurados los pacificadores, porque ellos serán llamados hijos de Dios.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
-      Question:
-        "What is the area of the parallelogram with base = 12ft and hight = 9ft",
+      Question: "¿Cómo se escribe el numero 7?",
       Img: "",
-      Responses: ["102 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
-      Correct: [2],
+      Responses: ["Siete", "Ocho", "Cuatro", "Nueve", "Tres"],
+      Correct: [0],
+      Verse:
+        "Marcos 8:36 Porque ¿qué aprovechará al hombre si ganare todo el mundo, y perdiere su alma?",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
-      Question:
-        "What is the area of the parallelogram with base = 12ft and hight = 12ft",
+      Question: "¿Cuál es el número cinco?",
       Img: "",
-      Responses: ["102 ft", "96 ft", "144 ft²", "136 ft²", "24 ft²", "21 ft²"],
-      Correct: [2],
+      Responses: ["5", "7", "2", "6"],
+      Correct: [0],
+      Verse:
+        "Mateo 5:3 Bienaventurados los pobres en espíritu, porque de ellos es el reino de los cielos.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
-      Question:
-        "What is the difference between a rectangle and a parallelogram?",
-      Img: "",
-      Responses: [
-        "One has opposite sides different and the other not",
-        "The difference is in the formulas for Perimeters and areas",
-        "The difference is that all sides are different",
-        "The sides of the rectangles intersect with 90 degrees angels and sides of the parallelogram no",
-        "There is no difference between them",
-      ],
-      Correct: [3],
-    },
-    {
-      Question: "Convert the following measure: 0.0015 km to mm",
+      Question: "¿Que es un conjunto? ",
       Img: "",
       Responses: [
-        "500 mm",
-        "5150 mm",
-        "0.95 mm",
-        "1500 mm",
-        "2500 mm",
-        "15000 mm",
+        "Agrupación de personas, animales o cosas considerados como un todo homogéneo, sin distinguir sus partes. (Todos son iguales)",
+        "Es un grupo de diferentes cosas o animales que tienen el mismo color. ",
+        "Son cosas que tiene el mismo color y son animales que comen el mismo tipo de comida. ",
       ],
-      Correct: [3],
+      Correct: [0],
+      Verse:
+        "Lucas 18:17 De cierto os digo, que el que no recibe el reino de Dios como un niño, no entrará en él.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "Escoja la resta tiene cero como respuesta:",
+      Img: "",
+      Responses: ["10-9", "3-1", "11-11", "15-12"],
+      Correct: [2],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
       Question:
-        "If a rectangle has a width of 2 km and a length of 3 km. What is the area in square km? ",
+        "Si comparamos el 8 y el 5. ¿Cuál sería la representación correcta? ",
       Img: "",
-      Responses: ["10 km²", "16 km²", "14 km²", "12 km²", "6 km²"],
+      Responses: ["8 < 5", "8 < 5", "8 = 5"],
+      Correct: [0],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question:
+        "Que signo utilizaría para comparar las siguiente suma: 3 + 5 ___ 4 + 3 ",
+      Img: "",
+      Responses: ["<", ">", "="],
+      Correct: [0],
+      Verse:
+        "Juan 5:28 No os maravilléis de esto; porque vendrá hora cuando todos los que están en los sepulcros oirán su voz.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Qué número es el que se indica en la recta Numérica?",
+      Img: recta,
+      Responses: ["0", "1", "2", "3", "7"],
+      Correct: [3],
+      Verse:
+        "1 de Corintios 2:15 En cambio el espiritual juzga todas las cosas; pero él no es juzgado de nadie.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuánto es la suma de 5 y 4? ",
+      Img: "",
+      Responses: ["10", "8", "1", "7", "9"],
       Correct: [4],
+      Verse:
+        "Salmos 119:9 ¿Con qué limpiará el joven su camino? Con guardar tu palabra.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
-      Question:
-        "Convert the following measure: 1.82 miles to yards if (1 mi = 1760 yd)",
+      Question: "¿Cual es la suma los siguientes Números: 25 + 13 =",
       Img: "",
-      Responses: [
-        "3971.2 yd",
-        "2971.2 yd",
-        "1871.2 yd",
-        "3203.2 yd",
-        "1971.2 yd",
-        "2771.2 yd",
-      ],
-      Correct: [3],
+      Responses: ["35", "39", "37", "36", "38"],
+      Correct: [4],
+      Verse: "Tito 2:6 Exhorta asimismo a los jóvenes a que sean prudentes.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
-      Question: "Find the area of a circle with diameter = 8 in",
+      Question: "¿Cuánto es la respuesta si restamos 12 - 9 =",
       Img: "",
-      Responses: [
-        "50.24 ft",
-        "150.24 in",
-        "50.24 in²",
-        "200.96 in",
-        "200.96 ft",
-        "184.25 ft",
-      ],
-      Correct: [2],
-    },
-    {
-      Question:
-        "What is the area of a parallelogram with base 12in and high 100 in",
-      Img: "",
-      Responses: ["1800 in²", "1400 in²", "100 in²", "1200 in²", "4800 in²"],
-      Correct: [3],
-    },
-    {
-      Question: "Which of the following is equal to -6?",
-      Img: "",
-      Responses: [
-        "-5 + 8",
-        "3 + 1",
-        "2 - 8",
-        "12 - 5",
-        "-8 + 1",
-        "None is equal to -6",
-      ],
-      Correct: [2],
-    },
-    {
-      Question: "Find the answer: 8 + 7 * 12 - 40 =",
-      Img: "",
-      Responses: ["55", "52", "-44", "60", "-50", "-15"],
-      Correct: [1],
-    },
-    {
-      Question:
-        "When we calculate using Order of Operation the second operation if there is present is always:",
-      Img: "",
-      Responses: [
-        "Multiplication",
-        "Division",
-        "Addition",
-        "Parenthesis",
-        "Subtraction",
-        "Exponent",
-      ],
+      Responses: ["21", "4", "2", "5", "10", "3"],
       Correct: [5],
-    },
-    {
-      Question: "Find the answer: - 12 + 9 * 3 - 15 + 3 * (5) =",
-      Img: "",
-      Responses: ["14", "20", "16", "15", "10", "18"],
-      Correct: [3],
+      Verse:
+        "Apocalipsis 1:8 Yo soy el Alfa y la Omega, principio y fin, dice el Señor, el que es y que era y que ha de venir, el Todopoderoso.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
       Question:
-        "Talking about US money, what is the equivalent of $5.25 in quarters?",
+        "Si Marcos tienes un paquete de galleta que tiene 12 galletas adentro y su mama le pidió que quería 3. ¿Cuantas galletas le quedan a Marcos?",
       Img: "",
-      Responses: [
-        "6 quarters",
-        "21 quarters",
-        "12 quarters",
-        "75 quarters",
-        "10 quarters",
-        "18 quarters",
-      ],
+      Responses: ["11", "7", "10", "15", "9"],
+      Correct: [4],
+      Verse:
+        "Proverbios 8:32 Ahora, pues, hijos, oídme, Y bienaventurados los que guardan mis caminos. ",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question:
+        "Si Daniela tienes 5 juguetes y su tía le regala 3 más y después Daniela le da uno a su hermanito. ¿Cuantos juguetes tienen?",
+      Img: "",
+      Responses: ["9", "7", "5", "8"],
       Correct: [1],
+      Verse:
+        "Apocalipsis 22:13 Yo soy el Alfa y la Omega, el principio y el fin, el primero y el último.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuantos lados tiene un triángulo?  ",
+      Img: "",
+      Responses: ["1", "2", "3", "4", "5"],
+      Correct: [2],
+      Verse:
+        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuántos lados tiene un cuadrado?",
+      Img: "",
+      Responses: ["1", "2", "3", "4", "5"],
+      Correct: [3],
+      Verse:
+        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuantas decenas hay en el número 84?",
+      Img: "",
+      Responses: ["84", "4", "10", "8", "9"],
+      Correct: [3],
+      Verse:
+        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuántas unidades hay en el numero 95? ",
+      Img: "",
+      Responses: ["95", "9", "100", "1", "96"],
+      Correct: [0],
+      Verse:
+        "Salmos 91:1 El que habita al abrigo del Altísimo Morará bajo la sombra del Omnipotente.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuantas caras hay en un dado?  ",
+      Img: "",
+      Responses: ["8", "4", "10", "6", "9"],
+      Correct: [3],
+      Verse:
+        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "¿Cuál es el resultado de sumar 56 + 75? ",
+      Img: "",
+      Responses: ["121", "141", "131", "100", "130"],
+      Correct: [2],
+      Verse:
+        "Salmos 146:5 Bienaventurado aquel cuyo ayudador es el Dios de Jacob, Cuya esperanza está en Jehová su Dios",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question: "Reste los siguientes números:  128 - 39",
+      Img: "",
+      Responses: ["99", "79", "89", "109", "167"],
+      Correct: [2],
+      Verse:
+        "1 Juan 1:9 Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados, y limpiarnos de toda maldad.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
     {
       Question:
-        "Talking about US money, what is the equivalent of $12.10 in dimes?",
+        "Alberto tiene 10 amigos y van a jugar futbol, pero deciden que todos incluyendo el, deben llevar un amigo para jugar en una cancha grande. ¿Cuantos van a jugar en total? ",
       Img: "",
-      Responses: [
-        "136 dimes",
-        "65 dimes",
-        "121 dimes",
-        "124 dimes",
-        "118 dimes",
-        "110 dimes",
-      ],
+      Responses: ["11", "10", "20", "22", "12"],
+      Correct: [3],
+      Verse:
+        "2 Timoteo 4:5 Pero tú sé sobrio en todo, soporta las aflicciones, haz obra de evangelista, cumple tu ministerio.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
+    },
+    {
+      Question:
+        "Si Jeremías ya tiene 36 meses, ¿Cuantos años tiene? (Asumiendo que 1 año tiene 12 meses)",
+      Img: "",
+      Responses: ["1", "4", "3", "36"],
       Correct: [2],
-    },
-    {
-      Question: "Find the value of K if 10K = 440",
-      Img: "",
-      Responses: ["54", "10", "32", "44", "25", "300"],
-      Correct: [3],
-    },
-    {
-      Question: "Find the value of X if -4X = 52",
-      Img: "",
-      Responses: ["-6", "-10", "12", "-13", "-16", "-4"],
-      Correct: [3],
-    },
-    {
-      Question: "Multiply the following numbers: 0.25 x 0.5 = ",
-      Img: "",
-      Responses: ["0.025", "1.5", "12", "0.125", "0.14", "0.1025"],
-      Correct: [3],
+      Verse:
+        "Gálatas 4:28 Así que, hermanos, nosotros, como Isaac, somos hijos de la promesa.",
+      List: "https://www.youtube.com/watch?v=ztG2OAwT9Lk&list=PLSPbyO4D6CgE24QV7oFdW57YY5CjvJuJo",
     },
   ];
 

@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import { fetchAllExams, fetchOrderArray } from "./store/slices/exams";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import { current } from "@reduxjs/toolkit";
 
 function App() {
   const { list: exams } = useSelector((state) => state.exams);
@@ -134,6 +135,32 @@ function App() {
                 ))}
               </div>
             </div>
+            {currentPos % 3 === 0 &&
+              currentPos !== 0 &&
+              exams[currentPos].Verse !== "" &&
+              currentPos !== 15 && (
+                <div className="bg-green-400 p-2 w-full mb-5 my-3 mx-auto rounded-lg">
+                  <p
+                    className="text-left text-lg"
+                    dangerouslySetInnerHTML={{
+                      __html: exams[currentPos].Verse,
+                    }}
+                  ></p>
+                </div>
+              )}
+            {currentPos % 5 === 0 &&
+              exams[currentPos].List !== "" &&
+              currentPos !== 0 && (
+                <div className="bg-red-400 p-2 w-80 mb-5 my-3 mx-auto rounded-lg">
+                  <a
+                    href={exams[currentPos].List}
+                    target="_blank"
+                    className="text-white font-bold text-xl"
+                  >
+                    Lista para aprendizaje
+                  </a>
+                </div>
+              )}
           </div>
         )
       ) : (
@@ -150,13 +177,15 @@ function App() {
         </div>
       )}
       {currentPos >= 0 && (
-        <button
-          type="button"
-          className="bg-blue-400 p-2 w-40 mb-5 my-3"
-          onClick={() => nextPosition()}
-        >
-          <span className="text-white font-bold text-xl">Next Question</span>
-        </button>
+        <Fragment>
+          <button
+            type="button"
+            className="bg-blue-400 p-2 w-40 mb-5 my-3"
+            onClick={() => nextPosition()}
+          >
+            <span className="text-white font-bold text-xl">Next Question</span>
+          </button>
+        </Fragment>
       )}
     </div>
   );
