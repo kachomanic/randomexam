@@ -125,7 +125,7 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question: "¿Cuánto mide un ángulo recto?",
-      Img: recta,
+      Img: "",
       Responses: ["90 grados", "180 grados", "360 grados", "270 grados"],
       Correct: [0],
       Verse:
