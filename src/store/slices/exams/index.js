@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import recta from "../../../assets/imgs/exam1-recta.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
