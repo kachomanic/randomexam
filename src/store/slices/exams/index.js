@@ -25,14 +25,13 @@ export const fetchOrderArray = () => (dispatch) => {
     if (getRandomNumber.remaining.length === 0) {
       getRandomNumber.remaining = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23,
       ].sort(() => Math.random() - 0.5);
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 23; i++) {
+  for (let i = 0; i < 19; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -42,19 +41,19 @@ export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
       Question:
-        "¿Cuál sería el perímetro de un pentágono regular en cual uno de sus lados mide 12m?",
+        "¿Cuál es el área de un octágono regular que tiene medida de lado 4cm y apotema 60mm?",
       Img: "",
-      Responses: ["600", "120", "60", "48", "1200"],
-      Correct: [2],
+      Responses: ["96cm²", "32cm²", "320cm²", "960cm²", "9.6cm²"],
+      Correct: [0],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "Los polígonos irregulares pueden tener más lados que los polígonos regulares",
+        "Si un Hexágono regular tiene lado igual a 8dm. ¿Cuál sería su perímetro en metro?",
       Img: "",
-      Responses: ["Verdadero", "Falso"],
+      Responses: ["48m", "4.8m", "48 dm", "48m", "8m"],
       Correct: [1],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
@@ -62,28 +61,28 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Si una empresa va a pagar el casto de sus trabajadores en una capacitación de mejora continua. ¿Cuánto tiene que pagar la empresa si los 12 trabajadores gastaron $256.65 en los 4 días del seminario?",
+        "Calcule el área de un heptágono que tiene como lado 5km y apotema 100,000 cm.",
       Img: "",
-      Responses: ["3079", "307,980", "207,980", "2079.80", "3079.80"],
-      Correct: [4],
+      Responses: ["27 km²", "117,980 km²", "35 km²", "17.5 km²"],
+      Correct: [3],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "Si una empresa grande paga en subsidio semanal $7,950.50 por la el almuerzo de sus 980 trabajadores cada semana. ¿Cuánto estaría asignando a cada trabajador?",
+        "Calcule el perímetro de un pentágono irregular que tiene las siguientes medidas en sus lados. Exprese su respuesta en Número Mixto. 4/6;  ¾; 6/9; 4/5; 2/6;",
       Img: "",
-      Responses: ["$ 11.11", "$ 9.11", "$ 10.11", "$ 11.8", "$ 8.11"],
-      Correct: [4],
+      Responses: ["4 y 7/60", "5 y 8/60", "4", "6 y 1/60", "7 y 9/60"],
+      Correct: [0],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
-      Question: "¿Cuál sería el menor de 3 números pares que suman 84?",
+      Question: "Si dividimos 73.017 entre 3.15. ¿Cuál es la respuesta?   ",
       Img: "",
-      Responses: ["36", "26", "16"],
+      Responses: ["33.05cm", "23.18cm", "18cm"],
       Correct: [1],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
@@ -91,68 +90,100 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "¿Cuál sería el mayor de dos números primos consecutivos que suman 18?",
+        "Calcule el volumen de un cilindro que tiene como radio 3.6 y su altura es de 3/4, redondee su respuesta al entero más cercano.",
       Img: "",
-      Responses: ["1", "13", "11", "7"],
-      Correct: [2],
+      Responses: ["30", "28", "31", "29"],
+      Correct: [1],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "De los siguientes números. ¿Cuál sería divisible por 2, 5 y 10?",
+        "Si un cubo tiene como lado 4m. ¿Será posible encontrar su volumen con solamente esta información? ",
       Img: "",
-      Responses: ["55", "64", "75", "105", "60"],
-      Correct: [4],
+      Responses: [
+        "Si",
+        "No",
+        "Solo los alumnos de la universidad",
+        "No estoy seguro",
+      ],
+      Correct: [0],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "¿Puede existir un número que sea divisible por 10 y no sea divisible por 5?",
+        "Si sumamos las dimensiones con las que trabaja el área y las dimensiones con las que trabaja el volumen obtendríamos: ",
       Img: "",
-      Responses: ["No", "Si", "Si, pero solo usando números negativos"],
-      Correct: [0],
+      Responses: ["4 dimensiones", "3 dimensiones", "5 dimensiones"],
+      Correct: [2],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "¿Cuáles de los siguientes números es el que más se repite cuando descomponemos el 54 en factores primos?",
+        "Si ubicamos una esfera dentro de un cubo, ¿cuál de los dos tiene el volumen más grande? ",
       Img: "",
-      Responses: ["2", "3", "5", "11", "7"],
+      Responses: [
+        "La esfera por supuesto",
+        "El Cubo por supuesto",
+        "Pueden ser iguales",
+      ],
       Correct: [1],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
-      Question:
-        "¿Cuáles de los siguientes números NO lo podemos usar para descomponer en factores primos?",
+      Question: "Multiplique 3/4 * 1/2 * 3/4 ",
       Img: "",
-      Responses: ["5", "6", "11", "3", "2", "13"],
-      Correct: [1],
+      Responses: ["9/24", "3/24", "9/32", "3/10"],
+      Correct: [2],
       Verse:
         "Salmos 119:9 ¿Con qué limpiará el joven su camino? Con guardar tu palabra.",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
-      Question:
-        "Si María llena con 3/4 de agua un balde que tiene 1/2 de un galón. ¿Cuánto necesita de agua para llenar un balde que tiene 1 galón completo?",
+      Question: "Divida las siguientes fracciones: 7/10 entre 3/5",
       Img: "",
-      Responses: ["1.5", "3/4", "1/2", "3", "6"],
-      Correct: [0],
+      Responses: ["1/6", "2/6", "7/6", "9/7", "6/7"],
+      Correct: [2],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
-      Question: "Cuál es el Máximo Común Divisor de 80, 60 y 95?",
+      Question:
+        "Si Paco usa un tercio de sal de un envase lleno para una salsa y su hermana usa la mitad de lo que queda. ¿Cuánto es lo que hay que comprar del pequeño envase para rellenarlo? ",
       Img: "",
-      Responses: ["10", "5", "3"],
+      Responses: [
+        "1/3 es lo que necesita para rellenar el envase.",
+        "2/3 es lo que necesita para rellenar el envase.",
+        "1/4 es lo que necesita para rellenar el envase.",
+      ],
+      Correct: [0],
+      Verse:
+        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
+      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+    },
+    {
+      Question:
+        "Si dos hermanos quieren comprar una casa de $45,000 y uno de ellos se compromete a pagar las cuotas restantes si su otro hermano paga $20,000. ¿Qué fracción de la casa pagará el otro hermano que para en cuotas?",
+      Img: "",
+      Responses: ["2/8", "5/6", "1/4", "5/9"],
+      Correct: [3],
+      Verse:
+        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
+      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+    },
+    {
+      Question:
+        "Si con dos libras de harina hacemos 3 pizas. ¿Cuantas libras de harina se necesitan para hacer 27 pizas?",
+      Img: "",
+      Responses: ["28 libras", "18 libras", "12 libras"],
       Correct: [1],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
@@ -160,79 +191,58 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "¿Cómo se podría escribir la siguiente fracción a decimal?  3/5",
+        "Si lanzamos un dado de 10 caras enumerado del 0 al 9. ¿Cuántas posibilidades tenemos en total?",
       Img: "",
-      Responses: ["0.8", "0.2", "0.6", "0.45"],
-      Correct: [2],
-      Verse:
-        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
-    },
-    {
-      Question:
-        "Si una circunferencia tiene un diámetro de 30cm; ¿cuál será la medida de su longitud?",
-      Img: "",
-      Responses: ["720cm", "260.45cm", "706.5cm"],
-      Correct: [2],
-      Verse:
-        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
-    },
-    {
-      Question:
-        "Si con 2 litros de agua puedo hacer un refresco para 7 personas. ¿Cuánto necesitare para hacerle un fresco a 49 personas?",
-      Img: "",
-      Responses: [
-        "4 litros",
-        "56 litros",
-        "42 litros",
-        "49 litros",
-        "14 litros",
-      ],
-      Correct: [4],
+      Responses: ["10 posibilidades", "9 porque el número mayor es 9"],
+      Correct: [0],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "El 25% de un colegio de 200 alumnos son parte de los equipos deportivos. ¿Cuántos alumnos no participan en los deportes en ese colegio?",
+        "Si vamos a un restaurante y sirven 6 platos de comida, 4 postres y 3 jugos naturales. ¿Cuantas opciones posibles tenemos si cada opción tiene una comida, un postre y un jugo? ",
       Img: "",
-      Responses: ["50", "75", "150", "200"],
-      Correct: [2],
+      Responses: [
+        "27 posibilidades",
+        "75 posibilidades",
+        "13 posibilidades",
+        "72 posibilidades",
+      ],
+      Correct: [3],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "Encuentre el área de un triángulo que su base es de 4m y su altura es del doble de la base.",
+        "Si lanzamos un dado y después una moneda; ¿Cuantas opciones diferentes tendríamos?",
       Img: "",
-      Responses: ["32m²", "8m²", "16m²", "28m²", "24m²"],
-      Correct: [2],
+      Responses: ["12", "10", "9", "14", "1"],
+      Correct: [0],
       Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "¿Cuál es el área de una ciudad cuadrada que su perímetro es 40km?  ",
+        "Si 5 hombres pintando una casa pueden hacer el trabajo en 12 días en cuanto tiempo podrían hacer el mismo trabajo 7 hombres.",
       Img: "",
-      Responses: ["400km²", "100km²", "200km²", "80km²", "800km²"],
-      Correct: [1],
+      Responses: ["12 días", "5 días", "9 días", "8.57 días"],
+      Correct: [3],
       Verse: "¿Cuántos cuadrantes hay en el plano cartesiano?",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
     {
       Question:
-        "¿Cuál es la suma de los 3 ángulos interiores de un triángulo? ¿Se aplica esto a todos los triángulos?",
+        "Si con dos libras de harina y 1 de Tomate hacemos 3 pizas. ¿Cuantas libras de harina y de tomate se necesitan para hacer 60 pizas?",
       Img: "",
       Responses: [
-        "180 grados y no se aplica a todos los triangulos",
-        "360 grados",
-        "90 grados",
-        "270 grados",
-        "180 grados y se aplica a todos los triangulos",
+        "10 libras de harina y 50 de tomate",
+        "40 libras de harina y 40 de tomate",
+        "10 libras de harina y 20 de tomate",
+        "30 libras de harina y 30 de tomate",
+        "40 libras de harina y 20 de tomate",
       ],
       Correct: [4],
       Verse:
@@ -241,56 +251,18 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Investigue en internet y encuentre ¿cuál es el promedio de las edades del presidente de Finlandia, Canadá y España? Redondee su respuesta",
-      Img: "",
-      Responses: ["67 años", "61 años", "44 años", "50 años", "57 años"],
-      Correct: [4],
-      Verse:
-        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
-    },
-    {
-      Question:
-        "De los siguientes valores que representan El número de usuarios usando internet por año; encuentre la moda mediana y Rango? Argentina 55.8; Bolivia 34.2; Canada 86.8; Chile 61.4; Colombia 49; Costa Rica 47.5; El Salvador 25.5; Ecuador 35.1; Brazil 49.8, Mexico 38.4",
+        "Si para lavar se necesitan 8 monedas de 25 centavos y para secar la ropa se necesitan 12 monedas iguales. ¿Cuanto cuesta terminar de lavar 2 veces?",
       Img: "",
       Responses: [
-        "Moda: No hay, Mediada: 48.25, Rango: 61.3",
-        "Moda: 55, Mediada: 40, Rango: 60",
-        "Moda: No hay, Mediada: 10, Rango: 25",
+        "$12 en Total o 36 monedas",
+        "$8 en Total o 32 monedas",
+        "$9 en Total o 36 monedas",
+        "$10 en Total o 40 monedas",
+        "$10 en Total o 30 monedas",
       ],
-      Correct: [0],
-      Verse:
-        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
-    },
-    {
-      Question:
-        "Si vamos a una tienda y están vendiendo un juguete que tiene un valor de $55 pero esta con un descuento de 20%. ¿Cuánto tiene que pagar mi mama si la convenzo de que me lo compre porque está en rebaja?",
-      Img: "",
-      Responses: ["45", "44", "50", "40"],
-      Correct: [1],
-      Verse:
-        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
-    },
-    {
-      Question:
-        "El 12% de un colegio de 400 alumnos son parte de los equipos deportivos. ¿Cuántos alumnos participan en los deportes en ese colegio?",
-      Img: "",
-      Responses: ["12", "50", "52", "48", "25"],
       Correct: [3],
       Verse:
-        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
-    },
-    {
-      Question:
-        "¿Cuál es el perimetro de una ciudad cuadrada que su area es 49km²?",
-      Img: "",
-      Responses: ["10km", "9km", "20km", "7km"],
-      Correct: [3],
-      Verse:
-        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
       List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
     },
   ];
