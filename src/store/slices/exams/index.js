@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import recta from "../../../assets/imgs/exam1-recta.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -121,7 +120,7 @@ export const fetchAllExams = () => (dispatch) => {
     {
       Question:
         "Cuanto es la respuesta de restar el antecesor de 88 con el sucesor de 27? ",
-      Img: recta,
+      Img: "",
       Responses: ["49", "59", "61", "63", "70"],
       Correct: [1],
       Verse:
