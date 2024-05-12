@@ -124,7 +124,7 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question: "A cuántos milímetros equivalen? 3.7 metros:",
-      Img: recta,
+      Img: "",
       Responses: ["3700", "37.00", "37,000"],
       Correct: [0],
       Verse:
