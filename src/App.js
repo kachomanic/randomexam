@@ -157,7 +157,7 @@ function App() {
                     target="_blank"
                     className="text-white font-bold text-xl"
                   >
-                    Lista para aprendizaje
+                    Lista completa de videos para 2do grado
                   </a>
                 </div>
               )}
