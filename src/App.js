@@ -157,7 +157,7 @@ function App() {
                     target="_blank"
                     className="text-white font-bold text-xl"
                   >
-                    Lista completa de videos para 7mo grado
+                    Lista completa de videos para 8vo grado
                   </a>
                 </div>
               )}
@@ -166,7 +166,7 @@ function App() {
       ) : (
         <div className="text-center h-80 bg-gray-100">
           <p className="text-3xl mb-6">
-            Note: {Math.trunc(100 - (errors * 100) / 29)}
+            Note: {Math.trunc(100 - (errors * 100) / 30)}
           </p>
           <p className="text-xl">
             {exams.length - errors} correct answers out of {exams.length}
