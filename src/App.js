@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from "react";
 import { fetchAllExams, fetchOrderArray } from "./store/slices/exams";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import { current } from "@reduxjs/toolkit";
 
 function App() {
   const { list: exams } = useSelector((state) => state.exams);
@@ -14,6 +13,8 @@ function App() {
   //const [message, setMessage] = useState("");
   const [selectedResp, setSelectedResp] = useState();
   const [warning, setWarning] = useState(false);
+  const [userAnswers, setUserAnswers] = useState({}); // Track answers for each question
+  const [questionStatus, setQuestionStatus] = useState({}); // Track status: 'correct', 'incorrect', 'unanswered'
   let actualPosition = parseInt(
     JSON.parse(localStorage.getItem("actualPosition"))
   );
@@ -52,7 +53,20 @@ function App() {
       return;
     }
 
-    if (!exams[currentPos].Correct.includes(parseInt(selectedResp))) {
+    // Save the user's answer
+    const newUserAnswers = { ...userAnswers };
+    newUserAnswers[currentPos] = selectedResp;
+    setUserAnswers(newUserAnswers);
+
+    // Determine if answer is correct
+    const isCorrect = exams[currentPos].Correct.includes(
+      parseInt(selectedResp)
+    );
+    const newQuestionStatus = { ...questionStatus };
+    newQuestionStatus[currentPos] = isCorrect ? "correct" : "incorrect";
+    setQuestionStatus(newQuestionStatus);
+
+    if (!isCorrect) {
       setErrors(errors + 1);
     }
 
@@ -63,27 +77,75 @@ function App() {
     }
 
     for (var j = 0; j < ele.length; j++) ele[j].checked = false;
+    setSelectedResp(undefined);
   };
 
+  const jumpToQuestion = (questionIndex) => {
+    // First, save current answer if one is selected
+    if (selectedResp !== undefined && currentPos >= 0) {
+      const newUserAnswers = { ...userAnswers };
+      newUserAnswers[currentPos] = selectedResp;
+      setUserAnswers(newUserAnswers);
+    }
+
+    setCurrentPos(questionIndex);
+    setWarning(false);
+
+    // Clear all radio selections
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+      radio.checked = false;
+    });
+
+    // Set the selected response if user has already answered this question
+    if (userAnswers[questionIndex] !== undefined) {
+      setSelectedResp(userAnswers[questionIndex]);
+      // Set the radio button to checked after a small delay to ensure DOM is updated
+      setTimeout(() => {
+        var newEle = document.getElementsByName(questionIndex);
+        if (newEle[userAnswers[questionIndex]]) {
+          newEle[userAnswers[questionIndex]].checked = true;
+        }
+      }, 50);
+    } else {
+      setSelectedResp(undefined);
+    }
+  };
+
+  const previousQuestion = () => {
+    if (currentPos > 0) {
+      jumpToQuestion(currentPos - 1);
+    }
+  };
+
+  // Effect to restore radio button selection when currentPos changes
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSeconds((seconds) => seconds + 1);
-    }, 1000);
+    if (currentPos >= 0 && userAnswers[currentPos] !== undefined) {
+      setTimeout(() => {
+        var ele = document.getElementsByName(currentPos);
+        if (ele[userAnswers[currentPos]]) {
+          ele[userAnswers[currentPos]].checked = true;
+        }
+      }, 50);
+    }
+  }, [currentPos, userAnswers]);
 
-    return () => clearInterval(interval);
-  }, []);
+  useEffect(() => {
+    // Only run the timer if the exam is still active (currentPos >= 0)
+    if (currentPos >= 0) {
+      const interval = setInterval(() => {
+        setSeconds((seconds) => seconds + 1);
+      }, 1000);
 
-  // useEffect(() => {
-  //   if (seconds === 0) {
-  //     setMessage("Time limit exceeded!");
-  //   }
-  // }, [seconds]);
+      return () => clearInterval(interval);
+    }
+  }, [currentPos]);
 
   return (
     <div className="App w-full sm:w-8/12 h-auto mx-auto">
       <p className="text-green-700 font-bold">
         Test time: {Math.trunc(seconds / 60)} minutes
       </p>
+
       {currentPos >= 0 ? (
         exams.length && (
           <div className="w-full">
@@ -155,38 +217,157 @@ function App() {
                   <a
                     href={exams[currentPos].List}
                     target="_blank"
+                    rel="noreferrer"
                     className="text-white font-bold text-xl"
                   >
-                    Lista completa de videos para 8vo grado
+                    Lista completa de videos para 10mo grado
                   </a>
                 </div>
               )}
           </div>
         )
       ) : (
-        <div className="text-center h-80 bg-gray-100">
+        <div className="text-center h-80 bg-gray-100 p-6">
+          <h2 className="text-2xl font-bold mb-4">Exam Results</h2>
           <p className="text-3xl mb-6">
-            Note: {Math.trunc(100 - (errors * 100) / 34)}
+            Score: {Math.trunc(100 - (errors * 100) / exams.length)}%
           </p>
-          <p className="text-xl">
+          <p className="text-xl mb-4">
             {exams.length - errors} correct answers out of {exams.length}
           </p>
-          <p className="text-lg">
-            Total time: {Math.trunc(seconds / 60)} minutes
+          <p className="text-lg mb-4">
+            Total time: {Math.trunc(seconds / 60)} minutes and {seconds % 60}{" "}
+            seconds
+          </p>
+          <p className="text-sm text-gray-600">
+            Review your answers using the question grid above
           </p>
         </div>
       )}
       {currentPos >= 0 && (
         <Fragment>
-          <button
-            type="button"
-            className="bg-blue-400 p-2 w-40 mb-5 my-3 rounded-lg"
-            onClick={() => nextPosition()}
-          >
-            <span className="text-white font-bold text-xl">Next Question</span>
-          </button>
+          <div className="flex gap-4 justify-center">
+            <button
+              type="button"
+              className={`p-2 w-40 mb-5 my-3 rounded-lg ${
+                currentPos > 0
+                  ? "bg-gray-400 hover:bg-gray-500 text-white"
+                  : "bg-gray-200 text-gray-400 cursor-not-allowed"
+              }`}
+              onClick={previousQuestion}
+              disabled={currentPos === 0}
+            >
+              <span className="font-bold text-xl">Previous Question</span>
+            </button>
+            <button
+              type="button"
+              className="bg-blue-400 hover:bg-blue-500 p-2 w-40 mb-5 my-3 rounded-lg"
+              onClick={() => nextPosition()}
+            >
+              <span className="text-white font-bold text-xl">
+                Next Question
+              </span>
+            </button>
+          </div>
         </Fragment>
       )}
+
+      {/* Question Navigation Grid */}
+      {exams.length > 0 && (
+        <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+          <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-4">
+            {exams.map((_, index) => {
+              let buttonClass = "w-10 h-10 rounded border-2 font-bold text-sm ";
+
+              // Determine button color based on status
+              if (currentPos === index) {
+                buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question
+              } else if (currentPos === -1) {
+                // Show results only when exam is finished (currentPos === -1)
+                if (questionStatus[index] === "correct") {
+                  buttonClass += "bg-green-500 text-white border-green-600"; // Correct answer
+                } else if (questionStatus[index] === "incorrect") {
+                  buttonClass += "bg-red-500 text-white border-red-600"; // Incorrect answer
+                } else {
+                  buttonClass += "bg-gray-200 text-gray-800 border-gray-300"; // Unanswered
+                }
+              } else {
+                // During exam, show all questions as neutral (no status indication)
+                buttonClass +=
+                  "bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300"; // Neutral
+              }
+
+              return (
+                <button
+                  key={index}
+                  className={buttonClass}
+                  onClick={() => jumpToQuestion(index)}
+                  disabled={currentPos === -1} // Disable navigation when exam is finished
+                >
+                  {index + 1}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Legend */}
+          <div className="flex flex-wrap gap-4 text-sm">
+            <div className="flex items-center gap-1">
+              <div className="w-4 h-4 bg-blue-500 rounded"></div>
+              <span>Current</span>
+            </div>
+            {currentPos === -1 ? (
+              // Show results legend only when exam is finished
+              <>
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-green-500 rounded"></div>
+                  <span>Correct</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-red-500 rounded"></div>
+                  <span>Incorrect</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-4 h-4 bg-gray-200 border border-gray-300 rounded"></div>
+                  <span>Unanswered</span>
+                </div>
+              </>
+            ) : (
+              // During exam, show only neutral legend
+              <div className="flex items-center gap-1">
+                <div className="w-4 h-4 bg-gray-200 border border-gray-300 rounded"></div>
+                <span>Questions</span>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Bottom Information Panel */}
+      <div className="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-700">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div>
+            <strong>Progress:</strong> {Object.keys(userAnswers).length} of{" "}
+            {exams.length} questions answered
+          </div>
+          <div>
+            <strong>Current Question:</strong>{" "}
+            {currentPos >= 0 ? currentPos + 1 : "Exam Complete"}
+          </div>
+          <div>
+            <strong>Time Elapsed:</strong> {Math.trunc(seconds / 60)}:
+            {(seconds % 60).toString().padStart(2, "0")}
+          </div>
+        </div>
+        {currentPos >= 0 && (
+          <div className="mt-2 text-center">
+            <div className="text-xs text-gray-500">
+              You can navigate between questions using the Previous/Next buttons
+              or the question grid
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
