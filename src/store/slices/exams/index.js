@@ -23,7 +23,7 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = Array.from(Array(40).keys()).sort(
+      getRandomNumber.remaining = Array.from(Array(32).keys()).sort(
         () => Math.random() - 0.5
       );
     }
@@ -41,370 +41,384 @@ export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
       Question:
-        "A bookstore offers a 25% discount on a book that originally cost $32. What is the sale price of the book?",
+        "The recipe is called for 3/4 cup of sugar. If you want to make half the recipe, how much sugar do you need?",
       Img: "",
-      Responses: ["$24", "$30", "$26", "$22", "$28"],
-      Correct: [0],
-      Verse: "",
-      List: "",
+      Responses: ["3/7 cup", "3/8 cup", "5/8 cup", "1/4 cup", "3/6 cup"],
+      Correct: [1],
+      Verse:
+        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "The school’s student enrollment increased from 400 to 500 students. What was the percentage increase in enrollment?",
+        "Emily ate 2/5 of a pizza and her brother ate 3/10 of it. What fraction of the pizza did they eat together?",
       Img: "",
-      Responses: ["25%", "20%", "18%", "15%", "30%"],
+      Responses: ["7/10", "5/7", "7/5", "5/6", "4/9"],
       Correct: [0],
-      Verse: "",
-      List: "",
+      Verse:
+        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "A jacket is marked down by 15% and is now priced at $85. What was the original price of the jacket?",
+        "John read 7/12 of a book, and after finished 1/3 that was pending. What fraction of the book did he read?",
       Img: "",
-      Responses: ["$100", "$110", "$90", "$85", "$120"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A car's price decreased by 12% and is now $22,000. What was the original price of the car?",
-      Img: "",
-      Responses: ["$25,000", "$23,000", "$24,000", "$26,000", "$27,000"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A factory produced 1,200 units last year. This year, production increased by 18%. How many units were produced this year?",
-      Img: "",
-      Responses: [
-        "1,416 units",
-        "1,316 units",
-        "1,446 units",
-        "1,266 units",
-        "1,265 units",
-      ],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "Sarah spent 60% of her monthly salary of $3,500 on rent. How much did she spend on other expenses than rent?",
-      Img: "",
-      Responses: ["$1,400", "$1,550", "$1,350", "$1,600", "$2,100"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "The restaurant’s bill was $70 before tax. With a 10% tip, how much was the total bill?",
-      Img: "",
-      Responses: ["$77", "$87", "$75", "$82", "$79"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A website’s traffic increased from 2,500 visitors to 3,750 visitors in a month. What is the percentage increase in traffic?",
-      Img: "",
-      Responses: ["40%", "45%", "50%", "35%"],
+      Responses: ["10/12", "11/15", "11/12", "7/12", "1/3"],
       Correct: [2],
-      Verse: "",
-      List: "",
+      Verse:
+        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "A fitness class has 24 students, and 25% of them are beginners. How many non-beginners are in the class?",
+        "The classroom has 30 students, and 2/5 of them are girls. How many boys are there in the class?",
       Img: "",
-      Responses: ["18", "16", "6", "20", "26"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 12% of 150?",
-      Img: "",
-      Responses: ["18", "16", "17", "15", "14"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 75% of 120?",
-      Img: "",
-      Responses: ["90", "85", "80", "88", "82"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 20% of 20?",
-      Img: "",
-      Responses: ["4", "3", "5", "7", "8"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 15% of 90?",
-      Img: "",
-      Responses: ["13.5", "15", "14.5", "13.25", "13.75"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 5% of 80?",
-      Img: "",
-      Responses: ["4", "6", "8", "7", "5"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A shirt costs $45 after a 20% discount. What was the original price?",
-      Img: "",
-      Responses: ["$56.25", "$52.75", "$55.75", "$54.25", "$53.75"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A car's value decreased by 30% and is now worth $14,000. What was its original value?",
-      Img: "",
-      Responses: ["$20,000", "$22,050", "$25,000", "$20,500", "$14,000"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "If a student scored 85% on an exam and got 51 questions correct, how many questions were on the exam?",
-      Img: "",
-      Responses: ["60", "65", "64", "62"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A stock's value increased from $80 to $100. What was the percentage increase?",
-      Img: "",
-      Responses: ["25%", "23%", "28%", "26%", "80%"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A recipe calls for 30% more sugar than originally. If the original was 200 grams, how much sugar is used now?",
-      Img: "",
-      Responses: [
-        "260 grams",
-        "280 grams",
-        "275 grams",
-        "270 grams",
-        "200 grams",
-      ],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A house was worth $250,000 and appreciated 8% over a year. What is its new value?",
-      Img: "",
-      Responses: ["$270,000", "$260,000", "$280,000", "$290,000", "$250,000"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A company increased its production by 18% and now produces 5,276 units. What was the original production?",
-      Img: "",
-      Responses: [
-        "4,472 units",
-        "4,374 units",
-        "5,372 units",
-        "4,482 units",
-        "4,462 units",
-      ],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A population density of 1,500 people in a 3 square mile area equals how many persons per square mile?",
-      Img: "",
-      Responses: ["400", "500", "600", "300", "650"],
-      Correct: [1],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "If you deposit $1,000 in a savings account with 4% simple interest for 2 years, how much money will you have at the end?",
-      Img: "",
-      Responses: ["$1,080", "$1,040", "$1,060", "$1,090", "$1,100"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "In a scale drawing where 1 inch = 10 feet, how many inches represent 45 feet?",
-      Img: "",
-      Responses: ["4.5", "55", "3.5", "44", "10"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "If a product costs $85 and has a markup of 35%, what is the selling price?",
-      Img: "",
-      Responses: ["$114.75", "$112.75", "$110.75", "$116.75", "$112.25"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A store is having a clearance sale. A jacket priced at $80 is marked down 30%, then another 20%. What is the final price?",
-      Img: "",
-      Responses: ["$44.80", "$40.00", "$48.00", "$52.80", "$42.88"],
+      Responses: ["10 boys", "16 boys", "14 boys", "12 boys", "18 boys"],
       Correct: [4],
-      Verse: "",
-      List: "",
+      Verse:
+        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "A car salesperson earns a 5% commission on each sale. If they sell a car for $28,500, what is their commission?",
+        "A garden has 5/8 planted with vegetables and 3/10 with flowers. What fraction is planted with other than vegetables or flowers?",
       Img: "",
-      Responses: ["$1,425", "$1,525", "$1,325", "$1,225", "$1,245"],
+      Responses: ["3/30", "3/20", "2/32", "3/37", "3/40"],
+      Correct: [4],
+      Verse:
+        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "If a car travels 3/4 of a mile in one minute, how far will it travel in 10 minutes?",
+      Img: "",
+      Responses: [
+        "10 1/2 miles",
+        "7 1/4 miles",
+        "8 1/2 miles",
+        "9 3/4 miles",
+        "7 1/2 miles",
+      ],
+      Correct: [4],
+      Verse:
+        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A cake recipe requires 2/3 cup of milk. If you are making 1/3 of the recipe, how much milk do you need?",
+      Img: "",
+      Responses: ["10/9 cup", "2/8 cup", "2/7 cup", "2/9 cup", "5/9 cup"],
+      Correct: [3],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "Sarah used 5/8 of a bottle of glue for a project. If there were originally 2 liters, how much glue did she use?",
+      Img: "",
+      Responses: [
+        "1.25 liters",
+        "1.75 liters",
+        "2.25 liters",
+        "3.75 liters",
+        "4.5 liters",
+      ],
+      Correct: [0],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A company's revenue increased by 7/20 this year compared to last year. If last year's was $50,000, what is the increase?",
+      Img: "",
+      Responses: ["$17,500", "$17,200", "$19,400", "$16,200", "$30,500"],
+      Correct: [0],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A farmer harvested 4/7 of his crops, and 3/5 of those were sold. What fraction of total crops were sold?",
+      Img: "",
+      Responses: ["15/35", "10/37", "11/39", "12/35", "7/35"],
+      Correct: [3],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "The recipe uses 3/4 cup of oil and 1/6 cup of vinegar. How much more oil is used than vinegar?",
+      Img: "",
+      Responses: [
+        "9/12 cup",
+        "10/12 cup",
+        "11/12 cup",
+        "15/16 cup",
+        "7/12 cup",
+      ],
+      Correct: [4],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "Michael spent 3/10 on books and 2/5 on food. What fraction of allowance is left?",
+      Img: "",
+      Responses: ["3/10", "10/11", "11/12", "4/9", "7/10"],
       Correct: [0],
       Verse: "",
-      List: "",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "A restaurant bill is $85. With an 18% tip and 8.25% tax, what is the total amount?",
+        "A pizza is cut into 8 slices. If 3/4 was eaten, how many slices remain?",
       Img: "",
-      Responses: ["$107.31", "$115.82", "$117.01", "$120.53", "$105.42"],
+      Responses: ["2 slices", "6 slices", "4 slices", "3 slices", "5 slices"],
+      Correct: [0],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "Linda has 2/5 gallon of paint. She uses 1/3 of it. How much paint does she use?",
+      Img: "",
+      Responses: [
+        "1/3 gallon",
+        "2/13 gallon",
+        "2/18 gallon",
+        "2/3 gallon",
+        "2/15 gallon",
+      ],
+      Correct: [4],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A car's fuel tank is 5/8 full. If it holds 16 gallons, how many gallons of fuel are in the tank?",
+      Img: "",
+      Responses: [
+        "10 gallons",
+        "16 gallons",
+        "14 gallons",
+        "12 gallons",
+        "11 gallons",
+      ],
+      Correct: [0],
+      Verse:
+        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "In a bag of 30 marbles, 2/3 are red. How many red marbles are in the bag?",
+      Img: "",
+      Responses: [
+        "20 marbles",
+        "16 marbles",
+        "14 marbles",
+        "12 marbles",
+        "18 marbles",
+      ],
+      Correct: [0],
+      Verse:
+        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A class has 24 students, and 7/12 are boys. How many girls are in the class?",
+      Img: "",
+      Responses: ["12 girls", "16 girls", "14 girls", "10 girls", "18 girls"],
+      Correct: [3],
+      Verse:
+        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A car traveled 3/5 of 500 miles in the first half of the trip. How far did it travel?",
+      Img: "",
+      Responses: [
+        "200 miles",
+        "250 miles",
+        "300 miles",
+        "310 miles",
+        "280 miles",
+      ],
+      Correct: [2],
+      Verse:
+        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A recipe requires 3/4 cup sugar, and you have 5/6 cup. How much more do you need?",
+      Img: "",
+      Responses: ["2/13 cup", "1/12 cup", "2/18 cup", "2/3 cup", "1/3 cup"],
       Correct: [1],
-      Verse: "",
-      List: "",
+      Verse:
+        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "An electronics store buys tablets for $180 each and marks them up by 45%. During a sale, 20% off. What is the final price?",
+        "A worker finished 4/9 of a task then 3/5 of remaining. What fraction of task was completed?",
       Img: "",
-      Responses: ["$231.20", "$208.80", "$216.00", "$261.00", "$205.25"],
+      Responses: ["19/45", "10/39", "11/45", "13/45", "7/45"],
+      Correct: [0],
+      Verse:
+        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A plant has 3/7 of height left to grow. If it has grown 15 inches, what is the total height?",
+      Img: "",
+      Responses: [
+        "31 inches",
+        "36 inches",
+        "34 inches",
+        "35 inches",
+        "38 inches",
+      ],
+      Correct: [3],
+      Verse:
+        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A school has 200 students, and 3/8 are in the band. How many are not in the band?",
+      Img: "",
+      Responses: [
+        "155 students",
+        "116 students",
+        "124 students",
+        "121 students",
+        "125 students",
+      ],
+      Correct: [4],
+      Verse:
+        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A bottle of juice is 5/6 full. If originally 1 liter, how much juice is left?",
+      Img: "",
+      Responses: [
+        "5/6 liter",
+        "5/9 liter",
+        "5/7 liter",
+        "4/7 liter",
+        "3/6 liter",
+      ],
+      Correct: [0],
+      Verse:
+        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "A project uses 2/3 of tape, and 1/4 of the remaining tape is used. How much is left?",
+      Img: "",
+      Responses: ["1/36", "2/5", "1/5", "3/4", "1/6"],
+      Correct: [4],
+      Verse:
+        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question:
+        "You cut pizza into 8 slices, you have 3/4 pizza. How many slices are left if you give away 1/2?",
+      Img: "",
+      Responses: ["5", "3", "6", "4", "2"],
       Correct: [1],
-      Verse: "",
-      List: "",
+      Verse:
+        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question: "5/6 – 1/3 = ?",
+      Img: "",
+      Responses: ["1/7", "1/5", "3/5", "3/4", "1/2"],
+      Correct: [4],
+      Verse:
+        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question: "3/8 × 4/7 = ?",
+      Img: "",
+      Responses: ["1/14", "1/15", "3/12", "3/14", "1/12"],
+      Correct: [3],
+      Verse:
+        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "Sarah invested $5000 at 4.5% simple interest per year. How much interest after 2 years?",
+        "Alice has 7/12 yard of fabric. Cut into 3 equal pieces, uses 1/4 of one piece. How much left of that piece?",
       Img: "",
-      Responses: ["$225", "$450", "$475", "$500", "$900"],
-      Correct: [1],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "If 72 is 60% of a number, what is the original number?",
-      Img: "",
-      Responses: ["120", "130", "760", "267", "110"],
-      Correct: [0],
-      Verse: "",
-      List: "",
+      Responses: ["3/50", "1/24", "7/48", "3/14", "1/48"],
+      Correct: [2],
+      Verse:
+        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "A business’s revenue increased from $500,000 to $600,000. What is the percentage change?",
+        "The recipe calls for 3/4 cup flour for 6 people. If serving 2, how much flour needed?",
       Img: "",
-      Responses: ["20%", "25%", "30%", "10%", "100%"],
+      Responses: ["1/4", "1/2", "3/5", "3/7", "1/12"],
       Correct: [0],
-      Verse: "",
-      List: "",
+      Verse:
+        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question: "6/8 × 5/7 × 7/2 = ?",
+      Img: "",
+      Responses: ["15/7", "8/15", "15/8", "8/14", "5/12"],
+      Correct: [2],
+      Verse:
+        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+    },
+    {
+      Question: "5/6 – 1/3 + 1/4 = ?",
+      Img: "",
+      Responses: ["3/4", "1/2", "3/5", "3/7", "1/12"],
+      Correct: [0],
+      Verse:
+        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
     {
       Question:
-        "The price of a laptop dropped from $1,250 to $1,000. What was the percentage decrease?",
+        "A company's subscribers increased by 1/5 this year = $60,000 growth. If this year's subs = 1,250,000, what was last year’s revenue/subscribers/income?",
       Img: "",
-      Responses: ["20%", "25%", "30%", "22.5%", "18%"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A pair of shoes cost $120 after a 25% discount. What was the original price?",
-      Img: "",
-      Responses: ["$160", "$150", "$130", "$145", "$140"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "Find 40% of 30% of 1,000.",
-      Img: "",
-      Responses: ["120", "150", "90", "70", "700"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "Find 200% of 50% of 10% of 100.",
-      Img: "",
-      Responses: ["10", "50", "15", "20", "100"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "Find 10% of 20% of 30% of 500.",
-      Img: "",
-      Responses: ["3", "20", "10", "50", "8"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A store bought a product for $60 and sold it for $75. What is the percentage profit?",
-      Img: "",
-      Responses: ["25%", "30%", "60%", "80%", "95%"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 75% of 4/5?",
-      Img: "",
-      Responses: ["3/5", "2/5", "3/2", "2/5", "1/3"],
-      Correct: [0],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question: "What is 7/25 expressed as a percentage?",
-      Img: "",
-      Responses: ["28%", "25%", "7%", "33%", "48%"],
-      Correct: [0],
-      Verse: "",
-      List: "",
+      Responses: [
+        "$260,000 revenue, 1M subscribers, 28cents income per subscriber",
+        "$280,000 revenue, 1M subscribers, 26cents income per subscriber",
+        "$250,000 revenue, 1M subscribers, 28cents income per subscriber",
+        "$240,000 revenue, 1M subscribers, 26cents income per subscriber",
+        "$240,000 revenue, 1M subscribers, 24cents income per subscriber",
+      ],
+      Correct: [4],
+      Verse:
+        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
+      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
     },
   ];
 
