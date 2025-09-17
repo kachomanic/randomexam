@@ -249,7 +249,7 @@ function App() {
           <div className="flex gap-4 justify-center">
             <button
               type="button"
-              className={`p-2 w-40 mb-5 my-3 rounded-lg ${
+              className={`p-2 w-60 mb-5 my-3 rounded-lg ${
                 currentPos > 0
                   ? "bg-gray-400 hover:bg-gray-500 text-white"
                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -261,7 +261,7 @@ function App() {
             </button>
             <button
               type="button"
-              className="bg-blue-400 hover:bg-blue-500 p-2 w-40 mb-5 my-3 rounded-lg"
+              className="bg-blue-400 hover:bg-blue-500 p-2 w-60 mb-5 my-3 rounded-lg"
               onClick={() => nextPosition()}
             >
               <span className="text-white font-bold text-xl">
@@ -292,17 +292,20 @@ function App() {
                   buttonClass += "bg-gray-200 text-gray-800 border-gray-300"; // Unanswered
                 }
               } else {
-                // During exam, show all questions as neutral (no status indication)
+                // During exam, show all questions as neutral and non-interactive
                 buttonClass +=
-                  "bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300"; // Neutral
+                  "bg-gray-200 text-gray-800 border-gray-300 cursor-default"; // Neutral and non-clickable
               }
 
               return (
                 <button
                   key={index}
                   className={buttonClass}
-                  onClick={() => jumpToQuestion(index)}
-                  disabled={currentPos === -1} // Disable navigation when exam is finished
+                  onClick={
+                    currentPos === -1 ? () => jumpToQuestion(index) : undefined
+                  }
+                  disabled={currentPos >= 0} // Disable navigation during exam, only allow after completion
+                  style={currentPos >= 0 ? { cursor: "default" } : {}}
                 >
                   {index + 1}
                 </button>
