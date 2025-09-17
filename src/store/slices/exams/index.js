@@ -47,7 +47,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -57,7 +57,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -67,7 +67,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -77,7 +77,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -87,7 +87,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -103,7 +103,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -113,7 +113,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -129,7 +129,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -139,7 +139,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -149,7 +149,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -165,7 +165,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -174,7 +174,7 @@ export const fetchAllExams = () => (dispatch) => {
       Responses: ["3/10", "10/11", "11/12", "4/9", "7/10"],
       Correct: [0],
       Verse: "",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -184,7 +184,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -200,7 +200,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -216,7 +216,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -232,7 +232,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -242,7 +242,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -258,7 +258,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -268,7 +268,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -278,7 +278,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -294,7 +294,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -310,7 +310,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -326,7 +326,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -336,7 +336,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -346,7 +346,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question: "5/6 – 1/3 = ?",
@@ -355,7 +355,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question: "3/8 × 4/7 = ?",
@@ -364,7 +364,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -374,7 +374,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -384,7 +384,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question: "6/8 × 5/7 × 7/2 = ?",
@@ -393,7 +393,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question: "5/6 – 1/3 + 1/4 = ?",
@@ -402,7 +402,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -418,7 +418,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
   ];
 

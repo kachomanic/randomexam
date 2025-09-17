@@ -41,14 +41,9 @@ function App() {
 
   const nextPosition = () => {
     setWarning(false);
-    var ele = document.getElementsByName(currentPos);
-    let res = false;
-    for (var i = 0; i < ele.length; i++) {
-      if (ele[i].checked === true) {
-        res = true;
-      }
-    }
-    if (res === false) {
+
+    // Check if an answer is selected
+    if (selectedResp === undefined) {
       setWarning(true);
       return;
     }
@@ -58,26 +53,32 @@ function App() {
     newUserAnswers[currentPos] = selectedResp;
     setUserAnswers(newUserAnswers);
 
-    // Determine if answer is correct
-    const isCorrect = exams[currentPos].Correct.includes(
-      parseInt(selectedResp)
-    );
-    const newQuestionStatus = { ...questionStatus };
-    newQuestionStatus[currentPos] = isCorrect ? "correct" : "incorrect";
-    setQuestionStatus(newQuestionStatus);
+    // Determine if answer is correct (only if this is the first time answering)
+    if (questionStatus[currentPos] === undefined) {
+      const isCorrect = exams[currentPos].Correct.includes(
+        parseInt(selectedResp)
+      );
+      const newQuestionStatus = { ...questionStatus };
+      newQuestionStatus[currentPos] = isCorrect ? "correct" : "incorrect";
+      setQuestionStatus(newQuestionStatus);
 
-    if (!isCorrect) {
-      setErrors(errors + 1);
+      if (!isCorrect) {
+        setErrors(errors + 1);
+      }
     }
 
+    // Clear radio buttons before moving
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+      radio.checked = false;
+    });
+    setSelectedResp(undefined);
+
+    // Move to next question or end exam
     if (currentPos < exams.length - 1) {
       setCurrentPos(currentPos + 1);
     } else {
       setCurrentPos(-1);
     }
-
-    for (var j = 0; j < ele.length; j++) ele[j].checked = false;
-    setSelectedResp(undefined);
   };
 
   const jumpToQuestion = (questionIndex) => {
@@ -88,10 +89,9 @@ function App() {
       setUserAnswers(newUserAnswers);
     }
 
-    setCurrentPos(questionIndex);
     setWarning(false);
 
-    // Clear all radio selections
+    // Clear all radio selections first
     document.querySelectorAll('input[type="radio"]').forEach((radio) => {
       radio.checked = false;
     });
@@ -99,16 +99,12 @@ function App() {
     // Set the selected response if user has already answered this question
     if (userAnswers[questionIndex] !== undefined) {
       setSelectedResp(userAnswers[questionIndex]);
-      // Set the radio button to checked after a small delay to ensure DOM is updated
-      setTimeout(() => {
-        var newEle = document.getElementsByName(questionIndex);
-        if (newEle[userAnswers[questionIndex]]) {
-          newEle[userAnswers[questionIndex]].checked = true;
-        }
-      }, 50);
     } else {
       setSelectedResp(undefined);
     }
+
+    // Set current position after state updates
+    setCurrentPos(questionIndex);
   };
 
   const previousQuestion = () => {
@@ -120,12 +116,19 @@ function App() {
   // Effect to restore radio button selection when currentPos changes
   useEffect(() => {
     if (currentPos >= 0 && userAnswers[currentPos] !== undefined) {
-      setTimeout(() => {
+      // Use a longer timeout to ensure DOM is fully updated
+      const timeoutId = setTimeout(() => {
         var ele = document.getElementsByName(currentPos);
         if (ele[userAnswers[currentPos]]) {
           ele[userAnswers[currentPos]].checked = true;
+          setSelectedResp(userAnswers[currentPos]);
         }
-      }, 50);
+      }, 100);
+
+      return () => clearTimeout(timeoutId);
+    } else if (currentPos >= 0) {
+      // Make sure selectedResp is cleared for unanswered questions
+      setSelectedResp(undefined);
     }
   }, [currentPos, userAnswers]);
 
@@ -238,9 +241,6 @@ function App() {
           <p className="text-lg mb-4">
             Total time: {Math.trunc(seconds / 60)} minutes and {seconds % 60}{" "}
             seconds
-          </p>
-          <p className="text-sm text-gray-600">
-            Review your answers using the question grid above
           </p>
         </div>
       )}
@@ -359,14 +359,7 @@ function App() {
             {(seconds % 60).toString().padStart(2, "0")}
           </div>
         </div>
-        {currentPos >= 0 && (
-          <div className="mt-2 text-center">
-            <div className="text-xs text-gray-500">
-              You can navigate between questions using the Previous/Next buttons
-              or the question grid
-            </div>
-          </div>
-        )}
+        {currentPos >= 0 && <div className="mt-2 text-center"></div>}
       </div>
     </div>
   );
