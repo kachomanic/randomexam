@@ -282,7 +282,7 @@ export const fetchAllExams = () => (dispatch) => {
         "A store is having a clearance sale. A jacket priced at $80 is marked down 30%, then another 20%. What is the final price?",
       Img: "",
       Responses: ["$44.80", "$40.00", "$48.00", "$52.80", "$42.88"],
-      Correct: [4],
+      Correct: [0],
       Verse: "",
       List: "",
     },
