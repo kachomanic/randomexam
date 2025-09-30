@@ -275,8 +275,9 @@ function App() {
       {/* Question Navigation Grid */}
       {exams.length > 0 && (
         <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-          <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-4">
-            {exams.map((_, index) => {
+          {/* First row - 12 questions */}
+          <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-2">
+            {exams.slice(0, 12).map((_, index) => {
               let buttonClass = "w-10 h-10 rounded border-2 font-bold text-sm ";
 
               // Determine button color based on status
@@ -312,6 +313,54 @@ function App() {
               );
             })}
           </div>
+
+          {/* Second row - 13 questions */}
+          {exams.length > 12 && (
+            <div
+              className="grid grid-cols-6 sm:grid-cols-13 gap-2 mb-4"
+              style={{ gridTemplateColumns: "repeat(13, minmax(0, 1fr))" }}
+            >
+              {exams.slice(12, 25).map((_, idx) => {
+                const index = idx + 12; // Adjust index for second row
+                let buttonClass =
+                  "w-10 h-10 rounded border-2 font-bold text-sm ";
+
+                // Determine button color based on status
+                if (currentPos === index) {
+                  buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question
+                } else if (currentPos === -1) {
+                  // Show results only when exam is finished (currentPos === -1)
+                  if (questionStatus[index] === "correct") {
+                    buttonClass += "bg-green-500 text-white border-green-600"; // Correct answer
+                  } else if (questionStatus[index] === "incorrect") {
+                    buttonClass += "bg-red-500 text-white border-red-600"; // Incorrect answer
+                  } else {
+                    buttonClass += "bg-gray-200 text-gray-800 border-gray-300"; // Unanswered
+                  }
+                } else {
+                  // During exam, show all questions as neutral and non-interactive
+                  buttonClass +=
+                    "bg-gray-200 text-gray-800 border-gray-300 cursor-default"; // Neutral and non-clickable
+                }
+
+                return (
+                  <button
+                    key={index}
+                    className={buttonClass}
+                    onClick={
+                      currentPos === -1
+                        ? () => jumpToQuestion(index)
+                        : undefined
+                    }
+                    disabled={currentPos >= 0} // Disable navigation during exam, only allow after completion
+                    style={currentPos >= 0 ? { cursor: "default" } : {}}
+                  >
+                    {index + 1}
+                  </button>
+                );
+              })}
+            </div>
+          )}
 
           {/* Legend */}
           <div className="flex flex-wrap gap-4 text-sm">
