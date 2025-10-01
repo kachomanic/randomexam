@@ -31,16 +31,15 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = [
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
-      ].sort(() => Math.random() - 0.5);
+      getRandomNumber.remaining = Array.from(Array(25).keys()).sort(
+        () => Math.random() - 0.5
+      );
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 33; i++) {
+  for (let i = 0; i < 25; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -62,7 +61,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question: "¿Cuál es la solución del siguiente sistema de 2 ecuaciones?",
@@ -77,7 +76,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -87,7 +86,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -97,7 +96,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question: "Resuelva la siguiente desigualdad:",
@@ -112,7 +111,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -122,7 +121,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -132,7 +131,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -147,7 +146,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=bN2Y14uaZpw&list=PLSPbyO4D6CgHo81gqaZB4dPXEQkCeRpvU",
+      List: "",
     },
     {
       Question:
@@ -163,7 +162,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -173,7 +172,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -183,7 +182,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -193,7 +192,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -203,7 +202,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -213,7 +212,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -223,7 +222,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question: "Encuentre el valor de X:",
@@ -238,7 +237,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question: "¿Cuál es la solución del siguiente sistema?",
@@ -253,7 +252,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
-      List: "https://www.youtube.com/watch?v=v2autI4LAyA&list=PLSPbyO4D6CgEcgelPSqelK6kJmzTC_0fx",
+      List: "",
     },
     {
       Question:
@@ -263,7 +262,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -273,7 +272,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -289,7 +288,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "En el principio era el Verbo, el Verbo estaba con Dios y el Verbo era Dios. Juan 1:1",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -305,7 +304,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "De Jehová es la tierra y su plenitud, el mundo y los que en él habitan, Salmos 24:1",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question: "Resuelva la siguiente desigualdad:",
@@ -314,7 +313,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "El que habita al abrigo del Altísimo morará bajo la sombra del Omnipotente. Salmos 91:1",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -330,7 +329,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "¿No sabéis que los injustos no heredarán el reino de Dios? No os engañéis: ni los fornicarios, ni los idólatras, ni los adúlteros, ni los afeminados, ni los homosexuales,  1 Corintios 6:9",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -346,7 +345,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "El que cree en el Hijo tiene vida eterna; pero el que se niega a creer en el Hijo no verá la vida, sino que la ira de Dios está sobre él. Juan 3:36",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question: "Encuentre el valor de la variable: log<sub>2</sub> x + 3 = 5",
@@ -361,7 +360,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna. 1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -371,7 +370,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "La revelación de Jesucristo, que Dios le dio para manifestar a sus siervos las cosas que deben suceder pronto. La declaró enviándola por medio de su ángel a su siervo Juan, Apocalipsis 1:1",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -381,7 +380,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Recibid mi enseñanza antes que la plata, y ciencia antes que el oro puro; Proverbios 8:10",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -397,7 +396,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -413,7 +412,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -429,7 +428,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -439,7 +438,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -449,7 +448,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -459,7 +458,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
     {
       Question:
@@ -469,15 +468,16 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Pero sabemos que el Hijo de Dios ha venido y nos ha dado entendimiento para conocer al que es verdadero; y estamos en el verdadero, en su Hijo Jesucristo. Éste es el verdadero Dios y la vida eterna.  1 Juan 5:20",
-      List: "https://www.youtube.com/watch?v=UoUajGo734c&list=PLSPbyO4D6CgFj-wENoH8e4kWvBCnlbMWm",
+      List: "",
     },
   ];
 
-  dispatch(
-    setExams(
-      exams.sort(function () {
-        return Math.random() - 0.5;
-      })
-    )
-  );
+  // Shuffle the array and take only 25 random questions
+  const shuffledExams = exams.sort(function () {
+    return Math.random() - 0.5;
+  });
+
+  const selectedExams = shuffledExams.slice(0, 25);
+
+  dispatch(setExams(selectedExams));
 };
