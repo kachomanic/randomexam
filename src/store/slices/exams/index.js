@@ -300,7 +300,7 @@ export const fetchAllExams = () => (dispatch) => {
         "A restaurant bill is $85. With an 18% tip and 8.25% tax, what is the total amount?",
       Img: "",
       Responses: ["$107.31", "$115.82", "$117.01", "$120.53", "$105.42"],
-      Correct: [1],
+      Correct: [0],
       Verse: "",
       List: "",
     },
