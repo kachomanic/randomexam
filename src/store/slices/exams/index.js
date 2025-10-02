@@ -80,16 +80,6 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Basados en las siguientes operaciones cuanto es el valor de a + b + c",
-      Img: novenoq3,
-      Responses: ["300", "377", "277", "200", "400", "Ninguna es correcta"],
-      Correct: [2],
-      Verse:
-        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "",
-    },
-    {
-      Question:
         "Encuentre el 6mo término en la sucesión geométrica siguiente: 3, 9, 27, 81…",
       Img: "",
       Responses: ["740", "201", "629", "729", "829"],
@@ -206,16 +196,6 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Basados en las siguientes operaciones cuanto es el valor de a + b + c",
-      Img: novenoq14,
-      Responses: ["-160 8/3", "123 7/8", "-124 1/8", "-123 7/8"],
-      Correct: [3],
-      Verse:
-        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "",
-    },
-    {
-      Question:
         "Si un prisma rectangular de lado 5cm, 12cm y volumen 180.6cm3; ¿cuánto es la medida del otro lado en mm? ",
       Img: "",
       Responses: ["600mm", "501mm", "401mm", "601mm", "60mm"],
@@ -262,16 +242,6 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "",
-    },
-    {
-      Question:
-        "En el siguiente triángulo rectángulo a = 15cm, ángulo A = 35 grados; encuentre los lados c y b.",
-      Img: novenoq19,
-      Responses: ["32.5", "50", "42.5", "42"],
-      Correct: [2],
-      Verse:
-        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
       List: "",
     },
     {
