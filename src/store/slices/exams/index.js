@@ -24,16 +24,15 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = [
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22,
-      ].sort(() => Math.random() - 0.5);
+      getRandomNumber.remaining = Array.from(Array(20).keys()).sort(
+        () => Math.random() - 0.5
+      );
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; i < 20; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -259,11 +258,12 @@ export const fetchAllExams = () => (dispatch) => {
     },
   ];
 
-  dispatch(
-    setExams(
-      exams.sort(function () {
-        return Math.random() - 0.5;
-      })
-    )
-  );
+  // Shuffle the array and take only 25 random questions
+  const shuffledExams = exams.sort(function () {
+    return Math.random() - 0.5;
+  });
+
+  const selectedExams = shuffledExams.slice(0, 20);
+
+  dispatch(setExams(selectedExams));
 };
