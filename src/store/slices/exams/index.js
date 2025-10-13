@@ -23,16 +23,15 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = [
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24,
-      ].sort(() => Math.random() - 0.5);
+      getRandomNumber.remaining = Array.from(Array(25).keys()).sort(
+        () => Math.random() - 0.5
+      );
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 25; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -46,6 +45,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["15", "12", "20", "14", "21", "28"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -53,18 +54,24 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["12 ft²", "8 ft²", "24 ft²", "4 ft²", "2 ft²", "6 ft²"],
       Correct: [4],
+      Verse: "",
+      List: "",
     },
     {
       Question: "What is the perimeter of a square that has a side of 10m?",
       Img: "",
       Responses: ["10", "16", "30", "40", "28", "14"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "What is 100% of 10?",
       Img: "",
       Responses: ["10", "1", "1000", "100", "5", "20"],
       Correct: [0],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -79,6 +86,8 @@ export const fetchAllExams = () => (dispatch) => {
         "12.17 m²",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -86,18 +95,24 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["100 ft", "80 ft²", "60 ft²", "110 ft²", "70 ft²", "80 ft²"],
       Correct: [5],
+      Verse: "",
+      List: "",
     },
     {
       Question: "What is the perimeter of a square that has a side of 13mm?",
       Img: "",
       Responses: ["60", "75", "40", "50", "52", "75"],
       Correct: [4],
+      Verse: "",
+      List: "",
     },
     {
       Question: "What is 50% of 50? ",
       Img: "",
       Responses: ["25", "12.5", "500", "250", "5", "50"],
       Correct: [0],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -105,6 +120,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["102 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -112,6 +129,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["102 ft", "96 ft", "144 ft²", "136 ft²", "24 ft²", "21 ft²"],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -125,6 +144,8 @@ export const fetchAllExams = () => (dispatch) => {
         "There is no difference between them",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Convert the following measure: 0.0015 km to mm",
@@ -138,6 +159,8 @@ export const fetchAllExams = () => (dispatch) => {
         "15000 mm",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -145,6 +168,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["10 km²", "16 km²", "14 km²", "12 km²", "6 km²"],
       Correct: [4],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -159,6 +184,8 @@ export const fetchAllExams = () => (dispatch) => {
         "2771.2 yd",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Find the area of a circle with diameter = 8 in",
@@ -172,6 +199,8 @@ export const fetchAllExams = () => (dispatch) => {
         "184.25 ft",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -179,6 +208,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["1800 in²", "1400 in²", "100 in²", "1200 in²", "4800 in²"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Which of the following is equal to -6?",
@@ -192,12 +223,16 @@ export const fetchAllExams = () => (dispatch) => {
         "None is equal to -6",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Find the answer: 8 + 7 * 12 - 40 =",
       Img: "",
       Responses: ["55", "52", "-44", "60", "-50", "-15"],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -212,12 +247,16 @@ export const fetchAllExams = () => (dispatch) => {
         "Exponent",
       ],
       Correct: [5],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Find the answer: - 12 + 9 * 3 - 15 + 3 * (5) =",
       Img: "",
       Responses: ["14", "20", "16", "15", "10", "18"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -232,6 +271,8 @@ export const fetchAllExams = () => (dispatch) => {
         "18 quarters",
       ],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -246,32 +287,41 @@ export const fetchAllExams = () => (dispatch) => {
         "110 dimes",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Find the value of K if 10K = 440",
       Img: "",
       Responses: ["54", "10", "32", "44", "25", "300"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Find the value of X if -4X = 52",
       Img: "",
       Responses: ["-6", "-10", "12", "-13", "-16", "-4"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Multiply the following numbers: 0.25 x 0.5 = ",
       Img: "",
       Responses: ["0.025", "1.5", "12", "0.125", "0.14", "0.1025"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
   ];
 
-  dispatch(
-    setExams(
-      exams.sort(function () {
-        return Math.random() - 0.5;
-      })
-    )
-  );
+  // Shuffle the array and take only 25 random questions
+  const shuffledExams = exams.sort(function () {
+    return Math.random() - 0.5;
+  });
+
+  const selectedExams = shuffledExams.slice(0, 25);
+
+  dispatch(setExams(selectedExams));
 };
