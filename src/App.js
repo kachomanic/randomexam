@@ -307,9 +307,9 @@ function App() {
       {/* Question Navigation Grid */}
       {exams.length > 0 && (
         <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-          {/* First row - 12 questions */}
-          <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-2">
-            {exams.slice(0, 12).map((_, index) => {
+          {/* First row - 10 questions */}
+          <div className="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-2">
+            {exams.slice(0, 10).map((_, index) => {
               let buttonClass = "w-10 h-10 rounded border-2 font-bold text-sm ";
               const isIncorrect = questionStatus[index] === "incorrect";
               const isClickable =
@@ -353,14 +353,63 @@ function App() {
             })}
           </div>
 
-          {/* Second row - 13 questions */}
-          {exams.length > 12 && (
-            <div
-              className="grid grid-cols-6 sm:grid-cols-13 gap-2 mb-4"
-              style={{ gridTemplateColumns: "repeat(13, minmax(0, 1fr))" }}
-            >
-              {exams.slice(12, 25).map((_, idx) => {
-                const index = idx + 12; // Adjust index for second row
+          {/* Second row - 10 questions */}
+          {exams.length > 10 && (
+            <div className="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-4">
+              {exams.slice(10, 20).map((_, idx) => {
+                const index = idx + 10; // Adjust index for second row
+                let buttonClass =
+                  "w-10 h-10 rounded border-2 font-bold text-sm ";
+                const isIncorrect = questionStatus[index] === "incorrect";
+                const isClickable =
+                  (currentPos === -1 || isReviewMode) && isIncorrect;
+                const showResults = currentPos === -1 || isReviewMode;
+
+                // Determine button color based on status
+                if (currentPos === index && isReviewMode) {
+                  buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question being reviewed
+                } else if (showResults) {
+                  // Show results when exam is finished or in review mode
+                  if (questionStatus[index] === "correct") {
+                    buttonClass += "bg-green-500 text-white border-green-600"; // Correct answer
+                  } else if (isIncorrect) {
+                    buttonClass +=
+                      "bg-red-500 text-white border-red-600 hover:bg-red-600 hover:border-red-700 cursor-pointer transition-all duration-200 hover:scale-110"; // Incorrect answer - clickable
+                  } else {
+                    buttonClass +=
+                      "bg-gray-200 text-gray-800 border-gray-300 cursor-default"; // Unanswered
+                  }
+                } else if (currentPos === index) {
+                  buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question during exam
+                } else {
+                  // During exam, show all questions as neutral and non-interactive
+                  buttonClass +=
+                    "bg-gray-200 text-gray-800 border-gray-300 cursor-default"; // Neutral and non-clickable
+                }
+
+                return (
+                  <button
+                    key={index}
+                    className={buttonClass}
+                    onClick={
+                      isClickable
+                        ? () => jumpToQuestion(index, true)
+                        : undefined
+                    }
+                    disabled={!isClickable} // Only enable incorrect answers after exam completion
+                  >
+                    {index + 1}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Third row - 10 questions */}
+          {exams.length > 20 && (
+            <div className="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-4">
+              {exams.slice(20, 30).map((_, idx) => {
+                const index = idx + 20; // Adjust index for third row
                 let buttonClass =
                   "w-10 h-10 rounded border-2 font-bold text-sm ";
                 const isIncorrect = questionStatus[index] === "incorrect";
