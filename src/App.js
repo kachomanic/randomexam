@@ -15,6 +15,7 @@ function App() {
   const [warning, setWarning] = useState(false);
   const [userAnswers, setUserAnswers] = useState({}); // Track answers for each question
   const [questionStatus, setQuestionStatus] = useState({}); // Track status: 'correct', 'incorrect', 'unanswered'
+  const [isReviewMode, setIsReviewMode] = useState(false); // Track if reviewing incorrect answers
   let actualPosition = parseInt(
     JSON.parse(localStorage.getItem("actualPosition"))
   );
@@ -81,7 +82,7 @@ function App() {
     }
   };
 
-  const jumpToQuestion = (questionIndex) => {
+  const jumpToQuestion = (questionIndex, fromResults = false) => {
     // First, save current answer if one is selected
     if (selectedResp !== undefined && currentPos >= 0) {
       const newUserAnswers = { ...userAnswers };
@@ -103,8 +104,23 @@ function App() {
       setSelectedResp(undefined);
     }
 
+    // Set review mode if jumping from results
+    if (fromResults) {
+      setIsReviewMode(true);
+    }
+
     // Set current position after state updates
     setCurrentPos(questionIndex);
+  };
+
+  const returnToResults = () => {
+    setIsReviewMode(false);
+    setCurrentPos(-1);
+    setSelectedResp(undefined);
+    // Clear all radio selections
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+      radio.checked = false;
+    });
   };
 
   const previousQuestion = () => {
@@ -246,29 +262,45 @@ function App() {
       )}
       {currentPos >= 0 && (
         <Fragment>
-          <div className="flex gap-4 justify-center">
-            <button
-              type="button"
-              className={`p-2 w-60 mb-5 my-3 rounded-lg ${
-                currentPos > 0
-                  ? "bg-gray-400 hover:bg-gray-500 text-white"
-                  : "bg-gray-200 text-gray-400 cursor-not-allowed"
-              }`}
-              onClick={previousQuestion}
-              disabled={currentPos === 0}
-            >
-              <span className="font-bold text-xl">Previous Question</span>
-            </button>
-            <button
-              type="button"
-              className="bg-blue-400 hover:bg-blue-500 p-2 w-60 mb-5 my-3 rounded-lg"
-              onClick={() => nextPosition()}
-            >
-              <span className="text-white font-bold text-xl">
-                Next Question
-              </span>
-            </button>
-          </div>
+          {isReviewMode ? (
+            // Show Return to Results button when in review mode
+            <div className="flex gap-4 justify-center">
+              <button
+                type="button"
+                className="bg-purple-500 hover:bg-purple-600 p-2 w-60 mb-5 my-3 rounded-lg"
+                onClick={returnToResults}
+              >
+                <span className="text-white font-bold text-xl">
+                  Return to Results
+                </span>
+              </button>
+            </div>
+          ) : (
+            // Show Previous/Next buttons during exam
+            <div className="flex gap-4 justify-center">
+              <button
+                type="button"
+                className={`p-2 w-60 mb-5 my-3 rounded-lg ${
+                  currentPos > 0
+                    ? "bg-gray-400 hover:bg-gray-500 text-white"
+                    : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                }`}
+                onClick={previousQuestion}
+                disabled={currentPos === 0}
+              >
+                <span className="font-bold text-xl">Previous Question</span>
+              </button>
+              <button
+                type="button"
+                className="bg-blue-400 hover:bg-blue-500 p-2 w-60 mb-5 my-3 rounded-lg"
+                onClick={() => nextPosition()}
+              >
+                <span className="text-white font-bold text-xl">
+                  Next Question
+                </span>
+              </button>
+            </div>
+          )}
         </Fragment>
       )}
 
@@ -279,19 +311,27 @@ function App() {
           <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-2">
             {exams.slice(0, 12).map((_, index) => {
               let buttonClass = "w-10 h-10 rounded border-2 font-bold text-sm ";
+              const isIncorrect = questionStatus[index] === "incorrect";
+              const isClickable =
+                (currentPos === -1 || isReviewMode) && isIncorrect;
+              const showResults = currentPos === -1 || isReviewMode;
 
               // Determine button color based on status
-              if (currentPos === index) {
-                buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question
-              } else if (currentPos === -1) {
-                // Show results only when exam is finished (currentPos === -1)
+              if (currentPos === index && isReviewMode) {
+                buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question being reviewed
+              } else if (showResults) {
+                // Show results when exam is finished or in review mode
                 if (questionStatus[index] === "correct") {
                   buttonClass += "bg-green-500 text-white border-green-600"; // Correct answer
-                } else if (questionStatus[index] === "incorrect") {
-                  buttonClass += "bg-red-500 text-white border-red-600"; // Incorrect answer
+                } else if (isIncorrect) {
+                  buttonClass +=
+                    "bg-red-500 text-white border-red-600 hover:bg-red-600 hover:border-red-700 cursor-pointer transition-all duration-200 hover:scale-110"; // Incorrect answer - clickable
                 } else {
-                  buttonClass += "bg-gray-200 text-gray-800 border-gray-300"; // Unanswered
+                  buttonClass +=
+                    "bg-gray-200 text-gray-800 border-gray-300 cursor-default"; // Unanswered
                 }
+              } else if (currentPos === index) {
+                buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question during exam
               } else {
                 // During exam, show all questions as neutral and non-interactive
                 buttonClass +=
@@ -303,10 +343,9 @@ function App() {
                   key={index}
                   className={buttonClass}
                   onClick={
-                    currentPos === -1 ? () => jumpToQuestion(index) : undefined
+                    isClickable ? () => jumpToQuestion(index, true) : undefined
                   }
-                  disabled={currentPos >= 0} // Disable navigation during exam, only allow after completion
-                  style={currentPos >= 0 ? { cursor: "default" } : {}}
+                  disabled={!isClickable} // Only enable incorrect answers after exam completion
                 >
                   {index + 1}
                 </button>
@@ -324,19 +363,27 @@ function App() {
                 const index = idx + 12; // Adjust index for second row
                 let buttonClass =
                   "w-10 h-10 rounded border-2 font-bold text-sm ";
+                const isIncorrect = questionStatus[index] === "incorrect";
+                const isClickable =
+                  (currentPos === -1 || isReviewMode) && isIncorrect;
+                const showResults = currentPos === -1 || isReviewMode;
 
                 // Determine button color based on status
-                if (currentPos === index) {
-                  buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question
-                } else if (currentPos === -1) {
-                  // Show results only when exam is finished (currentPos === -1)
+                if (currentPos === index && isReviewMode) {
+                  buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question being reviewed
+                } else if (showResults) {
+                  // Show results when exam is finished or in review mode
                   if (questionStatus[index] === "correct") {
                     buttonClass += "bg-green-500 text-white border-green-600"; // Correct answer
-                  } else if (questionStatus[index] === "incorrect") {
-                    buttonClass += "bg-red-500 text-white border-red-600"; // Incorrect answer
+                  } else if (isIncorrect) {
+                    buttonClass +=
+                      "bg-red-500 text-white border-red-600 hover:bg-red-600 hover:border-red-700 cursor-pointer transition-all duration-200 hover:scale-110"; // Incorrect answer - clickable
                   } else {
-                    buttonClass += "bg-gray-200 text-gray-800 border-gray-300"; // Unanswered
+                    buttonClass +=
+                      "bg-gray-200 text-gray-800 border-gray-300 cursor-default"; // Unanswered
                   }
+                } else if (currentPos === index) {
+                  buttonClass += "bg-blue-500 text-white border-blue-600"; // Current question during exam
                 } else {
                   // During exam, show all questions as neutral and non-interactive
                   buttonClass +=
@@ -348,12 +395,11 @@ function App() {
                     key={index}
                     className={buttonClass}
                     onClick={
-                      currentPos === -1
-                        ? () => jumpToQuestion(index)
+                      isClickable
+                        ? () => jumpToQuestion(index, true)
                         : undefined
                     }
-                    disabled={currentPos >= 0} // Disable navigation during exam, only allow after completion
-                    style={currentPos >= 0 ? { cursor: "default" } : {}}
+                    disabled={!isClickable} // Only enable incorrect answers after exam completion
                   >
                     {index + 1}
                   </button>
@@ -368,8 +414,8 @@ function App() {
               <div className="w-4 h-4 bg-blue-500 rounded"></div>
               <span>Current</span>
             </div>
-            {currentPos === -1 ? (
-              // Show results legend only when exam is finished
+            {currentPos === -1 || isReviewMode ? (
+              // Show results legend when exam is finished or in review mode
               <>
                 <div className="flex items-center gap-1">
                   <div className="w-4 h-4 bg-green-500 rounded"></div>
@@ -377,7 +423,7 @@ function App() {
                 </div>
                 <div className="flex items-center gap-1">
                   <div className="w-4 h-4 bg-red-500 rounded"></div>
-                  <span>Incorrect</span>
+                  <span>Incorrect (Click to review)</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <div className="w-4 h-4 bg-gray-200 border border-gray-300 rounded"></div>
