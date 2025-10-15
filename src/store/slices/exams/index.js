@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import recta from "../../../assets/imgs/exam1-recta.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -24,16 +23,15 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = [
-        0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-      ].sort(() => Math.random() - 0.5);
+      getRandomNumber.remaining = Array.from(Array(20).keys()).sort(
+        () => Math.random() - 0.5
+      );
     }
     return getRandomNumber.remaining.pop();
   }
   getRandomNumber.remaining = [];
   let orderArray = [];
-  for (let i = 0; i < 29; i++) {
+  for (let i = 0; i < 20; i++) {
     orderArray.push(parseInt(getRandomNumber()));
   }
   dispatch(setOrderArray(orderArray));
@@ -54,7 +52,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -64,7 +62,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Sume las siguientes cantidades 295 y 354",
@@ -73,7 +71,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -83,7 +81,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -93,7 +91,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Resuelva el siguiente ejercicio. 3*(1.5-0.8)=",
@@ -102,7 +100,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Realice la siguiente conversión.  3 años =   _______ meses",
@@ -111,7 +109,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Reste las siguientes cantidades decimales: 274.383 – 160.291",
@@ -120,7 +118,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "A cuántos milímetros equivalen? 3.7 metros:",
@@ -129,7 +127,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -139,7 +137,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Salmos 119:9 ¿Con qué limpiará el joven su camino? Con guardar tu palabra.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "¿Cuantas aristas y cuantas caras tiene un circulo?",
@@ -153,7 +151,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Multiplique los siguientes números: 237*1000",
@@ -162,7 +160,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -172,7 +170,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -182,7 +180,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Descomponga la siguiente cantidad: 45,494",
@@ -197,7 +195,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Seleccione la respuesta correcta: 2345 – 542 ",
@@ -206,7 +204,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -216,7 +214,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -226,7 +224,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Salmos 91:1 El que habita al abrigo del Altísimo Morará bajo la sombra del Omnipotente.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Multiplique los siguientes números: 220*16",
@@ -235,7 +233,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [4],
       Verse:
         "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Multiplique los siguientes números 1,600 por 1,000",
@@ -250,7 +248,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "¿Cuál de los siguientes números es un numero decimal? ",
@@ -259,7 +257,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Reste las siguientes cantidades decimales: 64.321 – 16.254",
@@ -268,7 +266,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "¿A cuántos centímetros equivalen? 2.5 metros?",
@@ -277,7 +275,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -287,7 +285,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "¿Cuantas aristas y cuantas caras tiene una caja de zapato? ",
@@ -301,7 +299,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [0],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "¿Qué son las rectas paralelas? ",
@@ -314,7 +312,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [2],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Resuelva el siguiente ejercicio. 2*(1.8+3.2)=",
@@ -323,7 +321,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -333,7 +331,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [1],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question: "Realice la siguiente conversión.  2 años =   _______ días",
@@ -342,7 +340,7 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
     {
       Question:
@@ -352,15 +350,16 @@ export const fetchAllExams = () => (dispatch) => {
       Correct: [3],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "https://www.youtube.com/watch?v=325-p2KnI_E&list=PLSPbyO4D6CgFBLtvpQED8JfETlSu0HCv5",
+      List: "",
     },
   ];
 
-  dispatch(
-    setExams(
-      exams.sort(function () {
-        return Math.random() - 0.5;
-      })
-    )
-  );
+  // Shuffle the array and take only 25 random questions
+  const shuffledExams = exams.sort(function () {
+    return Math.random() - 0.5;
+  });
+
+  const selectedExams = shuffledExams.slice(0, 20);
+
+  dispatch(setExams(selectedExams));
 };
