@@ -73,8 +73,8 @@ export const fetchAllExams = () => (dispatch) => {
       Question:
         "The classroom has 30 students, and 2/5 of them are girls. How many boys are there in the class?",
       Img: "",
-      Responses: ["10 boys", "16 boys", "14 boys", "12 boys", "18 boys"],
-      Correct: [4],
+      Responses: ["10 boys", "16 boys", "14 boys", "18 boys", "12 boys"],
+      Correct: [3],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
       List: "",
@@ -320,10 +320,10 @@ export const fetchAllExams = () => (dispatch) => {
         "5/6 liter",
         "5/9 liter",
         "5/7 liter",
-        "4/7 liter",
+        "1/6 liter",
         "3/6 liter",
       ],
-      Correct: [0],
+      Correct: [3],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
       List: "",
