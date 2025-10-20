@@ -167,10 +167,10 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "What is the perimeter of a rectangle with a length almost double the width using only whole numbers?",
+        "What is the perimeter of a rectangle with a length double the width using only whole numbers?",
       Img: "",
       Responses: ["36 meters", "42 meters", "26 meters", "46 meters"],
-      Correct: [3],
+      Correct: [0],
       Verse: "",
       List: "",
     },
@@ -214,7 +214,7 @@ export const fetchAllExams = () => (dispatch) => {
         "Find the area of a triangle with a base of 17 meters and a height of 8 meters.",
       Img: "",
       Responses: ["58 m²", "68 m²", "72 m²", "136 m²"],
-      Correct: [3],
+      Correct: [1],
       Verse: "",
       List: "",
     },
@@ -263,8 +263,8 @@ export const fetchAllExams = () => (dispatch) => {
       Question:
         "A regular pentagon has a perimeter of 35 feet. What is the length of one side in inches?",
       Img: "",
-      Responses: ["74 in", "84 in", "35 in", "48 in"],
-      Correct: [2],
+      Responses: ["7 in", "84 in", "35 in", "48 in"],
+      Correct: [0],
       Verse: "",
       List: "",
     },
@@ -281,8 +281,8 @@ export const fetchAllExams = () => (dispatch) => {
       Question:
         "A local park is designing a circular fountain. If the radius of the fountain is 15 feet, and the cost of decorative stone border is $28 per foot around the circumference, what is the total cost for the border?",
       Img: "",
-      Responses: ["$1,319.47", "$1,256.64", "$1,583.36", "$1,231.50"],
-      Correct: [0],
+      Responses: ["$1,319.47", "$1,256.64", "$2,637.60", "$2,231.50"],
+      Correct: [2],
       Verse: "",
       List: "",
     },
@@ -318,7 +318,7 @@ export const fetchAllExams = () => (dispatch) => {
         "A pizza shop makes a large circular pizza with a diameter of 16 inches. What is the approximate area of the pizza?",
       Img: "",
       Responses: [
-        "201.06 sq in",
+        "200.96 sq in",
         "154.29 sq in",
         "50.27 sq in",
         "100.53 sq in",
@@ -329,18 +329,9 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Sarah is painting a square wall in her room. Each side of the wall is 5 meters long. The paint costs $24 a gallon and she will need 1/2 gallon for every 20 square meters. How much would be the total cost of painting for Sarah?",
+        "A local park is quadrilateral, similar to a rectangle, measuring 50 feet in length in one side and 60 in the opposite side and 30 feet and 18 inches in opossites width. The city is planning to build a fence around the park to keep it secure in all areas except in 10 feet that there is a wall. What is the total length of fencing needed to go around the park? ",
       Img: "",
-      Responses: ["40 m²", "48 m²", "60 m²", "30 m²"],
-      Correct: [2],
-      Verse: "",
-      List: "",
-    },
-    {
-      Question:
-        "A local park is rectangular, measuring 50 feet in length and 30 feet and 6 inches in width. The city is planning to build a fence around the park to keep it secure. What is the total length of fencing needed?",
-      Img: "",
-      Responses: ["140.5 ft", "161 ft", "100 ft", "200 ft 6 in"],
+      Responses: ["170 ft", "148 ft", "158 ft", "200 ft 6 in"],
       Correct: [1],
       Verse: "",
       List: "",
