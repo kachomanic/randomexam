@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import img27 from "../../../assets/imgs/img27.png";
-import img28 from "../../../assets/imgs/img28.png";
+import img27 from "../../../assets/imgs/q27.png";
+import img28 from "../../../assets/imgs/q28.png";
 
 export const examsSlice = createSlice({
   name: "exams",
