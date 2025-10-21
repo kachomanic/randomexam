@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import img27 from "../../../assets/imgs/img27.png";
+import img28 from "../../../assets/imgs/img28.png";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -23,7 +25,7 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = Array.from(Array(32).keys()).sort(
+      getRandomNumber.remaining = Array.from(Array(40).keys()).sort(
         () => Math.random() - 0.5
       );
     }
@@ -40,10 +42,9 @@ export const fetchOrderArray = () => (dispatch) => {
 export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
-      Question:
-        "The recipe is called for 3/4 cup of sugar. If you want to make half the recipe, how much sugar do you need?",
+      Question: "In the following equation -y = -2x - 4 the slope is:",
       Img: "",
-      Responses: ["3/7 cup", "3/8 cup", "5/8 cup", "1/4 cup", "3/6 cup"],
+      Responses: ["Negative", "Positive", "Undefined", "Zero", "None"],
       Correct: [1],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
@@ -51,29 +52,40 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Emily ate 2/5 of a pizza and her brother ate 3/10 of it. What fraction of the pizza did they eat together?",
+        "A Gym charge one time enrolment fee of $50 plus $12 monthly fee after that. What equation best model the information describes?",
       Img: "",
-      Responses: ["7/10", "5/7", "7/5", "5/6", "4/9"],
-      Correct: [0],
-      Verse:
-        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "",
-    },
-    {
-      Question:
-        "John read 7/12 of a book, and after finished 1/3 that was pending. What fraction of the book did he read?",
-      Img: "",
-      Responses: ["10/12", "11/15", "11/12", "7/12", "1/3"],
+      Responses: [
+        "y = 50x",
+        "y = 12x",
+        "y = 12x + 50",
+        "y = 50x + 12",
+        "None is correct",
+      ],
       Correct: [2],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
       List: "",
     },
     {
-      Question:
-        "The classroom has 30 students, and 2/5 of them are girls. How many boys are there in the class?",
+      Question: "Which of the following equation has slope equal to zero?",
       Img: "",
-      Responses: ["10 boys", "16 boys", "14 boys", "18 boys", "12 boys"],
+      Responses: [
+        "y = 2x - 1",
+        "y = 1/2 x+ 0",
+        "y = 2x+ 4",
+        "y = 4",
+        "y = x - 1",
+      ],
+      Correct: [3],
+      Verse:
+        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
+      List: "",
+    },
+    {
+      Question:
+        "What is the inverse reciprocal of the slope passing through the following points (3, 9) and (0, 0).",
+      Img: "",
+      Responses: ["m = -3", "m = 9/3", "m = 3", "m = -1/3", "m = is undefine"],
       Correct: [3],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
@@ -81,24 +93,30 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "A garden has 5/8 planted with vegetables and 3/10 with flowers. What fraction is planted with other than vegetables or flowers?",
+        "A painter charge $50 for 2 hours and $100 for 4 hours of work. What is the equation that best describe the painter hourly rate?",
       Img: "",
-      Responses: ["3/30", "3/20", "2/32", "3/37", "3/40"],
-      Correct: [4],
+      Responses: [
+        "y = 50x + 100",
+        "y = 50x",
+        "y = 25x",
+        "y = 50x + 100 *4",
+        "No Answer is correct",
+      ],
+      Correct: [2],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
       List: "",
     },
     {
       Question:
-        "If a car travels 3/4 of a mile in one minute, how far will it travel in 10 minutes?",
+        "Which of the following equation has y-intercept equal to zero?",
       Img: "",
       Responses: [
-        "10 1/2 miles",
-        "7 1/4 miles",
-        "8 1/2 miles",
-        "9 3/4 miles",
-        "7 1/2 miles",
+        "y + 3 = 1/2 x - 1",
+        "y = x - 1",
+        "y – 1 = 1/2 x + 2",
+        "y = 1/2 x -7",
+        "y -2 = 1/2 x – 2",
       ],
       Correct: [4],
       Verse:
@@ -107,153 +125,144 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "A cake recipe requires 2/3 cup of milk. If you are making 1/3 of the recipe, how much milk do you need?",
+        "How do you model the process of buying a car when you pay a $3,000 down payment and a monthly payment of $350. Which number represent the slope and which the y-intercept?",
       Img: "",
-      Responses: ["10/9 cup", "2/8 cup", "2/7 cup", "2/9 cup", "5/9 cup"],
-      Correct: [3],
+      Responses: [
+        "$3,000 represent the slope but $350 is not needed in this case",
+        "$350 represent the slope and $3,000 the y-intercept.",
+        "$3,000 represent the slope and $350 the y-intercept.",
+        "$350 represent the slope but you cannot find the y intercept",
+        "The slope and Y-intercept is to model linear equations in coordinate plane NOT in finance",
+      ],
+      Correct: [1],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
       List: "",
     },
     {
-      Question:
-        "Sarah used 5/8 of a bottle of glue for a project. If there were originally 2 liters, how much glue did she use?",
+      Question: "Which of the following equation has slope undefine?",
       Img: "",
-      Responses: [
-        "1.25 liters",
-        "1.75 liters",
-        "2.25 liters",
-        "3.75 liters",
-        "4.5 liters",
-      ],
+      Responses: ["5 + x = 5y", "x = 5 + y", "-y = 5", "y = 5", "x = 5"],
+      Correct: [4],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
+      List: "",
+    },
+    {
+      Question: "What is the slope of the following equation ? 4y = 2x - 8",
+      Img: "",
+      Responses: ["m = 1/2", "m = 4", "m = -2", "m = -4", "m = 0"],
       Correct: [0],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
       List: "",
     },
     {
-      Question:
-        "A company's revenue increased by 7/20 this year compared to last year. If last year's was $50,000, what is the increase?",
+      Question: "Solve the equation 3(x−7) = 11 + 2x and find the value of x.",
       Img: "",
-      Responses: ["$17,500", "$17,200", "$19,400", "$16,200", "$30,500"],
+      Responses: ["36", "32", "18", "21", "22"],
+      Correct: [1],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "",
+    },
+    {
+      Question:
+        "What is the y-intercept of the following equation?  -4y = 4x - 4",
+      Img: "",
+      Responses: ["b = 1", "b = -2", "b = 2", "b = -4", "b = undefine"],
       Correct: [0],
       Verse:
-        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "",
-    },
-    {
-      Question:
-        "A farmer harvested 4/7 of his crops, and 3/5 of those were sold. What fraction of total crops were sold?",
-      Img: "",
-      Responses: ["15/35", "10/37", "11/39", "12/35", "7/35"],
-      Correct: [3],
-      Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
       List: "",
     },
     {
       Question:
-        "The recipe uses 3/4 cup of oil and 1/6 cup of vinegar. How much more oil is used than vinegar?",
+        "After finding the value of “X” and “Y” with the following equations",
       Img: "",
-      Responses: [
-        "9/12 cup",
-        "10/12 cup",
-        "11/12 cup",
-        "15/16 cup",
-        "7/12 cup",
-      ],
-      Correct: [4],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "",
-    },
-    {
-      Question:
-        "Michael spent 3/10 on books and 2/5 on food. What fraction of allowance is left?",
-      Img: "",
-      Responses: ["3/10", "10/11", "11/12", "4/9", "7/10"],
+      Responses: ["b = 100", "b = -32", "b = 85", "b = 121", "b = undefine"],
       Correct: [0],
       Verse: "",
       List: "",
     },
     {
       Question:
-        "A pizza is cut into 8 slices. If 3/4 was eaten, how many slices remain?",
-      Img: "",
-      Responses: ["2 slices", "6 slices", "4 slices", "3 slices", "5 slices"],
-      Correct: [0],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "",
-    },
-    {
-      Question:
-        "Linda has 2/5 gallon of paint. She uses 1/3 of it. How much paint does she use?",
-      Img: "",
-      Responses: [
-        "1/3 gallon",
-        "2/13 gallon",
-        "2/18 gallon",
-        "2/3 gallon",
-        "2/15 gallon",
-      ],
-      Correct: [4],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "",
-    },
-    {
-      Question:
-        "A car's fuel tank is 5/8 full. If it holds 16 gallons, how many gallons of fuel are in the tank?",
-      Img: "",
-      Responses: [
-        "10 gallons",
-        "16 gallons",
-        "14 gallons",
-        "12 gallons",
-        "11 gallons",
-      ],
-      Correct: [0],
-      Verse:
-        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "",
-    },
-    {
-      Question:
-        "In a bag of 30 marbles, 2/3 are red. How many red marbles are in the bag?",
-      Img: "",
-      Responses: [
-        "20 marbles",
-        "16 marbles",
-        "14 marbles",
-        "12 marbles",
-        "18 marbles",
-      ],
-      Correct: [0],
-      Verse:
-        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "",
-    },
-    {
-      Question:
-        "A class has 24 students, and 7/12 are boys. How many girls are in the class?",
-      Img: "",
-      Responses: ["12 girls", "16 girls", "14 girls", "10 girls", "18 girls"],
-      Correct: [3],
-      Verse:
-        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
-      List: "",
-    },
-    {
-      Question:
-        "A car traveled 3/5 of 500 miles in the first half of the trip. How far did it travel?",
+        "A car travels at a constant speed and covers 150 miles in 3 hours. How many miles will it cover in 5 hours if in the last 2 hours the driver increase the speed by 20%?",
       Img: "",
       Responses: [
         "200 miles",
-        "250 miles",
+        "270 miles",
         "300 miles",
-        "310 miles",
-        "280 miles",
+        "350 miles",
+        "250 miles",
+      ],
+      Correct: [1],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "",
+    },
+    {
+      Question:
+        "A company charges $25 per hour for consulting services and has a one-time setup fee of $50. If a client is billed $200 for a consultation, how many hours of consulting did the client receive?",
+      Img: "",
+      Responses: ["10 hours", "8 hours", "6 hours", "12 hours", "12 hours"],
+      Correct: [2],
+      Verse:
+        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      List: "",
+    },
+    {
+      Question:
+        "Jane saves $50 each month and starts with an initial savings of $200. How much will her total savings be after 10 months if in month 6 she did not save and in month 8 spend $120?",
+      Img: "",
+      Responses: ["$630", "$720", "$600", "$530", "$235"],
+      Correct: [3],
+      Verse:
+        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      List: "",
+    },
+    {
+      Question:
+        "A phone plan costs $30 per month plus $0.10 per minute on calls and 0.01 per text. If a customer’s bill for one month is $55, how many minutes of calls did he make if also test 120 text messages?",
+      Img: "",
+      Responses: [
+        "120 minutes",
+        "300 minutes",
+        "238 minutes",
+        "355 minutes",
+        "332 minutes",
+      ],
+      Correct: [2],
+      Verse:
+        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      List: "",
+    },
+    {
+      Question:
+        "Given the point (3, −2) and the slope m = 4/5 ​, write the equation of the line in point-slope form.",
+      Img: "",
+      Responses: [
+        "y + 2 = -4/5(x−3)",
+        "𝑦 + 2 = 4/5​(𝑥−3)",
+        "y - 2 = -2(x+3)",
+        "y + 2 = -4/5 (x+3)",
+        "y - 2 = 4/5(x+3)",
+      ],
+      Correct: [1],
+      Verse:
+        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      List: "",
+    },
+    {
+      Question:
+        "What is the slope of the line parallel to the following function? y = -2 x - 4",
+      Img: "",
+      Responses: [
+        "Answer: 1/2",
+        "Answer: 2",
+        "Answer: -2",
+        "Answer: 1/4",
+        "Answer: -4",
       ],
       Correct: [2],
       Verse:
@@ -262,66 +271,94 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "A recipe requires 3/4 cup sugar, and you have 5/6 cup. How much more do you need?",
+        "A farmer has chickens and cows. The total number of animals is 42. If there are 2 times as many chickens as cows, how many of each animal does the farmer have?",
       Img: "",
-      Responses: ["2/13 cup", "1/12 cup", "2/18 cup", "2/3 cup", "1/3 cup"],
-      Correct: [1],
+      Responses: [
+        "Answer: x=30, y=10",
+        "Answer: x=15, y=30",
+        "Answer: x=28, y=14",
+        "Answer: x=18, y=22",
+        "Answer: x=14, y=26",
+      ],
+      Correct: [4],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
       List: "",
     },
     {
       Question:
-        "A worker finished 4/9 of a task then 3/5 of remaining. What fraction of task was completed?",
+        "What is the slope of the line perpendicular to the following function?",
       Img: "",
-      Responses: ["19/45", "10/39", "11/45", "13/45", "7/45"],
+      Responses: ["m=1/2", "m=2", "m=3", "m=-1", "m=6"],
+      Correct: [3],
+      Verse:
+        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      List: "",
+    },
+    {
+      Question:
+        "Which are the intercepts from the following Function: 2x + 3y =9",
+      Img: "",
+      Responses: [
+        "(0, 1) and (4.5, 0)",
+        "(0, -3) and (-4.5, 0)",
+        "(0, -3) and (4.5, 2)",
+        "(0, 3) and (4.5, 0)",
+        "No answer is correct",
+      ],
+      Correct: [3],
+      Verse:
+        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      List: "",
+    },
+    {
+      Question: "The equation of the line 3y = -x +3 has:",
+      Img: "",
+      Responses: [
+        "Slope -1/3 and y-intercept 1",
+        "Slope 0 and y-intercept 1",
+        "Slope -1 and y-intercept 3",
+        "Slope 1/3 and y-intercept -3",
+        "Slope -1 and y-intercept 1",
+      ],
       Correct: [0],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
       List: "",
     },
     {
-      Question:
-        "A plant has 3/7 of height left to grow. If it has grown 15 inches, what is the total height?",
+      Question: "Which of the following Graph has slope undefine?",
       Img: "",
-      Responses: [
-        "31 inches",
-        "36 inches",
-        "34 inches",
-        "35 inches",
-        "38 inches",
-      ],
+      Responses: ["y = x", "y = 0", "y = -4 x", "x = -2", "y = -1/2x"],
       Correct: [3],
       Verse:
-        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
       List: "",
     },
     {
-      Question:
-        "A school has 200 students, and 3/8 are in the band. How many are not in the band?",
+      Question: "Write the following equation in Standard Form: y = 6x + 2/3",
       Img: "",
       Responses: [
-        "155 students",
-        "116 students",
-        "124 students",
-        "121 students",
-        "125 students",
+        "y - 2/3 = 6x",
+        "3y - 18x = 2/3",
+        "-6x - 2/3 = -y",
+        "No answer is correct",
+        "3y - 18x = 2",
       ],
       Correct: [4],
       Verse:
-        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
       List: "",
     },
     {
-      Question:
-        "A bottle of juice is 5/6 full. If originally 1 liter, how much juice is left?",
+      Question: "Which of the following lines are NOT parallel?",
       Img: "",
       Responses: [
-        "5/6 liter",
-        "5/9 liter",
-        "5/7 liter",
-        "1/6 liter",
-        "3/6 liter",
+        "Y = -1/2x + 1 and -y = -1/2x − 3",
+        "Y = 3x + 4 and y -3x = + 4",
+        "Y = 2x + 5 and y = 2x - 5",
+        "Y = −x + 2 and y - x = −3",
+        "Y -5 = −x -7 and y - x= -7",
       ],
       Correct: [3],
       Verse:
@@ -330,94 +367,203 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "A project uses 2/3 of tape, and 1/4 of the remaining tape is used. How much is left?",
+        "Which of the following points lies on the graph of the equation",
       Img: "",
-      Responses: ["1/36", "2/5", "1/5", "3/4", "1/6"],
-      Correct: [4],
-      Verse:
-        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "",
-    },
-    {
-      Question:
-        "You cut pizza into 8 slices, you have 3/4 pizza. How many slices are left if you give away 1/2?",
-      Img: "",
-      Responses: ["5", "3", "6", "4", "2"],
+      Responses: ["(1, 1)", "(2, 1)", "(3, -2)", "(4, 4)", "(-2, 3)"],
       Correct: [1],
       Verse:
-        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "",
-    },
-    {
-      Question: "5/6 – 1/3 = ?",
-      Img: "",
-      Responses: ["1/7", "1/5", "3/5", "3/4", "1/2"],
-      Correct: [4],
-      Verse:
         "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
       List: "",
     },
     {
-      Question: "3/8 × 4/7 = ?",
-      Img: "",
-      Responses: ["1/14", "1/15", "3/12", "3/14", "1/12"],
-      Correct: [3],
-      Verse:
-        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "",
-    },
-    {
-      Question:
-        "Alice has 7/12 yard of fabric. Cut into 3 equal pieces, uses 1/4 of one piece. How much left of that piece?",
-      Img: "",
-      Responses: ["3/50", "1/24", "7/48", "3/14", "1/48"],
-      Correct: [2],
-      Verse:
-        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "",
-    },
-    {
-      Question:
-        "The recipe calls for 3/4 cup flour for 6 people. If serving 2, how much flour needed?",
-      Img: "",
-      Responses: ["1/4", "1/2", "3/5", "3/7", "1/12"],
-      Correct: [0],
-      Verse:
-        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "",
-    },
-    {
-      Question: "6/8 × 5/7 × 7/2 = ?",
-      Img: "",
-      Responses: ["15/7", "8/15", "15/8", "8/14", "5/12"],
-      Correct: [2],
-      Verse:
-        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "",
-    },
-    {
-      Question: "5/6 – 1/3 + 1/4 = ?",
-      Img: "",
-      Responses: ["3/4", "1/2", "3/5", "3/7", "1/12"],
-      Correct: [0],
-      Verse:
-        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
-      List: "",
-    },
-    {
-      Question:
-        "A company's subscribers increased by 1/5 this year = $60,000 growth. If this year's subs = 1,250,000, what was last year’s revenue/subscribers/income?",
-      Img: "",
+      Question: "Which of the following equations match the indicated Graph?",
+      Img: img27,
       Responses: [
-        "$260,000 revenue, 1M subscribers, 28cents income per subscriber",
-        "$280,000 revenue, 1M subscribers, 26cents income per subscriber",
-        "$250,000 revenue, 1M subscribers, 28cents income per subscriber",
-        "$240,000 revenue, 1M subscribers, 26cents income per subscriber",
-        "$240,000 revenue, 1M subscribers, 24cents income per subscriber",
+        "y - 3 = 4x",
+        "x + y = 1",
+        "y = -2x - 1",
+        "x + 0.5 y = -1",
+        "-y + 2x = -1",
       ],
       Correct: [4],
       Verse:
+        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      List: "",
+    },
+    {
+      Question: "What is the slope of the following graph?",
+      Img: img28,
+      Responses: [
+        "Slope = 1/2",
+        "Slope = -2",
+        "Slope = 2/3",
+        "Slope = 4",
+        "Slope = 1/3",
+      ],
+      Correct: [2],
+      Verse:
+        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+      List: "",
+    },
+    {
+      Question:
+        "At a Sport Olympics event, tickets for adults are $25 and for children are $15. If they sold a total of 100 tickets and made $1,800, how many adult and child tickets were sold?",
+      Img: "",
+      Responses: [
+        "Answer: x=60, y=40",
+        "Answer: x=50, y=50",
+        "Answer: x=90, y=10",
+        "Answer: x=55, y=45",
+        "Answer: x=70, y=30",
+      ],
+      Correct: [4],
+      Verse:
+        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
+      List: "",
+    },
+    {
+      Question:
+        "Price of a paint is $65.25 in order to breakeven (no profit and no losses) how many units will need to sells if al total of fixed expenses are $29,000 and a total variable costs per unit is $29.00?",
+      Img: "",
+      Responses: ["800", "750", "815", "600", "730"],
+      Correct: [0],
+      Verse:
+        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
+      List: "",
+    },
+    {
+      Question:
+        "On a map, 2 inches represents 100 miles. How many miles are represented by 2 feet? (1 foot = 12 inches)",
+      Img: "",
+      Responses: [
+        "1400 miles",
+        "1050 miles",
+        "1250 miles",
+        "1200 miles",
+        "1220 miles",
+      ],
+      Correct: [3],
+      Verse:
         "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
+      List: "",
+    },
+    {
+      Question:
+        "Martha is making a cake for a 12 years old birthday. She use 1.25 gr of sugar, 3.45 gr of sweet cookies and 0.238 gr of another condiment. What is the total weigh of the condiment that She use?",
+      Img: "",
+      Responses: ["3.45 gr", "4.987 gr", "2.438 gr", "4.938 gr", "2.256 gr"],
+      Correct: [3],
+      Verse:
+        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
+      List: "",
+    },
+    {
+      Question:
+        "Peter is organizing a game for a 12 years old kids. The subscription is $15 per kid and there will be spots for 12 teams of 20 kids each, if only 9 teams enroll (with all 20 kids) and another team with half of the kids. What is the total amount of money that will be collected?",
+      Img: "",
+      Responses: ["$3,250", "$3,500", "$2,850", "$2,950", "$2,750"],
+      Correct: [2],
+      Verse:
+        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
+      List: "",
+    },
+    {
+      Question: "Which of the following is NOT a linear function?",
+      Img: "",
+      Responses: [
+        "y = -2",
+        "y = x^2 + 1",
+        "y = 0.5x - 1",
+        "y = -2x + 7",
+        "y = 5x + 3",
+      ],
+      Correct: [1],
+      Verse:
+        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
+      List: "",
+    },
+    {
+      Question: "What does the slope of a line indicate?",
+      Img: "",
+      Responses: [
+        "The y-intercept of the line",
+        "The steepness and direction of the line",
+        "The curvature of the line",
+        "The x-intercept of the line",
+        "None is correct",
+      ],
+      Correct: [1],
+      Verse:
+        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
+      List: "",
+    },
+    {
+      Question: "Which of the following is a linear function?",
+      Img: "",
+      Responses: [
+        "y = x^3 - 2",
+        "y = x^2 + 3",
+        "y = 2x + 5",
+        "y = 3x^2 - 4x + 1",
+        "y = 1/x",
+      ],
+      Correct: [2],
+      Verse:
+        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+      List: "",
+    },
+    {
+      Question: "What is the slope of a linear function on a graph?",
+      Img: "",
+      Responses: [
+        "The x-intercept of the function",
+        "The y-intercept of the function",
+        "The maximum value of the function",
+        "The rate of change of the function",
+        "The most important value of the function",
+      ],
+      Correct: [3],
+      Verse:
+        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+      List: "",
+    },
+    {
+      Question: "What is a function in mathematics?",
+      Img: "",
+      Responses: [
+        "A graph that is always a straight line",
+        "A relation where one input can have multiple outputs",
+        "A relation where each input has exactly one output",
+        "A set of ordered pairs with no restrictions",
+        "The line that always has a y-intercept",
+      ],
+      Correct: [2],
+      Verse:
+        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
+      List: "",
+    },
+    {
+      Question: "What does the y-intercept represent in a linear function?",
+      Img: "",
+      Responses: [
+        "The slope of the line",
+        "The x-intercept of the line",
+        "The maximum value of the function",
+        "The Minimum value of the function",
+        "The point where the line crosses the y-axis",
+      ],
+      Correct: [4],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
+      List: "",
+    },
+    {
+      Question: "Which of the following equations has a vertical slope?",
+      Img: "",
+      Responses: ["y = -2x+2", "3x = 51", "2y = -8", "5x = 5y + 5", "2x = 2y"],
+      Correct: [1],
+      Verse:
+        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
       List: "",
     },
   ];
