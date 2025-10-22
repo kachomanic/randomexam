@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import q5 from "../../../assets/imgs/q5.jpg";
+import q7 from "../../../assets/imgs/q7.jpg";
+import q9 from "../../../assets/imgs/q9.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -41,107 +44,93 @@ export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
       Question:
-        "Para un ángulo de 300 grados ¿cuál es el equivalente en radianes? y ¿cuál es el punto en el plano si hablamos de un círculo unitario?",
+        "Encuentre el volumen de un cono truncado dado que su altura es 12, y el radio mayor es 8 y su radio menor es 5. (exprese su respuesta en términos de pi)",
       Img: "",
-      Responses: [
-        "5π/3 y (1/2, −√3/2)",
-        "2π/3 y (−1/2, √3/2)",
-        "4π/3 y (−1/2, −√3/2)",
-        "π/3 y (√3/2, 1/2)",
-        "π/2 y (0, 1)",
-      ],
-      Correct: [0],
+      Responses: ["480π", "516π", "512π", "540π", "504π"],
+      Correct: [1],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
       List: "",
     },
     {
       Question:
-        "¿Cuál es la probabilidad de seleccionar dos médico y dos enfermeras de un grupo de 5 médicos y 5 enfermeras?",
+        "Escriba el siguiente número 2359<sub>4</sub> (de base 4) a su equivalente en base 10.",
       Img: "",
-      Responses: ["25%", "35%", "47.62%", "50%", "60%"],
-      Correct: [2],
+      Responses: [
+        "205<sub>10</sub>",
+        "201<sub>10</sub>",
+        "209<sub>10</sub>",
+        "215<sub>10</sub>",
+        "199<sub>10</sub>",
+      ],
+      Correct: [0],
       Verse:
         "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
       List: "",
     },
     {
       Question:
-        "¿Cuál es la intercepción Y de la siguiente función logarítmica?  y = log₃(x + 3)",
+        "En un grupo de 90 personas el 60% son mujeres, en este grupo de personas hay 14 hombres que son muy emprendedores y en las mujeres 12 son muy emprendedoras. ¿Cuál es la probabilidad de escoger una persona al azar que sea muy emprendedora dado que es varón?",
       Img: "",
-      Responses: ["0", "log₃3", "1", "3", "-1"],
-      Correct: [2],
+      Responses: ["1/2", "7/30", "7/15", "14/30", "7/18"],
+      Correct: [4],
       Verse:
         "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
       List: "",
     },
     {
       Question:
-        "¿Cuál es la intercepción X de la siguiente función Exponencial?  y = −(1/2)ˣ + 4",
+        "¿Cuál es la coordenada del centroide de un rectángulo que tiene vértices en (0, 2); (0, 6), (7, 2), (7, 6)?",
       Img: "",
-      Responses: ["x = 2", "x = -2", "x = 4", "x = 0", "x = 3"],
-      Correct: [1],
+      Responses: ["(3, 7/2)", "(7/2, 3)", "(7/2, 4)", "(4, 7/2)", "(2, 4)"],
+      Correct: [2],
       Verse:
         "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
       List: "",
     },
     {
       Question:
-        "¿A cuánto es equivalente el punto 4, 70° en coordenadas rectangulares?",
-      Img: "",
-      Responses: [
-        "(1.37, 3.76)",
-        "(2, 4)",
-        "(3.76, 1.37)",
-        "(4, 1.37)",
-        "(0, 4)",
-      ],
-      Correct: [0],
+        "Encuentre el valor de la variable en la siguiente ecuación exponencial.",
+      Img: q5,
+      Responses: ["x = -3/2", "x = 2", "x = 0", "x = 3/2", "x = -2"],
+      Correct: [4],
       Verse:
         "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
       List: "",
     },
     {
       Question:
-        "¿Cuál es el 5to término al expandir el siguiente binomio?  (5 − y)⁶",
+        "Encuentre la suma de los primeros 5 términos para una progresión geométrica donde el valor inicial es - 4 y r = ½.",
       Img: "",
-      Responses: ["375y²", "250y²", "150y³", "625y³", "300y²"],
-      Correct: [0],
+      Responses: ["-7/2", "-15/4", "-17/8", "-31/4", "-9/4"],
+      Correct: [3],
       Verse:
         "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
       List: "",
     },
     {
       Question:
-        "En el siguiente sistema de 3 ecuaciones ¿cuál sería la suma de (a + b + c)?   a + b + c = 12;  2a − 2b + c = 10;  a − b − c = 0",
-      Img: "",
-      Responses: ["10", "12", "15", "9", "8"],
-      Correct: [1],
+        "¿Cuál es el conjunto solución de la siguiente desigualdad racional?",
+      Img: q7,
+      Responses: ["x < 0", "x ≤ 0", "7/2 < x < 5", "x > 5", "0 < x < 7/2"],
+      Correct: [2],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
       List: "",
     },
     {
-      Question:
-        "Si hablamos de las funciones principales (función madre o la forma más simple de una función). ¿Cuál es el dominio de la función exponencial y el rango de la función radical?",
+      Question: "¿A que es igual el cos(5π/2) ?",
       Img: "",
-      Responses: [
-        "Dominio: todos los reales; Rango: todos los reales",
-        "Dominio: todos los reales; Rango: reales ≥ 0",
-        "Dominio: reales ≥ 0; Rango: todos los reales",
-        "Dominio: x > 0; Rango: y > 0",
-        "Dominio: x < 0; Rango: y > 0",
-      ],
+      Responses: ["0", "1/2", "1", "−1/2", "−1"],
       Correct: [1],
       Verse:
         "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
       List: "",
     },
     {
-      Question:
-        "¿Cuál es el volumen de un cuerpo que se genera por la rotación de un cuadrado alrededor del eje Y que tiene una diagonal con vértices en (-3, -3); (3, 3)?   (exprese su respuesta en términos de pi)",
-      Img: "",
-      Responses: ["36π", "54π", "48π", "60π", "42π"],
+      Question: "¿Dónde está ubicado el vértice de la siguiente elipse?",
+      Img: q9,
+      Responses: ["(2, -2)", "(2, -5)", "(-2, -5)", "(0, -5)", "(2, 0)"],
       Correct: [1],
       Verse:
         "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber.",
@@ -149,10 +138,10 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "¿Cuál es el Volumen de un casquete esférico que tiene como altura 2 y como radio del casquete 3? (exprese su respuesta en términos de pi)",
+        "De termine cuál de los siguientes puntos pertenecen a la circunferencia  x<sup>2</sup> + y<sup>2</sup> = 81",
       Img: "",
-      Responses: ["30π", "31π/3", "28π/3", "27π", "35π/3"],
-      Correct: [1],
+      Responses: ["(0, 10)", "(9, 1)", "(0, -8)", "(8, 8)", "(-9, 0)"],
+      Correct: [4],
       Verse:
         "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
       List: "",
