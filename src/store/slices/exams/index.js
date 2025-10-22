@@ -178,7 +178,7 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "After finding the value of “X” and “Y” with the following equations",
+        "After finding the value of “X” and “Y” with the following equations 2(x-3) + 4 = 10 and 5y + 2 =3y + 10 What is the value of (3x - 2y)<sup>2</sup>?",
       Img: "",
       Responses: ["b = 100", "b = -32", "b = 85", "b = 121", "b = undefine"],
       Correct: [0],
