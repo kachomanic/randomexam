@@ -280,14 +280,14 @@ export const fetchAllExams = () => (dispatch) => {
         "Answer: x=18, y=22",
         "Answer: x=14, y=26",
       ],
-      Correct: [4],
+      Correct: [2],
       Verse:
         "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
       List: "",
     },
     {
       Question:
-        "What is the slope of the line perpendicular to the following function?",
+        "What is the slope of the line perpendicular to the following function? 2y = 2x - 4",
       Img: "",
       Responses: ["m=1/2", "m=2", "m=3", "m=-1", "m=6"],
       Correct: [3],
