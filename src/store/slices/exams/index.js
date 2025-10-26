@@ -367,7 +367,7 @@ export const fetchAllExams = () => (dispatch) => {
     },
     {
       Question:
-        "Which of the following points lies on the graph of the equation",
+        "Which of the following points lies on the graph of the equation y = −1/2 x + 3 ?",
       Img: "",
       Responses: ["(1, 1)", "(2, 1)", "(3, -2)", "(4, 4)", "(-2, 3)"],
       Correct: [1],
@@ -383,7 +383,7 @@ export const fetchAllExams = () => (dispatch) => {
         "x + y = 1",
         "y = -2x - 1",
         "x + 0.5 y = -1",
-        "-y + 2x = -1",
+        "-y + 2x = 1",
       ],
       Correct: [4],
       Verse:
@@ -442,7 +442,7 @@ export const fetchAllExams = () => (dispatch) => {
         "1200 miles",
         "1220 miles",
       ],
-      Correct: [3],
+      Correct: [0],
       Verse:
         "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
       List: "",
