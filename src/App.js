@@ -267,7 +267,7 @@ function App() {
             <div className="flex gap-4 justify-center">
               <button
                 type="button"
-                className="bg-purple-500 hover:bg-purple-600 p-2 w-60 mb-5 my-3 rounded-lg"
+                className="bg-blue-500 hover:bg-blue-800 p-2 w-60 mb-5 my-3 rounded-lg"
                 onClick={returnToResults}
               >
                 <span className="text-white font-bold text-xl">
