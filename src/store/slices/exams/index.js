@@ -125,6 +125,8 @@ export const fetchAllExams = () => (dispatch) => {
         "5 + 3x² + 8x",
       ],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -138,6 +140,8 @@ export const fetchAllExams = () => (dispatch) => {
         "The slope and Y-intercept is to model linear equations in coordinate plane NOT in finance",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Does a line with positive slope go:",
