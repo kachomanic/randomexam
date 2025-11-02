@@ -56,6 +56,8 @@ export const fetchAllExams = () => (dispatch) => {
         "All are incorrect",
       ],
       Correct: [0],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -71,6 +73,8 @@ export const fetchAllExams = () => (dispatch) => {
         "-2y = 2x +2",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -78,6 +82,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["$5,100", "$9,200", "$6,400", "$7,600", "$8,400"],
       Correct: [4],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -85,6 +91,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["x=100, y=29", "x=70, y=95", "x=94, y=35", "x=150, y=15"],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -92,6 +100,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["4π cm", "8π/3 cm", "4π/3 cm", "16π/3 cm"],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -99,6 +109,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: exam2img6,
       Responses: ["215:86", "150:57", "445:172", "258:100", "150:86", "86:172"],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Divide (15x - 25x³ + 40x²) / 5x",
@@ -132,6 +144,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["Dawn", "Horizontal", "Up", "Vertical"],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question: "The equation of the line y=2x -1 has:",
@@ -143,6 +157,8 @@ export const fetchAllExams = () => (dispatch) => {
         "Slope 2 and y-intercept 1",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -158,6 +174,8 @@ export const fetchAllExams = () => (dispatch) => {
         "-5.24mi²",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -170,12 +188,16 @@ export const fetchAllExams = () => (dispatch) => {
         "Select a group indicate Combination and find a sequence or choosing specific order group like places in a race or president secretary indicate Permutation.",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "What is half of 0.025?",
       Img: "",
       Responses: ["1/8", "0.1575", "0.755", "0.0125", "1/0.75", "0.00755"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -190,6 +212,8 @@ export const fetchAllExams = () => (dispatch) => {
         "$27.60",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -197,6 +221,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["5", "-1", "3", "-3", "1/3", "-1/3", "1"],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Factor the polynomial: 16x² - 169",
@@ -210,6 +236,8 @@ export const fetchAllExams = () => (dispatch) => {
         "(4x + 13)(4x + 13)",
       ],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question: "The following equation y = 2x - 1 is written in:",
@@ -221,6 +249,8 @@ export const fetchAllExams = () => (dispatch) => {
         "Quadratic Form",
       ],
       Correct: [0],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -228,18 +258,24 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["58", "24", "35", "55", "63", "No answer is correct"],
       Correct: [4],
+      Verse: "",
+      List: "",
     },
     {
       Question: "-5² + (-5)² + 4²",
       Img: "",
       Responses: ["-25", "25", "-5", "5", "1", "0", "16", "64"],
       Correct: [6],
+      Verse: "",
+      List: "",
     },
     {
       Question: "If 3(5m - 1 ) = 12 ; What is the value of -2m",
       Img: "",
       Responses: ["m = 2", "m = -3", "m = 4", "m = -2", "m = -5", "m = 0"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -247,6 +283,8 @@ export const fetchAllExams = () => (dispatch) => {
       Img: "",
       Responses: ["0", "1/10", "2/15", "1/20", "1/9", "17/20"],
       Correct: [5],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Multiply xy²z<sup>4</sup> (2x² - 5yz)",
@@ -260,6 +298,8 @@ export const fetchAllExams = () => (dispatch) => {
         "No answer is correct",
       ],
       Correct: [0],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -274,6 +314,8 @@ export const fetchAllExams = () => (dispatch) => {
         "p = 6/5",
       ],
       Correct: [3, 5],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -287,12 +329,16 @@ export const fetchAllExams = () => (dispatch) => {
         "All answers are correct",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question: "What is the slope of the following equation? 4y = 2x - 8",
       Img: "",
       Responses: ["m = 0", "m = 4", "m = -2", "m = 8", "m = 0", "m = 1/2"],
       Correct: [5],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -307,6 +353,8 @@ export const fetchAllExams = () => (dispatch) => {
         "(1, 1) and (-4.5, 2)",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -320,12 +368,16 @@ export const fetchAllExams = () => (dispatch) => {
         "y = 6x -1",
       ],
       Correct: [1],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Convert the following measure: 0.0015 km to cm",
       Img: "",
       Responses: ["50 cm", "15 cm", "0.15 cm", "150 cm", "50 cm", "1,500 cm"],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -338,6 +390,8 @@ export const fetchAllExams = () => (dispatch) => {
         "Select a group indicate Combination and find a sequence or choosing specific order group like places in a race or president secretary indicate Permutation.",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -351,6 +405,8 @@ export const fetchAllExams = () => (dispatch) => {
         "mean 15 and range 15",
       ],
       Correct: [0],
+      Verse: "",
+      List: "",
     },
     {
       Question: "Find the area of the following triangle",
@@ -364,6 +420,8 @@ export const fetchAllExams = () => (dispatch) => {
         "The answer is not in the options",
       ],
       Correct: [2],
+      Verse: "",
+      List: "",
     },
     {
       Question:
@@ -379,6 +437,8 @@ export const fetchAllExams = () => (dispatch) => {
         "y = 5",
       ],
       Correct: [3],
+      Verse: "",
+      List: "",
     },
   ];
 
