@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exam3img12 from "../../../assets/imgs/exam3-question12.jpg";
 import exam5img23 from "../../../assets/imgs/exam5-question23.jpg";
 import exam5img24 from "../../../assets/imgs/exam5-question24.jpg";
 
