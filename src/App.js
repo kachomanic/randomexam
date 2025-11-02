@@ -307,9 +307,12 @@ function App() {
       {/* Question Navigation Grid */}
       {exams.length > 0 && (
         <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-          {/* First row - 12 questions */}
-          <div className="grid grid-cols-6 sm:grid-cols-12 gap-2 mb-2">
-            {exams.slice(0, 12).map((_, index) => {
+          {/* First row - 15 questions */}
+          <div
+            className="grid grid-cols-6 sm:grid-cols-15 gap-2 mb-2"
+            style={{ gridTemplateColumns: "repeat(15, minmax(0, 1fr))" }}
+          >
+            {exams.slice(0, 15).map((_, index) => {
               let buttonClass = "w-10 h-10 rounded border-2 font-bold text-sm ";
               const isIncorrect = questionStatus[index] === "incorrect";
               const isClickable =
@@ -353,14 +356,14 @@ function App() {
             })}
           </div>
 
-          {/* Second row - 13 questions */}
-          {exams.length > 12 && (
+          {/* Second row - 15 questions */}
+          {exams.length > 15 && (
             <div
-              className="grid grid-cols-6 sm:grid-cols-13 gap-2 mb-4"
-              style={{ gridTemplateColumns: "repeat(13, minmax(0, 1fr))" }}
+              className="grid grid-cols-6 sm:grid-cols-15 gap-2 mb-4"
+              style={{ gridTemplateColumns: "repeat(15, minmax(0, 1fr))" }}
             >
-              {exams.slice(12, 25).map((_, idx) => {
-                const index = idx + 12; // Adjust index for second row
+              {exams.slice(15, 30).map((_, idx) => {
+                const index = idx + 15; // Adjust index for second row
                 let buttonClass =
                   "w-10 h-10 rounded border-2 font-bold text-sm ";
                 const isIncorrect = questionStatus[index] === "incorrect";

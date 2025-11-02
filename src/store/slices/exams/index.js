@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import exam1img1 from "../../../assets/imgs/question-1.jpg";
+import exam1img2 from "../../../assets/imgs/question-2.jpg";
+import exam1img27 from "../../../assets/imgs/question-27.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -23,7 +26,7 @@ export default examsSlice.reducer;
 export const fetchOrderArray = () => (dispatch) => {
   function getRandomNumber() {
     if (getRandomNumber.remaining.length === 0) {
-      getRandomNumber.remaining = Array.from(Array(32).keys()).sort(
+      getRandomNumber.remaining = Array.from(Array(30).keys()).sort(
         () => Math.random() - 0.5
       );
     }
@@ -41,383 +44,348 @@ export const fetchAllExams = () => (dispatch) => {
   const exams = [
     {
       Question:
-        "The recipe is called for 3/4 cup of sugar. If you want to make half the recipe, how much sugar do you need?",
-      Img: "",
-      Responses: ["3/7 cup", "3/8 cup", "5/8 cup", "1/4 cup", "3/6 cup"],
-      Correct: [1],
-      Verse:
-        "Bienaventurados los de limpio corazón, porque verán a Dios. Mateo 5:8",
-      List: "",
-    },
-    {
-      Question:
-        "Emily ate 2/5 of a pizza and her brother ate 3/10 of it. What fraction of the pizza did they eat together?",
-      Img: "",
-      Responses: ["7/10", "5/7", "7/5", "5/6", "4/9"],
-      Correct: [0],
-      Verse:
-        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "",
-    },
-    {
-      Question:
-        "John read 7/12 of a book, and after finished 1/3 that was pending. What fraction of the book did he read?",
-      Img: "",
-      Responses: ["10/12", "11/15", "11/12", "7/12", "1/3"],
-      Correct: [2],
-      Verse:
-        "En el principio creó Dios los cielos y la tierra. Genesis Génesis 1:1",
-      List: "",
-    },
-    {
-      Question:
-        "The classroom has 30 students, and 2/5 of them are girls. How many boys are there in the class?",
-      Img: "",
-      Responses: ["10 boys", "16 boys", "14 boys", "18 boys", "12 boys"],
-      Correct: [3],
-      Verse:
-        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "",
-    },
-    {
-      Question:
-        "A garden has 5/8 planted with vegetables and 3/10 with flowers. What fraction is planted with other than vegetables or flowers?",
-      Img: "",
-      Responses: ["3/30", "3/20", "2/32", "3/37", "3/40"],
-      Correct: [4],
-      Verse:
-        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "",
-    },
-    {
-      Question:
-        "If a car travels 3/4 of a mile in one minute, how far will it travel in 10 minutes?",
-      Img: "",
-      Responses: [
-        "10 1/2 miles",
-        "7 1/4 miles",
-        "8 1/2 miles",
-        "9 3/4 miles",
-        "7 1/2 miles",
-      ],
-      Correct: [4],
-      Verse:
-        "Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó. Génesis 1:27",
-      List: "",
-    },
-    {
-      Question:
-        "A cake recipe requires 2/3 cup of milk. If you are making 1/3 of the recipe, how much milk do you need?",
-      Img: "",
-      Responses: ["10/9 cup", "2/8 cup", "2/7 cup", "2/9 cup", "5/9 cup"],
-      Correct: [3],
-      Verse:
-        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "",
-    },
-    {
-      Question:
-        "Sarah used 5/8 of a bottle of glue for a project. If there were originally 2 liters, how much glue did she use?",
-      Img: "",
-      Responses: [
-        "1.25 liters",
-        "1.75 liters",
-        "2.25 liters",
-        "3.75 liters",
-        "4.5 liters",
-      ],
-      Correct: [0],
-      Verse:
-        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "",
-    },
-    {
-      Question:
-        "A company's revenue increased by 7/20 this year compared to last year. If last year's was $50,000, what is the increase?",
-      Img: "",
-      Responses: ["$17,500", "$17,200", "$19,400", "$16,200", "$30,500"],
-      Correct: [0],
-      Verse:
-        "1 Pedro 1:25 Mas la palabra del Señor permanece para siempre. Y esta es la palabra que por el evangelio os ha sido anunciada.",
-      List: "",
-    },
-    {
-      Question:
-        "A farmer harvested 4/7 of his crops, and 3/5 of those were sold. What fraction of total crops were sold?",
-      Img: "",
-      Responses: ["15/35", "10/37", "11/39", "12/35", "7/35"],
-      Correct: [3],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "",
-    },
-    {
-      Question:
-        "The recipe uses 3/4 cup of oil and 1/6 cup of vinegar. How much more oil is used than vinegar?",
-      Img: "",
-      Responses: [
-        "9/12 cup",
-        "10/12 cup",
-        "11/12 cup",
-        "15/16 cup",
-        "7/12 cup",
-      ],
-      Correct: [4],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
-      List: "",
-    },
-    {
-      Question:
-        "Michael spent 3/10 on books and 2/5 on food. What fraction of allowance is left?",
-      Img: "",
-      Responses: ["3/10", "10/11", "11/12", "4/9", "7/10"],
-      Correct: [0],
+        "At a certain school, 70 out of 180 Year 2 students walk to school, while 90 out of 210 Year 6 students walk to school. What is the percentage difference in the number of Year 6 students who walk to school compared to Year 2 students who walk to school?",
+      Img: exam1img1,
+      Responses: ["3%", "4%", "5%", "6%", "2%", "8%"],
+      Correct: "1",
       Verse: "",
       List: "",
     },
     {
       Question:
-        "A pizza is cut into 8 slices. If 3/4 was eaten, how many slices remain?",
-      Img: "",
-      Responses: ["2 slices", "6 slices", "4 slices", "3 slices", "5 slices"],
-      Correct: [0],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+        "If the total 2013 cold cereal sales for the seven counties assessed were $180,000, what percent of these sales was purchased Trinity County? Disregard the percentage symbol when choosing your answer.",
+      Img: exam1img2,
+      Responses: ["20", "25", "10", "15", "12", "21"],
+      Correct: "3",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "Linda has 2/5 gallon of paint. She uses 1/3 of it. How much paint does she use?",
+        "Do we use the same units to represent Surface Areas of three-dimensional figures and Areas?",
+      Img: "",
+      Responses: ["Yes", "No", "Maybe", "Only when the answer is the same"],
+      Correct: "0",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Write the following equation in Standard Form: y = 6x + 2/3",
       Img: "",
       Responses: [
-        "1/3 gallon",
-        "2/13 gallon",
-        "2/18 gallon",
-        "2/3 gallon",
-        "2/15 gallon",
+        "y - 2/3 = 6x",
+        "3y - 18x = 2",
+        "-6x - 2/3 = -y",
+        "No answer is correct",
+        "There is no standard form when you work with Fractions.",
       ],
-      Correct: [4],
-      Verse:
-        "Santiago 3:18 Y el fruto de justicia se siembra en paz para aquellos que hacen la paz.",
+      Correct: "1",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "A car's fuel tank is 5/8 full. If it holds 16 gallons, how many gallons of fuel are in the tank?",
+        "Do I find the perimeter of the square with the same formula as a rectangle?",
       Img: "",
       Responses: [
-        "10 gallons",
-        "16 gallons",
-        "14 gallons",
-        "12 gallons",
-        "11 gallons",
+        "Maybe if they have the same perimeter.",
+        "You can calculate both using the formula of the rectangle.",
+        "The formula of the square you can use for a rectangle.",
+        "Squares and Rectangles always are the same formulas.",
       ],
-      Correct: [0],
-      Verse:
-        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      Correct: "1",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "In a bag of 30 marbles, 2/3 are red. How many red marbles are in the bag?",
+        "What is the area of the parallelogram with base = 12ft and height = 9ft",
+      Img: "",
+      Responses: ["108 ft", "96 ft", "108 ft²", "96 ft²", "90 ft²", "21 ft²"],
+      Correct: "2",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Convert the following measure: 0.0015 km to cm.",
+      Img: "",
+      Responses: ["50 cm", "15 cm", "0.15 cm", "150 cm", "50 cm", "1,500 cm"],
+      Correct: "3",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "What is Permutation (8, 2)?",
+      Img: "",
+      Responses: ["120", "24", "15", "56", "8", "10"],
+      Correct: "3",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "John has in his bank account $40,000 and he is planning to make 3 different investments. 1/5 of the money will go to the stock market, 1/4 of the total will be spent to sell online and the rest in real estate. How much money Does John will invest in Real Estate?",
       Img: "",
       Responses: [
-        "20 marbles",
-        "16 marbles",
-        "14 marbles",
-        "12 marbles",
-        "18 marbles",
+        "$7,500",
+        "$6,500",
+        "$6,000",
+        "$22,000",
+        "$21,500",
+        "$13,800",
       ],
-      Correct: [0],
-      Verse:
-        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      Correct: "3",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "A class has 24 students, and 7/12 are boys. How many girls are in the class?",
+        "If a linear equation has a formula y=2x-5. What is the y intercept for that equation?",
       Img: "",
-      Responses: ["12 girls", "16 girls", "14 girls", "10 girls", "18 girls"],
-      Correct: [3],
-      Verse:
-        "Es, pues, la fe la certeza de lo que se espera, la convicción de lo que no se ve. Hebreos 11:1",
+      Responses: ["5", "2", "-5", "2", "7", "-7"],
+      Correct: "2",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "A car traveled 3/5 of 500 miles in the first half of the trip. How far did it travel?",
+        "Which are the coordinates of the y intercept for the following equation? y + 2 = 3x",
       Img: "",
       Responses: [
-        "200 miles",
-        "250 miles",
-        "300 miles",
-        "310 miles",
-        "280 miles",
+        "(0, -2)",
+        "(1, -2)",
+        "(1, 3)",
+        "(0, -3)",
+        "(1, 3/2)",
+        "(0, -2/3)",
       ],
-      Correct: [2],
-      Verse:
-        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
+      Correct: "0",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "A recipe requires 3/4 cup sugar, and you have 5/6 cup. How much more do you need?",
-      Img: "",
-      Responses: ["2/13 cup", "1/12 cup", "2/18 cup", "2/3 cup", "1/3 cup"],
-      Correct: [1],
-      Verse:
-        "Por la fe comprendemos que el universo fue hecho por la palabra de Dios, de modo que lo que se ve fue hecho de lo que no se veía. Hebreos 11:3",
-      List: "",
-    },
-    {
-      Question:
-        "A worker finished 4/9 of a task then 3/5 of remaining. What fraction of task was completed?",
-      Img: "",
-      Responses: ["19/45", "10/39", "11/45", "13/45", "7/45"],
-      Correct: [0],
-      Verse:
-        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
-      List: "",
-    },
-    {
-      Question:
-        "A plant has 3/7 of height left to grow. If it has grown 15 inches, what is the total height?",
+        "When two die are rolled, find the probability of getting a 5 and then a number less than 2?",
       Img: "",
       Responses: [
-        "31 inches",
-        "36 inches",
-        "34 inches",
-        "35 inches",
-        "38 inches",
+        "1/36",
+        "3/36",
+        "1/12",
+        "1/18",
+        "0.90",
+        "4/36",
+        "All are incorrect",
       ],
-      Correct: [3],
-      Verse:
-        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      Correct: "0",
+      Verse: "",
       List: "",
     },
     {
       Question:
-        "A school has 200 students, and 3/8 are in the band. How many are not in the band?",
+        "A recent survey indicates that in a town of 1500 households, 850 had cordless telephones. If a household is randomly selected, find the probability that it has a cordless telephone.",
       Img: "",
       Responses: [
-        "155 students",
-        "116 students",
-        "124 students",
-        "121 students",
-        "125 students",
+        "17/30",
+        "500/1500",
+        "1/4",
+        "25/32",
+        "0.90",
+        "4/36",
+        "All are incorrect",
       ],
-      Correct: [4],
-      Verse:
-        "Genesis 1:31 Y vio Dios todo lo que había hecho, y he aquí que era bueno en gran manera. Y fue la tarde y la mañana el día sexto.",
+      Correct: "0",
+      Verse: "",
       List: "",
     },
     {
-      Question:
-        "A bottle of juice is 5/6 full. If originally 1 liter, how much juice is left?",
+      Question: "Factoring Trinomials 6x² + 15x - 21",
       Img: "",
       Responses: [
-        "5/6 liter",
-        "5/9 liter",
-        "5/7 liter",
-        "1/6 liter",
-        "3/6 liter",
+        "(x + 7)(3x - 3)",
+        "(2x + 7)(3x - 3)",
+        "(2x + 7)(3x + 3)",
+        "(2x - 7)(3x - 3)",
+        "(2x + 3)(3x - 7)",
+        "(2x + 3)(3x + 7)",
+        "The answer is not there",
       ],
-      Correct: [3],
-      Verse:
-        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
+      Correct: "6",
+      Verse: "",
       List: "",
     },
     {
-      Question:
-        "A project uses 2/3 of tape, and 1/4 of the remaining tape is used. How much is left?",
+      Question: "Find the answer: -2 + 9 * 3 -10 +3 * (-10) =",
       Img: "",
-      Responses: ["1/36", "2/5", "1/5", "3/4", "1/6"],
-      Correct: [4],
-      Verse:
-        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
+      Responses: ["4", "-20", "20", "-15", "9", "-10", "18", "16"],
+      Correct: "3",
+      Verse: "",
       List: "",
     },
     {
-      Question:
-        "You cut pizza into 8 slices, you have 3/4 pizza. How many slices are left if you give away 1/2?",
-      Img: "",
-      Responses: ["5", "3", "6", "4", "2"],
-      Correct: [1],
-      Verse:
-        "Proverbios 9:9 Da al sabio, y será más sabio; Enseña al justo, y aumentará su saber. ",
-      List: "",
-    },
-    {
-      Question: "5/6 – 1/3 = ?",
-      Img: "",
-      Responses: ["1/7", "1/5", "3/5", "3/4", "1/2"],
-      Correct: [4],
-      Verse:
-        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "",
-    },
-    {
-      Question: "3/8 × 4/7 = ?",
-      Img: "",
-      Responses: ["1/14", "1/15", "3/12", "3/14", "1/12"],
-      Correct: [3],
-      Verse:
-        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "",
-    },
-    {
-      Question:
-        "Alice has 7/12 yard of fabric. Cut into 3 equal pieces, uses 1/4 of one piece. How much left of that piece?",
-      Img: "",
-      Responses: ["3/50", "1/24", "7/48", "3/14", "1/48"],
-      Correct: [2],
-      Verse:
-        "Josué 1:9 Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
-      List: "",
-    },
-    {
-      Question:
-        "The recipe calls for 3/4 cup flour for 6 people. If serving 2, how much flour needed?",
-      Img: "",
-      Responses: ["1/4", "1/2", "3/5", "3/7", "1/12"],
-      Correct: [0],
-      Verse:
-        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "",
-    },
-    {
-      Question: "6/8 × 5/7 × 7/2 = ?",
-      Img: "",
-      Responses: ["15/7", "8/15", "15/8", "8/14", "5/12"],
-      Correct: [2],
-      Verse:
-        "Jesús les dijo: —De cierto, de cierto os digo: Antes que Abraham fuera, yo soy.  Juan 8:58",
-      List: "",
-    },
-    {
-      Question: "5/6 – 1/3 + 1/4 = ?",
-      Img: "",
-      Responses: ["3/4", "1/2", "3/5", "3/7", "1/12"],
-      Correct: [0],
-      Verse:
-        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
-      List: "",
-    },
-    {
-      Question:
-        "A company's subscribers increased by 1/5 this year = $60,000 growth. If this year's subs = 1,250,000, what was last year’s revenue/subscribers/income?",
+      Question: "What is the unit that we use to represent volume?",
       Img: "",
       Responses: [
-        "$260,000 revenue, 1M subscribers, 28cents income per subscriber",
-        "$280,000 revenue, 1M subscribers, 26cents income per subscriber",
-        "$250,000 revenue, 1M subscribers, 28cents income per subscriber",
-        "$240,000 revenue, 1M subscribers, 26cents income per subscriber",
-        "$240,000 revenue, 1M subscribers, 24cents income per subscriber",
+        "Cube units",
+        "Square units",
+        "Linear units",
+        "None of these",
+        "All of these",
       ],
-      Correct: [4],
-      Verse:
-        "Efesios 6:10 Por lo demás, hermanos míos, fortaleceos en el Señor, y en el poder de su fuerza.",
+      Correct: "0",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "In the following equation y = -2x + 4 the slope is:",
+      Img: "",
+      Responses: ["Negative", "Positive", "Undefined", "Zero"],
+      Correct: "0",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Solve for k; 3k + 5 = 17",
+      Img: "",
+      Responses: ["k = 2", "k = 5", "k = -3", "k = -2", "k = 4"],
+      Correct: "4",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Divide (48m - 30n³ + 16t²)/4",
+      Img: "",
+      Responses: [
+        "12m - 15/2n³ + 5t²",
+        "12m - 15/2n² + 4t²",
+        "12m - 13/2n³ + 4t²",
+        "10m - 15/2n³ + 4t²",
+        "12m - 15/2n³ + 4t²",
+      ],
+      Correct: "4",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Multiply (x + 7)(2x - 8)",
+      Img: "",
+      Responses: [
+        "2x² - 6x + 56",
+        "x² + 6x - 56",
+        "2x² + 6x + 56",
+        "2x² - 6x - 56",
+        "2x² + 6x - 56",
+        "No answer is correct",
+      ],
+      Correct: "4",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "5 is 100% of what Number?",
+      Img: "",
+      Responses: ["100", "1", "5", "20", "4"],
+      Correct: "2",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "At a store we see that shoes are mark dawn15%. If the price of shoes is $160. What is the new price after the discount?",
+      Img: "",
+      Responses: ["154", "145", "136", "120", "155"],
+      Correct: "2",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Find the probability of getting a 7 when we role a dice.",
+      Img: "",
+      Responses: [
+        "We can not calculated",
+        "Probability is equal to 0",
+        "Probability is equal to -1",
+        "Probability is equal to 1/6",
+        "Probability is equal to 1/5",
+        "Probability is equal to 1/4",
+        "Probability is equal to 35%",
+      ],
+      Correct: "1",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "What is the probability of selecting a vowel in a 24 later alphabet?",
+      Img: "",
+      Responses: ["7/24", "3/24", "4/24", "5/24", "No answer is correct"],
+      Correct: "3",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "If a product's revenue is given by the function R(x) = 500x - 0.5x², where x is the number of units sold, what is the maximum revenue that can be generated by the product?",
+      Img: "",
+      Responses: [
+        "$250,000",
+        "$500,000",
+        "$125,000",
+        "None of the above",
+        "$420,000",
+        "$575,000",
+      ],
+      Correct: "2",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "A football team has scored 45 goals in 20 matches so far in the league. If they want to achieve an average of 3 goals per match for the remaining 10 matches, how many goals do they need to score in these matches?",
+      Img: "",
+      Responses: ["15", "20", "25", "30", "13", "22"],
+      Correct: "2",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "A sports club spends $100,000 on different sports in a year. The pie chart representing this expenditure shows that hockey accounts for 27.78% of the total amount spent. What is the total amount spent on sports other than hockey?",
+      Img: exam1img27,
+      Responses: [
+        "$22,220",
+        "$72,220",
+        "$77,780",
+        "$100,000",
+        "$22,780",
+        "$77,220",
+      ],
+      Correct: "1",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question:
+        "What is the probability of throwing dice and getting an odd number?",
+      Img: "",
+      Responses: ["1/4", "1/3", "1/2", "No answer is correct", "1/5", "3"],
+      Correct: "2",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "What is 7.5ft in inches?",
+      Img: "",
+      Responses: ["86 in", "120 in", "96 in", "72 in", "120 in", "90 in"],
+      Correct: "5",
+      Verse: "",
+      List: "",
+    },
+    {
+      Question: "Find the Value of 2P. 3(P + 5) - 4 = 23",
+      Img: "",
+      Responses: ["-4", "5", "8", "2", "9", "-5"],
+      Correct: "2",
+      Verse: "",
       List: "",
     },
   ];
@@ -427,7 +395,7 @@ export const fetchAllExams = () => (dispatch) => {
     return Math.random() - 0.5;
   });
 
-  const selectedExams = shuffledExams.slice(0, 25);
+  const selectedExams = shuffledExams.slice(0, 30);
 
   dispatch(setExams(selectedExams));
 };
