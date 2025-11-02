@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exam1img1 from "../../../assets/imgs/ques1.jpg";
-import exam1img2 from "../../../assets/imgs/ques2.jpg";
-import exam1img27 from "../../../assets/imgs/ques27.jpg";
+import q1 from "../../../assets/imgs/ques1.jpg";
+import q2 from "../../../assets/imgs/ques2.jpg";
+import q27 from "../../../assets/imgs/ques27.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
@@ -45,7 +45,7 @@ export const fetchAllExams = () => (dispatch) => {
     {
       Question:
         "At a certain school, 70 out of 180 Year 2 students walk to school, while 90 out of 210 Year 6 students walk to school. What is the percentage difference in the number of Year 6 students who walk to school compared to Year 2 students who walk to school?",
-      Img: exam1img1,
+      Img: q1,
       Responses: ["3%", "4%", "5%", "6%", "2%", "8%"],
       Correct: "1",
       Verse: "",
@@ -54,7 +54,7 @@ export const fetchAllExams = () => (dispatch) => {
     {
       Question:
         "If the total 2013 cold cereal sales for the seven counties assessed were $180,000, what percent of these sales was purchased Trinity County? Disregard the percentage symbol when choosing your answer.",
-      Img: exam1img2,
+      Img: q2,
       Responses: ["20", "25", "10", "15", "12", "21"],
       Correct: "3",
       Verse: "",
@@ -350,7 +350,7 @@ export const fetchAllExams = () => (dispatch) => {
     {
       Question:
         "A sports club spends $100,000 on different sports in a year. The pie chart representing this expenditure shows that hockey accounts for 27.78% of the total amount spent. What is the total amount spent on sports other than hockey?",
-      Img: exam1img27,
+      Img: q27,
       Responses: [
         "$22,220",
         "$72,220",
