@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import exam1img1 from "../../../assets/imgs/question-1.jpg";
-import exam1img2 from "../../../assets/imgs/question-2.jpg";
-import exam1img27 from "../../../assets/imgs/question-27.jpg";
+import exam1img1 from "../../../assets/imgs/ques1.jpg";
+import exam1img2 from "../../../assets/imgs/ques2.jpg";
+import exam1img27 from "../../../assets/imgs/ques27.jpg";
 
 export const examsSlice = createSlice({
   name: "exams",
