@@ -93,8 +93,8 @@ export const fetchAllExams = () => (dispatch) => {
       Question:
         "What is an area of a rectangle with side A = 10ft and B = 8ft?",
       Img: "",
-      Responses: ["100 ft", "80 ft²", "60 ft²", "110 ft²", "70 ft²", "80 ft²"],
-      Correct: [5],
+      Responses: ["100 ft", "60 ft²", "110 ft²", "70 ft²", "80 ft²"],
+      Correct: [4],
       Verse: "",
       List: "",
     },
