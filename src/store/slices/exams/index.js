@@ -279,7 +279,7 @@ export const fetchAllExams = () => (dispatch) => {
         "Probability is equal to 1/4",
         "Probability is equal to 35%",
       ],
-      Correct: [3],
+      Correct: [1],
     },
     {
       Question:
