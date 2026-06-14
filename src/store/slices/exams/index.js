@@ -27,18 +27,13 @@ export const fetchOrderArray = () => (dispatch) => {
         () => Math.random() - 0.5
       );
     }
-
     return getRandomNumber.remaining.pop();
   }
-
   getRandomNumber.remaining = [];
-
-  const orderArray = [];
-
-  for (let i = 0; i < 40; i++) {
-    orderArray.push(parseInt(getRandomNumber(), 10));
+  let orderArray = [];
+  for (let i = 0; i < 25; i++) {
+    orderArray.push(parseInt(getRandomNumber()));
   }
-
   dispatch(setOrderArray(orderArray));
 };
 
@@ -515,8 +510,11 @@ export const fetchAllExams = () => (dispatch) => {
     },
   ];
 
-  // Shuffle the array and include all 40 questions.
-  const shuffledExams = [...exams].sort(() => Math.random() - 0.5);
+  const shuffledExams = exams.sort(function () {
+    return Math.random() - 0.5;
+  });
 
-  dispatch(setExams(shuffledExams));
+  const selectedExams = shuffledExams.slice(0, 25);
+
+  dispatch(setExams(selectedExams));
 };
